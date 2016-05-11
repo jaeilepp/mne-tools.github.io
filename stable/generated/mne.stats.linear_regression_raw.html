@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,19 +193,19 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-stats-linear-regression-raw">
 <h1>mne.stats.linear_regression_raw<a class="headerlink" href="#mne-stats-linear-regression-raw" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.stats.linear_regression_raw">
-<code class="descclassname">mne.stats.</code><code class="descname">linear_regression_raw</code><span class="sig-paren">(</span><em>raw</em>, <em>events</em>, <em>event_id=None</em>, <em>tmin=-0.1</em>, <em>tmax=1</em>, <em>covariates=None</em>, <em>reject=None</em>, <em>flat=None</em>, <em>tstep=1.0</em>, <em>decim=1</em>, <em>picks=None</em>, <em>solver='cholesky'</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.stats.linear_regression_raw" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.stats.</tt><tt class="descname">linear_regression_raw</tt><big>(</big><em>raw</em>, <em>events</em>, <em>event_id=None</em>, <em>tmin=-0.1</em>, <em>tmax=1</em>, <em>covariates=None</em>, <em>reject=None</em>, <em>flat=None</em>, <em>tstep=1.0</em>, <em>decim=1</em>, <em>picks=None</em>, <em>solver='cholesky'</em><big>)</big><a class="headerlink" href="#mne.stats.linear_regression_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate regression-based evoked potentials/fields by linear modelling</p>
 <p>This models the full M/EEG time course, including correction for
 overlapping potentials and allowing for continuous/scalar predictors.
 Internally, this constructs a predictor matrix X of size
 n_samples * (n_conds * window length), solving the linear system
-<code class="docutils literal"><span class="pre">Y</span> <span class="pre">=</span> <span class="pre">bX</span></code> and returning <code class="docutils literal"><span class="pre">b</span></code> as evoked-like time series split by
+<tt class="docutils literal"><span class="pre">Y</span> <span class="pre">=</span> <span class="pre">bX</span></tt> and returning <tt class="docutils literal"><span class="pre">b</span></tt> as evoked-like time series split by
 condition. See <a class="reference internal" href="#r29" id="id1">[R29]</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -248,9 +248,9 @@ used.</p>
 <p><strong>covariates</strong> : dict-like | None</p>
 <blockquote>
 <div><p>If dict-like (e.g., a pandas DataFrame), values have to be array-like
-and of the same length as the columns in <code class="docutils literal"><span class="pre">`events`</span></code>. Keys correspond
+and of the same length as the columns in <tt class="docutils literal"><span class="pre">`events`</span></tt>. Keys correspond
 to additional event types/conditions to be estimated and are matched
-with the time points given by the first column of <code class="docutils literal"><span class="pre">`events`</span></code>. If
+with the time points given by the first column of <tt class="docutils literal"><span class="pre">`events`</span></tt>. If
 None, only binary events (from event_id) are used.</p>
 </div></blockquote>
 <p><strong>reject</strong> : None | dict</p>
@@ -261,7 +261,7 @@ selected subepochs. If None, no rejection is done.
 If dict, keys are types (&#8216;grad&#8217; | &#8216;mag&#8217; | &#8216;eeg&#8217; | &#8216;eog&#8217; | &#8216;ecg&#8217;)
 and values are the maximal peak-to-peak values to select rejected
 epochs, e.g.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>reject = dict(grad=4000e-12, # T / m (gradiometers)
+<div class="highlight-python"><div class="highlight"><pre>reject = dict(grad=4000e-12, # T / m (gradiometers)
               mag=4e-11, # T (magnetometers)
               eeg=40e-5, # V (EEG channels)
               eog=250e-5 # V (EOG channels))
@@ -295,8 +295,8 @@ MEG and EEG channels.</p>
 <blockquote>
 <div><p>Either a function which takes as its inputs the sparse predictor
 matrix X and the observation matrix Y, and returns the coefficient
-matrix b; or a string. If str, must be <code class="docutils literal"><span class="pre">'cholesky'</span></code>, in which case
-the solver used is <code class="docutils literal"><span class="pre">linalg.solve(dot(X.T,</span> <span class="pre">X),</span> <span class="pre">dot(X.T,</span> <span class="pre">y))</span></code>.</p>
+matrix b; or a string. If str, must be <tt class="docutils literal"><span class="pre">'cholesky'</span></tt>, in which case
+the solver used is <tt class="docutils literal"><span class="pre">linalg.solve(dot(X.T,</span> <span class="pre">X),</span> <span class="pre">dot(X.T,</span> <span class="pre">y))</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -338,7 +338,7 @@ considerations. Psychophysiology, 52(2), 169-189.</td></tr>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

@@ -10,7 +10,6 @@ Epoching and averaging (ERP/ERF)
 
 
 
-
 .. code-block:: python
 
     import os.path as op
@@ -30,7 +29,6 @@ construction of epochs and averaging the epoch data to evoked instances.
 First let's read in the raw sample data.
 
 
-
 .. code-block:: python
 
     data_path = mne.datasets.sample.data_path()
@@ -41,26 +39,11 @@ First let's read in the raw sample data.
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-        Read a total of 3 projection items:
-            PCA-v1 (1 x 102)  idle
-            PCA-v2 (1 x 102)  idle
-            PCA-v3 (1 x 102)  idle
-    Current compensation grade : 0
-        Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-    Ready.
-    Adding average EEG reference projection.
-    1 projection items deactivated
 
 
 To create time locked epochs, we first need a set of events that contain the
 information about the times. In this tutorial we use the stimulus channel to
 define the events. Let's look at the raw data.
-
 
 
 .. code-block:: python
@@ -91,7 +74,6 @@ from an outside source (like a separate file of events), pay special
 attention in aligning the events correctly with the raw data.
 
 
-
 .. code-block:: python
 
     events = mne.find_events(raw)
@@ -118,8 +100,6 @@ attention in aligning the events correctly with the raw data.
 
  Out::
 
-    320 events found
-    Events id: [ 1  2  3  4  5 32]
     [[ 27977      0      2]
      [ 28345      0      3]
      [ 28771      0      1]
@@ -462,7 +442,6 @@ raw data. Notice how the vertical lines (events) align nicely with the pulses
 on `STI 014`.
 
 
-
 .. code-block:: python
 
     raw.plot(events=events, n_channels=10, order=order)
@@ -484,7 +463,6 @@ is lost. First we shall define some parameters to feed to the
 :class:`mne.Epochs` constructor. The values ``tmin`` and ``tmax`` refer to
 offsets in relation to the events. Here we make epochs that collect the data
 from 200 ms before to 500 ms after the event.
-
 
 
 .. code-block:: python
@@ -520,7 +498,6 @@ for EEG and EOG electrodes.
           preprocessing for more.
 
 
-
 .. code-block:: python
 
     baseline = (None, 0.0)
@@ -532,14 +509,6 @@ for EEG and EOG electrodes.
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    289 matching events found
-    Applying baseline correction (mode: mean)
-    Created an SSP operator (subspace dimension = 3)
-    4 projection items activated
 
 
 Let's plot the epochs to see the results. The number at the top refers to the
@@ -555,7 +524,6 @@ To see all the interactive features of the epochs browser, click 'Help' in
 the lower left corner of the browser window.
 
 
-
 .. code-block:: python
 
     epochs.plot(block=True)
@@ -567,45 +535,9 @@ the lower left corner of the browser window.
     :align: center
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    Loading data for 289 events and 421 original time points ...
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on MAG : [u'MEG 1711']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on MAG : [u'MEG 1711']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-        Rejecting  epoch based on EOG : [u'EOG 061']
-    28 bad epochs dropped
-    Loading data for 20 events and 421 original time points ...
 
 
 To see why the epochs were rejected, we can plot the drop log.
-
 
 
 .. code-block:: python
@@ -631,7 +563,6 @@ is created where the channel indices run from 0 to ``epochs.info['nchan']``.
 See :ref:`tut_info_objects` for more information.
 
 
-
 .. code-block:: python
 
     picks = mne.pick_types(epochs.info, meg=True, eog=True)
@@ -649,7 +580,6 @@ conditions of the experiment. We can use these 'tags' to select for example
 all left trials (both visual left and auditory right) ...
 
 
-
 .. code-block:: python
 
 
@@ -665,7 +595,6 @@ all left trials (both visual left and auditory right) ...
 
 
 Finally, let's plot the evoked responses.
-
 
 
 .. code-block:: python
@@ -692,7 +621,7 @@ Finally, let's plot the evoked responses.
 
 
 **Total running time of the script:**
-(0 minutes 16.831 seconds)
+(0 minutes 16.951 seconds)
 
 
 

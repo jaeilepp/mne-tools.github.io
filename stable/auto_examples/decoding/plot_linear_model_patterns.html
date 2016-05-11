@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,7 +193,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="linear-classifier-on-sensor-data-with-plot-patterns-and-filters">
 <span id="sphx-glr-auto-examples-decoding-plot-linear-model-patterns-py"></span><h1>Linear classifier on sensor data with plot patterns and filters<a class="headerlink" href="#linear-classifier-on-sensor-data-with-plot-patterns-and-filters" title="Permalink to this headline">¶</a></h1>
@@ -209,7 +209,7 @@ because the noise is less spatially correlated in MEG than EEG.</p>
 Blankertz, B., &amp; Bießmann, F. (2014). On the interpretation of
 weight vectors of linear models in multivariate neuroimaging.
 NeuroImage, 87, 96–110. doi:10.1016/j.neuroimage.2013.10.067</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Romain Trachel &lt;trachelr@gmail.com&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
@@ -230,7 +230,7 @@ NeuroImage, 87, 96–110. doi:10.1016/j.neuroimage.2013.10.067</p>
 </pre></div>
 </div>
 <p>Set parameters</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 <span class="n">event_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw-eve.fif&#39;</span>
 <span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span>
 <span class="n">event_id</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">aud_l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vis_l</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -254,28 +254,11 @@ NeuroImage, 87, 96–110. doi:10.1016/j.neuroimage.2013.10.067</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-        Average EEG reference (1 x 60)  idle
-Current compensation grade : 0
-    Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-Ready.
-Reading 0 ... 41699  =      0.000 ...   277.709 secs...
-High-pass filtering at 2 Hz
-145 matching events found
-No baseline correction applied
-The measurement information indicates a low-pass frequency of 40 Hz. The decim=4 parameter will result in a sampling frequency of 37.5384 Hz, which can cause aliasing artifacts.
-Created an SSP operator (subspace dimension = 4)
-4 projection items activated
-Loading data for 145 events and 106 original time points ...
-0 bad epochs dropped
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>The measurement information indicates a low-pass frequency of 40 Hz. The decim=4 parameter will result in a sampling frequency of 37.5384 Hz, which can cause aliasing artifacts.
 </pre></div>
 </div>
 <p>Decoding in sensor space using a LogisticRegression classifier</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
 <span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
 <span class="c1"># create a linear model with LogisticRegression</span>
@@ -307,11 +290,11 @@ Loading data for 145 events and 106 original time points ...
 </li>
 </ul>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 14.266 seconds)</p>
+(0 minutes 9.183 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_linear_model_patterns.py"><code class="xref download docutils literal"><span class="pre">plot_linear_model_patterns.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_linear_model_patterns.py"><tt class="xref download docutils literal"><span class="pre">plot_linear_model_patterns.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_linear_model_patterns.ipynb"><code class="xref download docutils literal"><span class="pre">plot_linear_model_patterns.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_linear_model_patterns.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_linear_model_patterns.ipynb</span></tt></a></div>
 </div>
 
 
@@ -329,7 +312,7 @@ Loading data for 145 events and 106 original time points ...
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

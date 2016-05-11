@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-viz-plot-evoked-topomap">
 <h1>mne.viz.plot_evoked_topomap<a class="headerlink" href="#mne-viz-plot-evoked-topomap" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.viz.plot_evoked_topomap">
-<code class="descclassname">mne.viz.</code><code class="descname">plot_evoked_topomap</code><span class="sig-paren">(</span><em>evoked</em>, <em>times='auto'</em>, <em>ch_type=None</em>, <em>layout=None</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>cmap=None</em>, <em>sensors=True</em>, <em>colorbar=True</em>, <em>scale=None</em>, <em>scale_time=1000.0</em>, <em>unit=None</em>, <em>res=64</em>, <em>size=1</em>, <em>cbar_fmt='%3.1f'</em>, <em>time_format='%01d ms'</em>, <em>proj=False</em>, <em>show=True</em>, <em>show_names=False</em>, <em>title=None</em>, <em>mask=None</em>, <em>mask_params=None</em>, <em>outlines='head'</em>, <em>contours=6</em>, <em>image_interp='bilinear'</em>, <em>average=None</em>, <em>head_pos=None</em>, <em>axes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.plot_evoked_topomap" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.viz.</tt><tt class="descname">plot_evoked_topomap</tt><big>(</big><em>evoked</em>, <em>times='auto'</em>, <em>ch_type=None</em>, <em>layout=None</em>, <em>vmin=None</em>, <em>vmax=None</em>, <em>cmap=None</em>, <em>sensors=True</em>, <em>colorbar=True</em>, <em>scale=None</em>, <em>scale_time=1000.0</em>, <em>unit=None</em>, <em>res=64</em>, <em>size=1</em>, <em>cbar_fmt='%3.1f'</em>, <em>time_format='%01d ms'</em>, <em>proj=False</em>, <em>show=True</em>, <em>show_names=False</em>, <em>title=None</em>, <em>mask=None</em>, <em>mask_params=None</em>, <em>outlines='head'</em>, <em>contours=6</em>, <em>image_interp='bilinear'</em>, <em>average=None</em>, <em>head_pos=None</em>, <em>axes=None</em><big>)</big><a class="headerlink" href="#mne.viz.plot_evoked_topomap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot topographic maps of specific time points of evoked data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -211,8 +211,8 @@
 </div></blockquote>
 <p><strong>times</strong> : float | array of floats | &#8220;auto&#8221; | &#8220;peaks&#8221;.</p>
 <blockquote>
-<div><p>The time point(s) to plot. If &#8220;auto&#8221;, the number of <code class="docutils literal"><span class="pre">axes</span></code> determines
-the amount of time point(s). If <code class="docutils literal"><span class="pre">axes</span></code> is also None, 10 topographies
+<div><p>The time point(s) to plot. If &#8220;auto&#8221;, the number of <tt class="docutils literal"><span class="pre">axes</span></tt> determines
+the amount of time point(s). If <tt class="docutils literal"><span class="pre">axes</span></tt> is also None, 10 topographies
 will be shown with a regular time spacing between the first and last
 time instant. If &#8220;peaks&#8221;, finds time points automatically by checking
 for local maxima in global field power.</p>
@@ -318,7 +318,7 @@ Indices set to <cite>True</cite> will be considered. Defaults to None.</p>
 <blockquote>
 <div><p>Additional plotting parameters for plotting significant sensors.
 Default (None) equals:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
      <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -362,8 +362,8 @@ relative to the electrode locations.</p>
 <p><strong>axes</strong> : instance of Axes | list | None</p>
 <blockquote>
 <div><p>The axes to plot to. If list, the list must be a list of Axes of the
-same length as <code class="docutils literal"><span class="pre">times</span></code> (unless <code class="docutils literal"><span class="pre">times</span></code> is None). If instance of
-Axes, <code class="docutils literal"><span class="pre">times</span></code> must be a float or a list of one float.
+same length as <tt class="docutils literal"><span class="pre">times</span></tt> (unless <tt class="docutils literal"><span class="pre">times</span></tt> is None). If instance of
+Axes, <tt class="docutils literal"><span class="pre">times</span></tt> must be a float or a list of one float.
 Defaults to None.</p>
 </div></blockquote>
 </td>
@@ -395,7 +395,7 @@ Defaults to None.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

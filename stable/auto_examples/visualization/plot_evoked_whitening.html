@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -171,7 +171,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -199,7 +199,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="whitening-evoked-data-with-a-noise-covariance">
 <span id="sphx-glr-auto-examples-visualization-plot-evoked-whitening-py"></span><h1>Whitening evoked data with a noise covariance<a class="headerlink" href="#whitening-evoked-data-with-a-noise-covariance" title="Permalink to this headline">¶</a></h1>
@@ -215,7 +215,7 @@ plots are based on [1].</p>
 <dd>estimation and spatial whitening of MEG and EEG signals, vol. 108,
 328-342, NeuroImage.</dd>
 </dl>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Denis A. Engemann &lt;denis.engemann@gmail.com&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
@@ -230,7 +230,7 @@ plots are based on [1].</p>
 </pre></div>
 </div>
 <p>Set parameters</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 <span class="n">event_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw-eve.fif&#39;</span>
 
@@ -251,39 +251,8 @@ plots are based on [1].</p>
 <span class="c1"># epochs = epochs[:20]  # For your data, use as many samples as you can!</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-        Average EEG reference (1 x 60)  idle
-Current compensation grade : 0
-    Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-Ready.
-Reading 0 ... 41699  =      0.000 ...   277.709 secs...
-Band-pass filtering from 1 - 40 Hz
-73 matching events found
-No baseline correction applied
-Created an SSP operator (subspace dimension = 4)
-4 projection items activated
-Loading data for 73 events and 106 original time points ...
-    Rejecting  epoch based on EEG : [u&#39;EEG 002&#39;, u&#39;EEG 003&#39;, u&#39;EEG 007&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 001&#39;, u&#39;EEG 002&#39;, u&#39;EEG 003&#39;, u&#39;EEG 004&#39;, u&#39;EEG 006&#39;, u&#39;EEG 007&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 007&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 001&#39;, u&#39;EEG 002&#39;, u&#39;EEG 003&#39;, u&#39;EEG 006&#39;, u&#39;EEG 007&#39;]
-    Rejecting  epoch based on MAG : [u&#39;MEG 1711&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 008&#39;, u&#39;EEG 009&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 001&#39;, u&#39;EEG 003&#39;, u&#39;EEG 007&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 001&#39;, u&#39;EEG 002&#39;, u&#39;EEG 003&#39;, u&#39;EEG 006&#39;, u&#39;EEG 007&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 001&#39;, u&#39;EEG 002&#39;, u&#39;EEG 003&#39;, u&#39;EEG 007&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 001&#39;, u&#39;EEG 002&#39;, u&#39;EEG 003&#39;, u&#39;EEG 007&#39;]
-    Rejecting  epoch based on EEG : [u&#39;EEG 001&#39;]
-11 bad epochs dropped
-</pre></div>
-</div>
 <p>Compute covariance using automated regularization</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">noise_covs</span> <span class="o">=</span> <a href="../../generated/mne.compute_covariance.html#mne.compute_covariance"><span class="n">compute_covariance</span></a><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">noise_covs</span> <span class="o">=</span> <a href="../../generated/mne.compute_covariance.html#mne.compute_covariance"><span class="n">compute_covariance</span></a><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
                                 <span class="n">return_estimators</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                                 <span class="n">projs</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 
@@ -296,7 +265,7 @@ Loading data for 73 events and 106 original time points ...
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Estimating covariance using SHRUNK
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Estimating covariance using SHRUNK
 Done.
 Estimating covariance using DIAGONAL_FIXED
     EEG regularization : None
@@ -306,21 +275,21 @@ Done.
 Estimating covariance using EMPIRICAL
 Done.
 Estimating covariance using FACTOR_ANALYSIS
-... rank: 5 - loglik: -1801.587
-... rank: 10 - loglik: -1749.706
-... rank: 15 - loglik: -1703.215
-... rank: 20 - loglik: -1675.987
-... rank: 25 - loglik: -1656.535
-... rank: 30 - loglik: -1642.556
-... rank: 35 - loglik: -1634.068
-... rank: 40 - loglik: -1628.518
-... rank: 45 - loglik: -1624.140
-... rank: 50 - loglik: -1622.486
-... rank: 55 - loglik: -1621.697
-... rank: 60 - loglik: -1621.290
-... rank: 65 - loglik: -1621.628
-... rank: 70 - loglik: -1622.674
-... rank: 75 - loglik: -1623.352
+... rank: 5 - loglik: -1801.602
+... rank: 10 - loglik: -1749.709
+... rank: 15 - loglik: -1703.213
+... rank: 20 - loglik: -1675.971
+... rank: 25 - loglik: -1656.484
+... rank: 30 - loglik: -1642.343
+... rank: 35 - loglik: -1633.901
+... rank: 40 - loglik: -1628.557
+... rank: 45 - loglik: -1624.084
+... rank: 50 - loglik: -1622.155
+... rank: 55 - loglik: -1621.290
+... rank: 60 - loglik: -1620.951
+... rank: 65 - loglik: -1621.711
+... rank: 70 - loglik: -1622.204
+... rank: 75 - loglik: -1623.004
 early stopping parameter search.
 ... best model at rank = 60
 Done.
@@ -344,18 +313,18 @@ Number of samples used : 1922
 [done]
 log-likelihood on unseen data (descending order):
    shrunk: -1604.635
-   factor_analysis: -1621.290
+   factor_analysis: -1620.951
    diagonal_fixed: -1690.067
    empirical: -1810.229
 Covariance estimates sorted from best to worst
 shrunk : -1604.63546573
-factor_analysis : -1621.28967605
+factor_analysis : -1620.95112457
 diagonal_fixed : -1690.06725296
 empirical : -1810.22877908
 </pre></div>
 </div>
 <p>Show whitening</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">evoked</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">evoked</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
 
 <span class="n">evoked</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  <span class="c1"># plot evoked response</span>
 
@@ -374,54 +343,18 @@ empirical : -1810.22877908
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>estimated rank (eeg): 59
-estimated rank (grad): 203
-estimated rank (mag): 102
-estimated rank (mag + grad): 305
-estimated rank (eeg): 59
-estimated rank (eeg): 59
-estimated rank (grad): 203
-estimated rank (mag): 102
-estimated rank (mag + grad): 305
-estimated rank (eeg): 59
-estimated rank (eeg): 58
-estimated rank (grad): 203
-estimated rank (mag): 102
-estimated rank (mag + grad): 305
-estimated rank (eeg): 58
-estimated rank (eeg): 58
-estimated rank (grad): 203
-estimated rank (mag): 99
-estimated rank (mag + grad): 302
-estimated rank (eeg): 58
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG.
-Setting small EEG eigenvalues to zero.
-Not doing PCA for EEG.
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>No average EEG reference present in info[&quot;projs&quot;], covariance may be adversely affected. Consider recomputing covariance using a raw file with an average eeg reference projector added.
 No average EEG reference present in info[&quot;projs&quot;], covariance may be adversely affected. Consider recomputing covariance using a raw file with an average eeg reference projector added.
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG.
-Setting small EEG eigenvalues to zero.
-Not doing PCA for EEG.
 No average EEG reference present in info[&quot;projs&quot;], covariance may be adversely affected. Consider recomputing covariance using a raw file with an average eeg reference projector added.
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG.
-Setting small EEG eigenvalues to zero.
-Not doing PCA for EEG.
-No average EEG reference present in info[&quot;projs&quot;], covariance may be adversely affected. Consider recomputing covariance using a raw file with an average eeg reference projector added.
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG.
-Setting small EEG eigenvalues to zero.
-Not doing PCA for EEG.
 No average EEG reference present in info[&quot;projs&quot;], covariance may be adversely affected. Consider recomputing covariance using a raw file with an average eeg reference projector added.
 </pre></div>
 </div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 35.170 seconds)</p>
+(0 minutes 56.154 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_evoked_whitening.py"><code class="xref download docutils literal"><span class="pre">plot_evoked_whitening.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_evoked_whitening.py"><tt class="xref download docutils literal"><span class="pre">plot_evoked_whitening.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_evoked_whitening.ipynb"><code class="xref download docutils literal"><span class="pre">plot_evoked_whitening.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_evoked_whitening.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_evoked_whitening.ipynb</span></tt></a></div>
 </div>
 </div>
 
@@ -440,7 +373,7 @@ No average EEG reference present in info[&quot;projs&quot;], covariance may be a
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

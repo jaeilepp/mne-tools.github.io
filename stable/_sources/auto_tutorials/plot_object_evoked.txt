@@ -9,7 +9,6 @@ The :class:`Evoked <mne.Evoked>` data structure: evoked/averaged data
 =====================================================================
 
 
-
 .. code-block:: python
 
     import os.path as op
@@ -28,7 +27,6 @@ epochs data with :func:`mne.Epochs.average`. Here we read the evoked dataset
 from a file.
 
 
-
 .. code-block:: python
 
     data_path = mne.datasets.sample.data_path()
@@ -44,7 +42,7 @@ from a file.
 
  Out::
 
-    Reading /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
+    Reading /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
         Read a total of 4 projection items:
             PCA-v1 (1 x 102) active
             PCA-v2 (1 x 102) active
@@ -99,7 +97,6 @@ categories of
 We can also use ``condition`` parameter to read in only one category.
 
 
-
 .. code-block:: python
 
     evoked = mne.read_evokeds(fname, condition='Left Auditory', baseline=(None, 0),
@@ -114,7 +111,7 @@ We can also use ``condition`` parameter to read in only one category.
 
  Out::
 
-    Reading /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
+    Reading /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
         Read a total of 4 projection items:
             PCA-v1 (1 x 102) active
             PCA-v2 (1 x 102) active
@@ -133,7 +130,6 @@ If you're gone through the tutorials of raw and epochs datasets, you're
 probably already familiar with the :class:`Info <mne.Info>` attribute.
 There is nothing new or special with the ``evoked.info``. All the relevant
 info is still there.
-
 
 
 .. code-block:: python
@@ -159,12 +155,12 @@ info is still there.
         dig : list | 146 items
         events : list | 0 items
         file_id : dict | 4 items
-        filename : unicode | /home/ubun.../sample_audvis-ave.fif
+        filename : str | /home/jaak.../sample_audvis-ave.fif
         highpass : float | 0.10000000149 Hz
         hpi_meas : list | 1 items
         hpi_results : list | 1 items
         lowpass : float | 40.0 Hz
-        meas_date : numpy.ndarray | 2002-12-03 19:01:10
+        meas_date : numpy.ndarray | 2002-12-03 20:01:10
         meas_id : dict | 4 items
         nchan : int | 376
         projs : list | PCA-v1: on, PCA-v2: on, PCA-v3: on, ...
@@ -259,7 +255,6 @@ The evoked data structure also contains some new attributes easily
 accessible:
 
 
-
 .. code-block:: python
 
     print(evoked.nave)  # Number of averaged epochs.
@@ -289,7 +284,6 @@ when the evoked object is constructed. You can access the data as a numpy
 array.
 
 
-
 .. code-block:: python
 
     data = evoked.data
@@ -310,7 +304,6 @@ The data is arranged in an array of shape `(n_channels, n_times)`. Notice
 that unlike epochs, evoked object does not support indexing. This means that
 to access the data of a specific channel you must use the data array
 directly.
-
 
 
 .. code-block:: python
@@ -441,7 +434,6 @@ the data and some info about the evoked data. For more information, see
 :ref:`tut_creating_data_structures`.
 
 
-
 .. code-block:: python
 
     evoked = mne.EvokedArray(data, evoked.info, tmin=evoked.times[0])
@@ -459,9 +451,8 @@ the data and some info about the evoked data. For more information, see
 To write an evoked dataset to a file, use the :func:`mne.Evoked.save' method.
 To save multiple categories to a single file, see :func:`mne.write_evokeds`.
 
-
 **Total running time of the script:**
-(0 minutes 1.811 seconds)
+(0 minutes 1.557 seconds)
 
 
 

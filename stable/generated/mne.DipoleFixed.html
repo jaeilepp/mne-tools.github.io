@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,18 +193,18 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-dipolefixed">
 <h1>mne.DipoleFixed<a class="headerlink" href="#mne-dipolefixed" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mne.DipoleFixed">
-<em class="property">class </em><code class="descclassname">mne.</code><code class="descname">DipoleFixed</code><span class="sig-paren">(</span><em>info</em>, <em>data</em>, <em>times</em>, <em>nave</em>, <em>aspect_kind</em>, <em>first</em>, <em>last</em>, <em>comment</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.DipoleFixed" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">mne.</tt><tt class="descname">DipoleFixed</tt><big>(</big><em>info</em>, <em>data</em>, <em>times</em>, <em>nave</em>, <em>aspect_kind</em>, <em>first</em>, <em>last</em>, <em>comment</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.DipoleFixed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dipole class for fixed-position dipole fits</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This class should usually not be instantiated directly,
-instead <a class="reference internal" href="mne.read_dipole.html#mne.read_dipole" title="mne.read_dipole"><code class="xref py py-func docutils literal"><span class="pre">mne.read_dipole()</span></code></a> should be used.</p>
+instead <a class="reference internal" href="mne.read_dipole.html#mne.read_dipole" title="mne.read_dipole"><tt class="xref py py-func docutils literal"><span class="pre">mne.read_dipole()</span></tt></a> should be used.</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -252,12 +252,12 @@ instead <a class="reference internal" href="mne.read_dipole.html#mne.read_dipole
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.read_dipole.html#mne.read_dipole" title="mne.read_dipole"><code class="xref py py-obj docutils literal"><span class="pre">read_dipole</span></code></a>, <a class="reference internal" href="mne.Dipole.html#mne.Dipole" title="mne.Dipole"><code class="xref py py-obj docutils literal"><span class="pre">Dipole</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.read_dipole.html#mne.read_dipole" title="mne.read_dipole"><tt class="xref py py-obj docutils literal"><span class="pre">read_dipole</span></tt></a>, <a class="reference internal" href="mne.Dipole.html#mne.Dipole" title="mne.Dipole"><tt class="xref py py-obj docutils literal"><span class="pre">Dipole</span></tt></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This class is for fixed-position dipole fits, where the position
 (and maybe orientation) is static over time. For sequential dipole fits,
-where the position can change a function of time, use <a class="reference internal" href="mne.Dipole.html#mne.Dipole" title="mne.Dipole"><code class="xref py py-class docutils literal"><span class="pre">mne.Dipole</span></code></a>.</p>
+where the position can change a function of time, use <a class="reference internal" href="mne.Dipole.html#mne.Dipole" title="mne.Dipole"><tt class="xref py py-class docutils literal"><span class="pre">mne.Dipole</span></tt></a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.12.</span></p>
 </div>
@@ -268,22 +268,22 @@ where the position can change a function of time, use <a class="reference intern
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#mne.DipoleFixed.plot" title="mne.DipoleFixed.plot"><code class="xref py py-obj docutils literal"><span class="pre">plot</span></code></a>([show])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.DipoleFixed.plot" title="mne.DipoleFixed.plot"><tt class="xref py py-obj docutils literal"><span class="pre">plot</span></tt></a>([show])</td>
 <td>Plot dipole data</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.DipoleFixed.save" title="mne.DipoleFixed.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(fname[,&nbsp;verbose])</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.DipoleFixed.save" title="mne.DipoleFixed.save"><tt class="xref py py-obj docutils literal"><span class="pre">save</span></tt></a>(fname[,&nbsp;verbose])</td>
 <td>Save dipole in a .fif file</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="mne.DipoleFixed.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>info</em>, <em>data</em>, <em>times</em>, <em>nave</em>, <em>aspect_kind</em>, <em>first</em>, <em>last</em>, <em>comment</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.DipoleFixed.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>info</em>, <em>data</em>, <em>times</em>, <em>nave</em>, <em>aspect_kind</em>, <em>first</em>, <em>last</em>, <em>comment</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.DipoleFixed.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="mne.DipoleFixed.plot">
-<code class="descname">plot</code><span class="sig-paren">(</span><em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.DipoleFixed.plot" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">plot</tt><big>(</big><em>show=True</em><big>)</big><a class="headerlink" href="#mne.DipoleFixed.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot dipole data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -307,7 +307,7 @@ where the position can change a function of time, use <a class="reference intern
 
 <dl class="method">
 <dt id="mne.DipoleFixed.save">
-<code class="descname">save</code><span class="sig-paren">(</span><em>fname</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.DipoleFixed.save" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">save</tt><big>(</big><em>fname</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.DipoleFixed.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save dipole in a .fif file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -315,8 +315,8 @@ where the position can change a function of time, use <a class="reference intern
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
 <blockquote>
-<div><p>The name of the .fif file. Must end with <code class="docutils literal"><span class="pre">'.fif'</span></code> or
-<code class="docutils literal"><span class="pre">'.fif.gz'</span></code> to make it explicit that the file contains
+<div><p>The name of the .fif file. Must end with <tt class="docutils literal"><span class="pre">'.fif'</span></tt> or
+<tt class="docutils literal"><span class="pre">'.fif.gz'</span></tt> to make it explicit that the file contains
 dipole information in FIF format.</p>
 </div></blockquote>
 <p><strong>verbose</strong> : bool, str, int, or None</p>
@@ -348,7 +348,7 @@ dipole information in FIF format.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

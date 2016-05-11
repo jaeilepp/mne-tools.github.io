@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,14 +193,14 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="fdr-correction-on-t-test-on-sensor-data">
 <span id="sphx-glr-auto-examples-stats-plot-fdr-stats-evoked-py"></span><h1>FDR correction on T-test on sensor data<a class="headerlink" href="#fdr-correction-on-t-test-on-sensor-data" title="Permalink to this headline">¶</a></h1>
 <p>One tests if the evoked response significantly deviates from 0.
 Multiple comparison problem is addressed with
 False Discovery Rate (FDR) correction.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -217,7 +217,7 @@ False Discovery Rate (FDR) correction.</p>
 </pre></div>
 </div>
 <p>Set parameters</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 <span class="n">event_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw-eve.fif&#39;</span>
 <span class="n">event_id</span><span class="p">,</span> <span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span>
@@ -230,20 +230,8 @@ False Discovery Rate (FDR) correction.</p>
 <span class="n">include</span> <span class="o">=</span> <span class="p">[</span><span class="n">channel</span><span class="p">]</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-        Average EEG reference (1 x 60)  idle
-Current compensation grade : 0
-    Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-Ready.
-</pre></div>
-</div>
 <p>Read epochs for the channel of interest</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">picks</span> <span class="o">=</span> <a href="../../generated/mne.pick_types.html#mne.pick_types"><span class="n">mne</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">picks</span> <span class="o">=</span> <a href="../../generated/mne.pick_types.html#mne.pick_types"><span class="n">mne</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
                        <span class="n">exclude</span><span class="o">=</span><span class="s1">&#39;bads&#39;</span><span class="p">)</span>
 <span class="n">event_id</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">reject</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">grad</span><span class="o">=</span><span class="mf">4000e-13</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="mf">150e-6</span><span class="p">)</span>
@@ -253,16 +241,8 @@ Ready.
 <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># take only one channel to get a 2D array</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>7 matching events found
-Applying baseline correction (mode: mean)
-4 projection items activated
-Loading data for 7 events and 106 original time points ...
-0 bad epochs dropped
-</pre></div>
-</div>
 <p>Compute statistic</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">T</span><span class="p">,</span> <span class="n">pval</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">T</span><span class="p">,</span> <span class="n">pval</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
 
 <span class="n">n_samples</span><span class="p">,</span> <span class="n">n_tests</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
@@ -276,7 +256,7 @@ Loading data for 7 events and 106 original time points ...
 </pre></div>
 </div>
 <p>Plot</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">times</span> <span class="o">=</span> <span class="mf">1e3</span> <span class="o">*</span> <span class="n">epochs</span><span class="o">.</span><span class="n">times</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">times</span> <span class="o">=</span> <span class="mf">1e3</span> <span class="o">*</span> <span class="n">epochs</span><span class="o">.</span><span class="n">times</span>
 
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.close"><span class="n">plt</span><span class="o">.</span><span class="n">close</span></a><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;T-stat&#39;</span><span class="p">)</span>
@@ -295,11 +275,11 @@ Loading data for 7 events and 106 original time points ...
 </div>
 <img alt="../../_images/sphx_glr_plot_fdr_stats_evoked_001.png" class="align-center" src="../../_images/sphx_glr_plot_fdr_stats_evoked_001.png" />
 <p><strong>Total running time of the script:</strong>
-(0 minutes 0.392 seconds)</p>
+(0 minutes 0.108 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_fdr_stats_evoked.py"><code class="xref download docutils literal"><span class="pre">plot_fdr_stats_evoked.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_fdr_stats_evoked.py"><tt class="xref download docutils literal"><span class="pre">plot_fdr_stats_evoked.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_fdr_stats_evoked.ipynb"><code class="xref download docutils literal"><span class="pre">plot_fdr_stats_evoked.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_fdr_stats_evoked.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_fdr_stats_evoked.ipynb</span></tt></a></div>
 </div>
 
 
@@ -317,7 +297,7 @@ Loading data for 7 events and 106 original time points ...
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

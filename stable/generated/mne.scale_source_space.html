@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-scale-source-space">
 <h1>mne.scale_source_space<a class="headerlink" href="#mne-scale-source-space" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.scale_source_space">
-<code class="descclassname">mne.</code><code class="descname">scale_source_space</code><span class="sig-paren">(</span><em>subject_to</em>, <em>src_name</em>, <em>subject_from=None</em>, <em>scale=None</em>, <em>subjects_dir=None</em>, <em>n_jobs=1</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.scale_source_space" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.</tt><tt class="descname">scale_source_space</tt><big>(</big><em>subject_to</em>, <em>src_name</em>, <em>subject_from=None</em>, <em>scale=None</em>, <em>subjects_dir=None</em>, <em>n_jobs=1</em><big>)</big><a class="headerlink" href="#mne.scale_source_space" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale a source space for an mri created with scale_mri()</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -211,11 +211,11 @@
 </div></blockquote>
 <p><strong>src_name</strong> : str</p>
 <blockquote>
-<div><p>Source space name. Can be a spacing parameter (e.g., <code class="docutils literal"><span class="pre">'7'</span></code>,
-<code class="docutils literal"><span class="pre">'ico4'</span></code>, <code class="docutils literal"><span class="pre">'oct6'</span></code>) or a file name of a source space file relative
+<div><p>Source space name. Can be a spacing parameter (e.g., <tt class="docutils literal"><span class="pre">'7'</span></tt>,
+<tt class="docutils literal"><span class="pre">'ico4'</span></tt>, <tt class="docutils literal"><span class="pre">'oct6'</span></tt>) or a file name of a source space file relative
 to the bem directory; if the file name contains the subject name, it
-should be indicated as &#8220;{subject}&#8221; in <code class="docutils literal"><span class="pre">src_name</span></code> (e.g.,
-<code class="docutils literal"><span class="pre">&quot;{subject}-my_source_space-src.fif&quot;</span></code>).</p>
+should be indicated as &#8220;{subject}&#8221; in <tt class="docutils literal"><span class="pre">src_name</span></tt> (e.g.,
+<tt class="docutils literal"><span class="pre">&quot;{subject}-my_source_space-src.fif&quot;</span></tt>).</p>
 </div></blockquote>
 <p><strong>subject_from</strong> : None | str</p>
 <blockquote>
@@ -260,7 +260,7 @@ than there are source spaces).</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

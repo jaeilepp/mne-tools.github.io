@@ -13,7 +13,6 @@ inverse method such as MNE/dSPM/sLORETA on evoked/raw/epochs data.
 
 
 
-
 .. code-block:: python
 
     import numpy as np
@@ -31,7 +30,6 @@ inverse method such as MNE/dSPM/sLORETA on evoked/raw/epochs data.
 
 
 Process MEG data
-
 
 
 .. code-block:: python
@@ -63,7 +61,7 @@ Process MEG data
 
  Out::
 
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
+    Opening raw data file /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
         Read a total of 4 projection items:
             PCA-v1 (1 x 102)  idle
             PCA-v2 (1 x 102)  idle
@@ -84,7 +82,6 @@ Compute regularized noise covariance
 ------------------------------------
 
 For more details see :ref:`tut_compute_covariance`.
-
 
 
 .. code-block:: python
@@ -154,7 +151,6 @@ Compute the evoked response
 ---------------------------
 
 
-
 .. code-block:: python
 
 
@@ -202,7 +198,6 @@ Inverse modeling: MNE/dSPM on evoked and raw data
 -------------------------------------------------
 
 
-
 .. code-block:: python
 
 
@@ -230,7 +225,7 @@ Inverse modeling: MNE/dSPM on evoked and raw data
 
  Out::
 
-    Reading forward solution from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-fwd.fif...
+    Reading forward solution from /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-fwd.fif...
         Reading a source space...
         Computing patch statistics...
         Patch information added...
@@ -284,7 +279,6 @@ Compute inverse solution
 ------------------------
 
 
-
 .. code-block:: python
 
 
@@ -324,7 +318,6 @@ Visualization
 View activation time-series
 
 
-
 .. code-block:: python
 
 
@@ -344,7 +337,6 @@ View activation time-series
 
 Here we use peak getter to move visualization to the time point of the peak
 and draw a marker at the maximum peak vertex.
-
 
 
 .. code-block:: python
@@ -389,7 +381,6 @@ and draw a marker at the maximum peak vertex.
 
 Morph data to average brain
 ---------------------------
-
 
 
 .. code-block:: python
@@ -444,9 +435,8 @@ Exercise
    - By changing the method parameter to 'sloreta' recompute the source
      estimates using the sLORETA method.
 
-
 **Total running time of the script:**
-(1 minutes 30.534 seconds)
+(0 minutes 52.183 seconds)
 
 
 

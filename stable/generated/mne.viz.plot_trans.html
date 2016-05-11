@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-viz-plot-trans">
 <h1>mne.viz.plot_trans<a class="headerlink" href="#mne-viz-plot-trans" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.viz.plot_trans">
-<code class="descclassname">mne.viz.</code><code class="descname">plot_trans</code><span class="sig-paren">(</span><em>info</em>, <em>trans='auto'</em>, <em>subject=None</em>, <em>subjects_dir=None</em>, <em>ch_type=None</em>, <em>source=('bem'</em>, <em>'head')</em>, <em>coord_frame='head'</em>, <em>meg_sensors=False</em>, <em>eeg_sensors=True</em>, <em>dig=False</em>, <em>ref_meg=False</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.plot_trans" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.viz.</tt><tt class="descname">plot_trans</tt><big>(</big><em>info</em>, <em>trans='auto'</em>, <em>subject=None</em>, <em>subjects_dir=None</em>, <em>ch_type=None</em>, <em>source=('bem'</em>, <em>'head')</em>, <em>coord_frame='head'</em>, <em>meg_sensors=False</em>, <em>eeg_sensors=True</em>, <em>dig=False</em>, <em>ref_meg=False</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.viz.plot_trans" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot MEG/EEG head surface and helmet in 3D.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -211,7 +211,7 @@
 </div></blockquote>
 <p><strong>trans</strong> : str | &#8216;auto&#8217; | dict | None</p>
 <blockquote>
-<div><p>The full path to the head&lt;-&gt;MRI transform <code class="docutils literal"><span class="pre">*-trans.fif</span></code> file
+<div><p>The full path to the head&lt;-&gt;MRI transform <tt class="docutils literal"><span class="pre">*-trans.fif</span></tt> file
 produced during coregistration. If trans is None, no head
 surface will be shown.</p>
 </div></blockquote>
@@ -291,7 +291,7 @@ to &#8216;bem&#8217;. Note. For single layer bems it is recommended to use &#821
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

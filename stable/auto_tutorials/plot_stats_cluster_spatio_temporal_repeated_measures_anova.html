@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -177,7 +177,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -211,7 +211,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="repeated-measures-anova-on-source-data-with-spatio-temporal-clustering">
 <span id="tut-stats-cluster-source-ranova"></span><span id="sphx-glr-auto-tutorials-plot-stats-cluster-spatio-temporal-repeated-measures-anova-py"></span><h1>Repeated measures ANOVA on source data with spatio-temporal clustering<a class="headerlink" href="#repeated-measures-anova-on-source-data-with-spatio-temporal-clustering" title="Permalink to this headline">¶</a></h1>
@@ -224,7 +224,7 @@ using one subject&#8217;s data). For this purpose we will compute an
 interaction effect using a repeated measures ANOVA. The multiple
 comparisons problem is addressed with a cluster-level permutation test
 across space and time.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Eric Larson &lt;larson.eric.d@gmail.com&gt;</span>
 <span class="c1">#          Denis Engemannn &lt;denis.engemann@gmail.com&gt;</span>
 <span class="c1">#</span>
@@ -249,7 +249,7 @@ across space and time.</p>
 </div>
 <div class="section" id="set-parameters">
 <h2>Set parameters<a class="headerlink" href="#set-parameters" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <a href="../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <a href="../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 <span class="n">event_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw-eve.fif&#39;</span>
 <span class="n">subjects_dir</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/subjects&#39;</span>
@@ -263,7 +263,7 @@ across space and time.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Opening raw data file /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
     Read a total of 4 projection items:
         PCA-v1 (1 x 102)  idle
         PCA-v2 (1 x 102)  idle
@@ -277,7 +277,7 @@ Ready.
 </div>
 <div class="section" id="read-epochs-for-all-channels-removing-a-bad-one">
 <h2>Read epochs for all channels, removing a bad one<a class="headerlink" href="#read-epochs-for-all-channels-removing-a-bad-one" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;bads&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;MEG 2443&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;bads&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;MEG 2443&#39;</span><span class="p">]</span>
 <span class="n">picks</span> <span class="o">=</span> <a href="../generated/mne.pick_types.html#mne.pick_types"><span class="n">mne</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="s1">&#39;bads&#39;</span><span class="p">)</span>
 <span class="c1"># we&#39;ll load all four conditions that make up the &#39;two ways&#39; of our ANOVA</span>
 
@@ -292,7 +292,7 @@ Ready.
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>288 matching events found
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>288 matching events found
 Applying baseline correction (mode: mean)
 Created an SSP operator (subspace dimension = 3)
 4 projection items activated
@@ -337,7 +337,7 @@ Dropped 15 epochs
 </div>
 <div class="section" id="transform-to-source-space">
 <h2>Transform to source space<a class="headerlink" href="#transform-to-source-space" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">fname_inv</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fname_inv</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif&#39;</span>
 <span class="n">snr</span> <span class="o">=</span> <span class="mf">3.0</span>
 <span class="n">lambda2</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">snr</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;dSPM&quot;</span>  <span class="c1"># use dSPM method (could also be MNE or sLORETA)</span>
@@ -362,7 +362,7 @@ Dropped 15 epochs
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Reading inverse operator decomposition from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Reading inverse operator decomposition from /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif...
     Reading inverse operator info...
     [done]
     Reading inverse operator decomposition...
@@ -460,7 +460,7 @@ to the same cortical space (e.g. fsaverage). For example purposes, we will
 simulate this by just having each &#8220;subject&#8221; have the same response (just
 noisy in source space) here.</p>
 <p>We&#8217;ll only consider the left hemisphere in this tutorial.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">n_vertices_sample</span><span class="p">,</span> <span class="n">n_times</span> <span class="o">=</span> <span class="n">conditions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lh_data</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">n_vertices_sample</span><span class="p">,</span> <span class="n">n_times</span> <span class="o">=</span> <span class="n">conditions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lh_data</span><span class="o">.</span><span class="n">shape</span>
 <span class="n">n_subjects</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Simulating data for </span><span class="si">%d</span><span class="s1"> subjects.&#39;</span> <span class="o">%</span> <span class="n">n_subjects</span><span class="p">)</span>
 
@@ -472,7 +472,7 @@ noisy in source space) here.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Simulating data for 7 subjects.
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Simulating data for 7 subjects.
 </pre></div>
 </div>
 <p>It&#8217;s a good idea to spatially smooth the data, and for visualization
@@ -481,7 +481,7 @@ with vertices 0:10242 for each hemisphere. Usually you&#8217;d have to morph
 each subject&#8217;s data separately (and you might want to use morph_data
 instead), but here since all estimates are on &#8216;sample&#8217; we can use one
 morph matrix for all the heavy lifting.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">fsave_vertices</span> <span class="o">=</span> <span class="p">[</span><a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">10242</span><span class="p">),</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.array.html#numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([],</span> <span class="nb">int</span><span class="p">)]</span>  <span class="c1"># right hemi is empty</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fsave_vertices</span> <span class="o">=</span> <span class="p">[</span><a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">10242</span><span class="p">),</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.array.html#numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([],</span> <span class="nb">int</span><span class="p">)]</span>  <span class="c1"># right hemi is empty</span>
 <span class="n">morph_mat</span> <span class="o">=</span> <a href="../generated/mne.compute_morph_matrix.html#mne.compute_morph_matrix"><span class="n">compute_morph_matrix</span></a><span class="p">(</span><span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="n">sample_vertices</span><span class="p">,</span>
                                  <span class="n">fsave_vertices</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">subjects_dir</span><span class="p">)</span>
 <span class="n">n_vertices_fsave</span> <span class="o">=</span> <span class="n">morph_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -494,7 +494,7 @@ morph matrix for all the heavy lifting.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Computing morph matrix...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Computing morph matrix...
 Triangle file: created by gramfort on Thu Sep 15 21:13:45 2011 nvert = 155407 ntri = 310810
 Triangle file: created by gramfort on Fri Sep 16 00:40:11 2011 nvert = 156866 ntri = 313728
     Left-hemisphere map read.
@@ -510,7 +510,7 @@ list of multi-dimensional arrays (one per condition) of shape: samples
 (subjects) x time x space.</p>
 <p>First we permute dimensions, then split the array into a list of conditions
 and discard the empty dimension resulting from the split using numpy squeeze.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.transpose.html#numpy.transpose"><span class="n">np</span><span class="o">.</span><span class="n">transpose</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1">#</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">X</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.transpose.html#numpy.transpose"><span class="n">np</span><span class="o">.</span><span class="n">transpose</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1">#</span>
 <span class="n">X</span> <span class="o">=</span> <span class="p">[</span><a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.squeeze.html#numpy.squeeze"><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.split.html#numpy.split"><span class="n">np</span><span class="o">.</span><span class="n">split</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -524,13 +524,13 @@ the return values. For this reason we&#8217;ll write a tiny dummy function.</p>
 <p>We will tell the ANOVA how to interpret the data matrix in terms of
 factors. This is done via the factor levels argument which is a list
 of the number factor levels for each factor.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">factor_levels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">factor_levels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Finally we will pick the interaction effect by passing &#8216;A:B&#8217;.
 (this notation is borrowed from the R formula language). Without this also
 the main effects will be returned.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">effects</span> <span class="o">=</span> <span class="s1">&#39;A:B&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">effects</span> <span class="o">=</span> <span class="s1">&#39;A:B&#39;</span>
 <span class="c1"># Tell the ANOVA not to compute p-values which we don&#39;t need for clustering</span>
 <span class="n">return_pvals</span> <span class="o">=</span> <span class="bp">False</span>
 
@@ -547,8 +547,8 @@ input array of dimensions: subjects X conditions X observations (optional).</p>
 second dimension, and finally calls ANOVA.</p>
 <p>Note. for further details on this ANOVA function consider the
 corresponding
-<a class="reference internal" href="plot_stats_cluster_time_frequency_repeated_measures_anova.html#tut-stats-cluster-sensor-ranova-tfr"><span>time frequency tutorial</span></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">stat_fun</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<a class="reference internal" href="plot_stats_cluster_time_frequency_repeated_measures_anova.html#tut-stats-cluster-sensor-ranova-tfr"><em>time frequency tutorial</em></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">stat_fun</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="k">return</span> <a href="../generated/mne.stats.f_mway_rm.html#mne.stats.f_mway_rm"><span class="n">f_mway_rm</span></a><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.swapaxes.html#numpy.swapaxes"><span class="n">np</span><span class="o">.</span><span class="n">swapaxes</span></a><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">factor_levels</span><span class="o">=</span><span class="n">factor_levels</span><span class="p">,</span>
                      <span class="n">effects</span><span class="o">=</span><span class="n">effects</span><span class="p">,</span> <span class="n">return_pvals</span><span class="o">=</span><span class="n">return_pvals</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="c1"># get f-values only.</span>
@@ -559,7 +559,7 @@ corresponding
 <h2>Compute clustering statistic<a class="headerlink" href="#compute-clustering-statistic" title="Permalink to this headline">¶</a></h2>
 <p>To use an algorithm optimized for spatio-temporal clustering, we
 just pass the spatial connectivity matrix (instead of spatio-temporal).</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">source_space</span> <span class="o">=</span> <a href="../generated/mne.grade_to_tris.html#mne.grade_to_tris"><span class="n">grade_to_tris</span></a><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">source_space</span> <span class="o">=</span> <a href="../generated/mne.grade_to_tris.html#mne.grade_to_tris"><span class="n">grade_to_tris</span></a><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="c1"># as we only have one hemisphere we need only need half the connectivity</span>
 <span class="n">lh_source_space</span> <span class="o">=</span> <span class="n">source_space</span><span class="p">[</span><span class="n">source_space</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">10242</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Computing connectivity.&#39;</span><span class="p">)</span>
@@ -585,7 +585,7 @@ just pass the spatial connectivity matrix (instead of spatio-temporal).</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Computing connectivity.
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Computing connectivity.
 -- number of connected vertices : 10242
 Clustering.
 stat_fun(H1): min=0.000000 max=500.726492
@@ -604,7 +604,7 @@ Done.
 </div>
 <div class="section" id="visualize-the-clusters">
 <h2>Visualize the clusters<a class="headerlink" href="#visualize-the-clusters" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Visualizing clusters.&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Visualizing clusters.&#39;</span><span class="p">)</span>
 
 <span class="c1">#    Now let&#39;s build a convenient representation of each cluster, where each</span>
 <span class="c1">#    cluster becomes a &quot;time point&quot; in the SourceEstimate</span>
@@ -630,7 +630,7 @@ Done.
 </div>
 <img alt="../_images/sphx_glr_plot_stats_cluster_spatio_temporal_repeated_measures_anova_001.png" class="align-center" src="../_images/sphx_glr_plot_stats_cluster_spatio_temporal_repeated_measures_anova_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Visualizing clusters.
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Visualizing clusters.
 Updating smoothing matrix, be patient..
 Smoothing matrix creation, step 1
 Smoothing matrix creation, step 2
@@ -647,7 +647,7 @@ colormap: fmin=-4.00e+01 fmid=0.00e+00 fmax=4.00e+01 transparent=0
 </div>
 <p>Finally, let&#8217;s investigate interaction effect by reconstructing the time
 courses</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">inds_t</span><span class="p">,</span> <span class="n">inds_v</span> <span class="o">=</span> <span class="p">[(</span><span class="n">clusters</span><span class="p">[</span><span class="n">cluster_ind</span><span class="p">])</span> <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">cluster_ind</span> <span class="ow">in</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">inds_t</span><span class="p">,</span> <span class="n">inds_v</span> <span class="o">=</span> <span class="p">[(</span><span class="n">clusters</span><span class="p">[</span><span class="n">cluster_ind</span><span class="p">])</span> <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">cluster_ind</span> <span class="ow">in</span>
                   <span class="nb">enumerate</span><span class="p">(</span><span class="n">good_cluster_inds</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># first cluster</span>
 
 <span class="n">times</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">tstep</span> <span class="o">*</span> <span class="mf">1e3</span>
@@ -682,11 +682,11 @@ courses</p>
 </div>
 <img alt="../_images/sphx_glr_plot_stats_cluster_spatio_temporal_repeated_measures_anova_002.png" class="align-center" src="../_images/sphx_glr_plot_stats_cluster_spatio_temporal_repeated_measures_anova_002.png" />
 <p><strong>Total running time of the script:</strong>
-(1 minutes 16.992 seconds)</p>
+(0 minutes 43.001 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_stats_cluster_spatio_temporal_repeated_measures_anova.py"><code class="xref download docutils literal"><span class="pre">plot_stats_cluster_spatio_temporal_repeated_measures_anova.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_stats_cluster_spatio_temporal_repeated_measures_anova.py"><tt class="xref download docutils literal"><span class="pre">plot_stats_cluster_spatio_temporal_repeated_measures_anova.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_stats_cluster_spatio_temporal_repeated_measures_anova.ipynb"><code class="xref download docutils literal"><span class="pre">plot_stats_cluster_spatio_temporal_repeated_measures_anova.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_stats_cluster_spatio_temporal_repeated_measures_anova.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_stats_cluster_spatio_temporal_repeated_measures_anova.ipynb</span></tt></a></div>
 </div>
 </div>
 
@@ -705,7 +705,7 @@ courses</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -35,7 +35,7 @@
     <link rel="top" title="MNE 0.12.0 documentation" href="../index.html" />
     <link rel="up" title="Python API Reference" href="../python_reference.html" />
     <link rel="next" title="mne.gui.coregistration" href="mne.gui.coregistration.html" />
-    <link rel="prev" title="mne.make_ad_hoc_cov" href="mne.make_ad_hoc_cov.html" />
+    <link rel="prev" title="mne.write_cov" href="mne.write_cov.html" />
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -177,7 +177,7 @@
 </ul>
 
   <li>
-    <a href="mne.make_ad_hoc_cov.html" title="Previous Chapter: mne.make_ad_hoc_cov"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; mne.make_ad_h...</span>
+    <a href="mne.write_cov.html" title="Previous Chapter: mne.write_cov"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; mne.write_cov</span>
     </a>
   </li>
   <li>
@@ -193,19 +193,19 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-cov-regularize">
 <h1>mne.cov.regularize<a class="headerlink" href="#mne-cov-regularize" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.cov.regularize">
-<code class="descclassname">mne.cov.</code><code class="descname">regularize</code><span class="sig-paren">(</span><em>cov</em>, <em>info</em>, <em>mag=0.1</em>, <em>grad=0.1</em>, <em>eeg=0.1</em>, <em>exclude='bads'</em>, <em>proj=True</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.cov.regularize" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.cov.</tt><tt class="descname">regularize</tt><big>(</big><em>cov</em>, <em>info</em>, <em>mag=0.1</em>, <em>grad=0.1</em>, <em>eeg=0.1</em>, <em>exclude='bads'</em>, <em>proj=True</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.cov.regularize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Regularize noise covariance matrix.</p>
 <p>This method works by adding a constant to the diagonal for each
 channel type separately. Special care is taken to keep the
 rank of the data constant.</p>
 <p><strong>Note:</strong> This function is kept for reasons of backward-compatibility.
-Please consider explicitly using the <code class="docutils literal"><span class="pre">method</span></code> parameter in
+Please consider explicitly using the <tt class="docutils literal"><span class="pre">method</span></tt> parameter in
 <cite>compute_covariance</cite> to directly combine estimation with regularization
 in a data-driven fashion see the
 <a class="reference external" href="http://martinos.org/mne/dev/faq.html#how-should-i-regularize-the-covariance-matrix">faq</a>
@@ -259,7 +259,7 @@ are extracted from both info[&#8216;bads&#8217;] and cov[&#8216;bads&#8217;].</p
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-obj docutils literal"><span class="pre">compute_covariance</span></code></p>
+<p class="last"><tt class="xref py py-obj docutils literal"><span class="pre">compute_covariance</span></tt></p>
 </div>
 </dd></dl>
 
@@ -280,7 +280,7 @@ are extracted from both info[&#8216;bads&#8217;] and cov[&#8216;bads&#8217;].</p
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

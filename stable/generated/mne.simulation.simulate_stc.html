@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-simulation-simulate-stc">
 <h1>mne.simulation.simulate_stc<a class="headerlink" href="#mne-simulation-simulate-stc" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.simulation.simulate_stc">
-<code class="descclassname">mne.simulation.</code><code class="descname">simulate_stc</code><span class="sig-paren">(</span><em>src</em>, <em>labels</em>, <em>stc_data</em>, <em>tmin</em>, <em>tstep</em>, <em>value_fun=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.simulation.simulate_stc" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.simulation.</tt><tt class="descname">simulate_stc</tt><big>(</big><em>src</em>, <em>labels</em>, <em>stc_data</em>, <em>tmin</em>, <em>tstep</em>, <em>value_fun=None</em><big>)</big><a class="headerlink" href="#mne.simulation.simulate_stc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate sources time courses from waveforms and labels</p>
 <p>This function generates a source estimate with extended sources by
 filling the labels with the waveforms given in stc_data.</p>
@@ -268,7 +268,7 @@ stc = generate_stc(fwd, labels, stc_data, tmin, tstep, fun)</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="compute-lcmv-beamformer-on-evoked-data">
 <span id="sphx-glr-auto-examples-inverse-plot-lcmv-beamformer-py"></span><h1>Compute LCMV beamformer on evoked data<a class="headerlink" href="#compute-lcmv-beamformer-on-evoked-data" title="Permalink to this headline">¶</a></h1>
 <p>Compute LCMV beamformer solutions on evoked dataset for three different choices
 of source orientation and stores the solutions in stc files for visualisation.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Author: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Author: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -222,7 +222,7 @@ of source orientation and stores the solutions in stc files for visualisation.</
 </pre></div>
 </div>
 <p>Get epochs</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">event_id</span><span class="p">,</span> <span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">event_id</span><span class="p">,</span> <span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span>
 
 <span class="c1"># Setup for reading the raw data</span>
 <span class="n">raw</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span><span class="p">(</span><span class="n">raw_fname</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -291,96 +291,7 @@ of source orientation and stores the solutions in stc files for visualisation.</
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-    Read a total of 3 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-Current compensation grade : 0
-    Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-Ready.
-Adding average EEG reference projection.
-1 projection items deactivated
-Reading 0 ... 166799  =      0.000 ...   277.714 secs...
-Created an SSP operator (subspace dimension = 4)
-4 projection items activated
-SSP projectors applied...
-72 matching events found
-Applying baseline correction (mode: mean)
-Created an SSP operator (subspace dimension = 3)
-4 projection items activated
-Loading data for 72 events and 421 original time points ...
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-16 bad epochs dropped
-Reading forward solution from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-eeg-oct-6-fwd.fif...
-    Reading a source space...
-    Computing patch statistics...
-    Patch information added...
-    Distance information added...
-    [done]
-    Reading a source space...
-    Computing patch statistics...
-    Patch information added...
-    Distance information added...
-    [done]
-    2 source spaces read
-    Desired named matrix (kind = 3523) not available
-    Read MEG forward solution (7498 sources, 306 channels, free orientations)
-    Desired named matrix (kind = 3523) not available
-    Read EEG forward solution (7498 sources, 60 channels, free orientations)
-    MEG and EEG forward solutions combined
-    Source spaces transformed to the forward solution coordinate frame
-    Converting to surface-based source orientations...
-    Average patch normals will be employed in the rotation to the local surface coordinates....
-[done]
-Estimating covariance using SHRUNK
-Done.
-Using cross-validation to select the best estimator.
-Number of samples used : 6776
-[done]
-log-likelihood on unseen data (descending order):
-   shrunk: -195.027
-selecting best estimator: shrunk
-Estimating covariance using SHRUNK
-Done.
-Using cross-validation to select the best estimator.
-Number of samples used : 3752
-[done]
-log-likelihood on unseen data (descending order):
-   shrunk: -201.698
-selecting best estimator: shrunk
-    39 out of 366 channels remain after picking
-    Created an SSP operator (subspace dimension = 3)
-estimated rank (mag + grad): 36
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG.
-combining the current components...
-    39 out of 366 channels remain after picking
-    Created an SSP operator (subspace dimension = 3)
-estimated rank (mag + grad): 36
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG.
-    39 out of 366 channels remain after picking
-    Created an SSP operator (subspace dimension = 3)
-estimated rank (mag + grad): 36
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG.
-Updating smoothing matrix, be patient..
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Updating smoothing matrix, be patient..
 Smoothing matrix creation, step 1
 Smoothing matrix creation, step 2
 Smoothing matrix creation, step 3
@@ -395,11 +306,11 @@ colormap: fmin=3.95e-01 fmid=4.45e-01 fmax=1.08e+00 transparent=1
 </pre></div>
 </div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 25.645 seconds)</p>
+(0 minutes 12.469 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_lcmv_beamformer.py"><code class="xref download docutils literal"><span class="pre">plot_lcmv_beamformer.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_lcmv_beamformer.py"><tt class="xref download docutils literal"><span class="pre">plot_lcmv_beamformer.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_lcmv_beamformer.ipynb"><code class="xref download docutils literal"><span class="pre">plot_lcmv_beamformer.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_lcmv_beamformer.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_lcmv_beamformer.ipynb</span></tt></a></div>
 </div>
 
 
@@ -417,7 +328,7 @@ colormap: fmin=3.95e-01 fmid=4.45e-01 fmax=1.08e+00 transparent=1
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

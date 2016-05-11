@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-io-read-raw-edf">
 <h1>mne.io.read_raw_edf<a class="headerlink" href="#mne-io-read-raw-edf" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.io.read_raw_edf">
-<code class="descclassname">mne.io.</code><code class="descname">read_raw_edf</code><span class="sig-paren">(</span><em>input_fname</em>, <em>montage=None</em>, <em>eog=None</em>, <em>misc=None</em>, <em>stim_channel=-1</em>, <em>annot=None</em>, <em>annotmap=None</em>, <em>preload=False</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.io.read_raw_edf" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.io.</tt><tt class="descname">read_raw_edf</tt><big>(</big><em>input_fname</em>, <em>montage=None</em>, <em>eog=None</em>, <em>misc=None</em>, <em>stim_channel=-1</em>, <em>annot=None</em>, <em>annotmap=None</em>, <em>preload=False</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.io.read_raw_edf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reader function for EDF+, BDF conversion to FIF</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -213,7 +213,7 @@
 <blockquote>
 <div><p>Path or instance of montage containing electrode positions.
 If None, sensor locations are (0,0,0). See the documentation of
-<a class="reference internal" href="mne.channels.read_montage.html#mne.channels.read_montage" title="mne.channels.read_montage"><code class="xref py py-func docutils literal"><span class="pre">mne.channels.read_montage()</span></code></a> for more information.</p>
+<a class="reference internal" href="mne.channels.read_montage.html#mne.channels.read_montage" title="mne.channels.read_montage"><tt class="xref py py-func docutils literal"><span class="pre">mne.channels.read_montage()</span></tt></a> for more information.</p>
 </div></blockquote>
 <p><strong>eog</strong> : list or tuple</p>
 <blockquote>
@@ -269,7 +269,7 @@ on the hard drive (slower, requires less memory).</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-obj docutils literal"><span class="pre">mne.io.Raw</span></code></a></dt>
+<dt><a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><tt class="xref py py-obj docutils literal"><span class="pre">mne.io.Raw</span></tt></a></dt>
 <dd>Documentation of attribute and methods.</dd>
 </dl>
 </div>
@@ -292,7 +292,7 @@ on the hard drive (slower, requires less memory).</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

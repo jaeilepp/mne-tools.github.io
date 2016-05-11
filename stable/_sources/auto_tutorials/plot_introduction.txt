@@ -90,7 +90,6 @@ supported across systems::
 First, load the mne package:
 
 
-
 .. code-block:: python
 
 
@@ -105,7 +104,6 @@ First, load the mne package:
 If you'd like to turn information status messages off:
 
 
-
 .. code-block:: python
 
 
@@ -118,7 +116,6 @@ If you'd like to turn information status messages off:
 
 
 But it's generally a good idea to leave them on:
-
 
 
 .. code-block:: python
@@ -136,7 +133,6 @@ You can set the default level by setting the environment variable
 "MNE_LOGGING_LEVEL", or by having mne-python write preferences to a file:
 
 
-
 .. code-block:: python
 
 
@@ -150,7 +146,6 @@ You can set the default level by setting the environment variable
 
 Note that the location of the mne-python preferences file (for easier manual
 editing) can be found using:
-
 
 
 .. code-block:: python
@@ -171,7 +166,6 @@ Access raw data
 ^^^^^^^^^^^^^^^
 
 
-
 .. code-block:: python
 
 
@@ -188,14 +182,13 @@ Access raw data
 
  Out::
 
-    /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif
+    /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif
 
 
 .. note:: The MNE sample dataset should be downloaded automatically but be
           patient (approx. 2GB)
 
 Read data from file:
-
 
 
 .. code-block:: python
@@ -213,7 +206,7 @@ Read data from file:
 
  Out::
 
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
+    Opening raw data file /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
         Read a total of 4 projection items:
             PCA-v1 (1 x 102)  idle
             PCA-v2 (1 x 102)  idle
@@ -234,12 +227,12 @@ Read data from file:
         dig : list | 146 items
         events : list | 0 items
         file_id : dict | 4 items
-        filename : unicode | /home/ubun.../sample_audvis_filt-0-40_raw.fif
+        filename : str | /home/jaak.../sample_audvis_filt-0-40_raw.fif
         highpass : float | 0.10000000149 Hz
         hpi_meas : list | 1 items
         hpi_results : list | 1 items
         lowpass : float | 40.0 Hz
-        meas_date : numpy.ndarray | 2002-12-03 19:01:10
+        meas_date : numpy.ndarray | 2002-12-03 20:01:10
         meas_id : dict | 4 items
         nchan : int | 376
         projs : list | PCA-v1: off, PCA-v2: off, PCA-v3: off, ...
@@ -262,7 +255,6 @@ Read data from file:
 Look at the channels in raw:
 
 
-
 .. code-block:: python
 
 
@@ -280,7 +272,6 @@ Look at the channels in raw:
 
 
 Read and plot a segment of raw data
-
 
 
 .. code-block:: python
@@ -311,7 +302,6 @@ Read and plot a segment of raw data
 Save a segment of 150s of raw data (MEG only):
 
 
-
 .. code-block:: python
 
 
@@ -328,7 +318,8 @@ Save a segment of 150s of raw data (MEG only):
 
  Out::
 
-    Writing /home/ubuntu/mne-python/tutorials/sample_audvis_meg_raw.fif
+    Overwriting existing file.
+    Writing /home/jaakko/mne-python/tutorials/sample_audvis_meg_raw.fif
     Writing ...
     Writing ...
     Writing ...
@@ -344,14 +335,13 @@ Save a segment of 150s of raw data (MEG only):
     Writing ...
     Writing ...
     Writing ...
-    Closing /home/ubuntu/mne-python/tutorials/sample_audvis_meg_raw.fif [done]
+    Closing /home/jaakko/mne-python/tutorials/sample_audvis_meg_raw.fif [done]
 
 
 Define and read epochs
 ^^^^^^^^^^^^^^^^^^^^^^
 
 First extract events:
-
 
 
 .. code-block:: python
@@ -382,7 +372,6 @@ system (e.g., a newer system that uses channel 'STI101' by default), you can
 use the following to set the default stim channel to use for finding events:
 
 
-
 .. code-block:: python
 
 
@@ -401,7 +390,6 @@ manipulate.
 Define epochs parameters:
 
 
-
 .. code-block:: python
 
 
@@ -416,7 +404,6 @@ Define epochs parameters:
 
 
 Exclude some channels (original bads + 2 more):
-
 
 
 .. code-block:: python
@@ -435,7 +422,6 @@ The variable raw.info['bads'] is just a python list.
 Pick the good channels, excluding raw.info['bads']:
 
 
-
 .. code-block:: python
 
 
@@ -449,7 +435,6 @@ Pick the good channels, excluding raw.info['bads']:
 
 
 Alternatively one can restrict to magnetometers or gradiometers with:
-
 
 
 .. code-block:: python
@@ -467,7 +452,6 @@ Alternatively one can restrict to magnetometers or gradiometers with:
 Define the baseline period:
 
 
-
 .. code-block:: python
 
 
@@ -483,7 +467,6 @@ Define peak-to-peak rejection parameters for gradiometers, magnetometers
 and EOG:
 
 
-
 .. code-block:: python
 
 
@@ -496,7 +479,6 @@ and EOG:
 
 
 Read epochs:
-
 
 
 .. code-block:: python
@@ -523,7 +505,6 @@ Read epochs:
 
 
 Get single epochs for one condition:
-
 
 
 .. code-block:: python
@@ -569,7 +550,6 @@ Scipy supports read and write of matlab files. You can save your single
 trials with:
 
 
-
 .. code-block:: python
 
 
@@ -584,7 +564,6 @@ trials with:
 
 or if you want to keep all the information about the data you can save your
 epochs in a fif file:
-
 
 
 .. code-block:: python
@@ -638,7 +617,6 @@ epochs in a fif file:
 and read them later with:
 
 
-
 .. code-block:: python
 
 
@@ -673,7 +651,6 @@ and read them later with:
 Compute evoked responses for auditory responses by averaging and plot it:
 
 
-
 .. code-block:: python
 
 
@@ -700,7 +677,6 @@ Compute evoked responses for auditory responses by averaging and plot it:
   1. Extract the max value of each epoch
 
 
-
 .. code-block:: python
 
 
@@ -715,11 +691,10 @@ Compute evoked responses for auditory responses by averaging and plot it:
 
  Out::
 
-    [1.9375167201631345e-05, 1.640551698642913e-05, 1.8545377810380145e-05, 2.0412807568093327e-05]
+    [1.9375167201631341e-05, 1.6405516986429127e-05, 1.8545377810380145e-05, 2.0412807568093327e-05]
 
 
 It is also possible to read evoked data stored in a fif file:
-
 
 
 .. code-block:: python
@@ -737,7 +712,7 @@ It is also possible to read evoked data stored in a fif file:
 
  Out::
 
-    Reading /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
+    Reading /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
         Read a total of 4 projection items:
             PCA-v1 (1 x 102) active
             PCA-v2 (1 x 102) active
@@ -754,7 +729,6 @@ It is also possible to read evoked data stored in a fif file:
 Or another one stored in the same file:
 
 
-
 .. code-block:: python
 
 
@@ -769,7 +743,7 @@ Or another one stored in the same file:
 
  Out::
 
-    Reading /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
+    Reading /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
         Read a total of 4 projection items:
             PCA-v1 (1 x 102) active
             PCA-v2 (1 x 102) active
@@ -784,7 +758,6 @@ Or another one stored in the same file:
 
 
 Compute a contrast:
-
 
 
 .. code-block:: python
@@ -810,7 +783,6 @@ Time-Frequency: Induced power and inter trial coherence
 Define parameters:
 
 
-
 .. code-block:: python
 
 
@@ -825,7 +797,6 @@ Define parameters:
 
 
 Compute induced power and phase-locking values and plot gradiometers:
-
 
 
 .. code-block:: python
@@ -853,7 +824,6 @@ Inverse modeling: MNE and dSPM on evoked and raw data
 Import the required functions:
 
 
-
 .. code-block:: python
 
 
@@ -866,7 +836,6 @@ Import the required functions:
 
 
 Read the inverse operator:
-
 
 
 .. code-block:: python
@@ -883,7 +852,7 @@ Read the inverse operator:
 
  Out::
 
-    Reading inverse operator decomposition from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif...
+    Reading inverse operator decomposition from /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif...
         Reading inverse operator info...
         [done]
         Reading inverse operator decomposition...
@@ -924,7 +893,6 @@ Read the inverse operator:
 Define the inverse parameters:
 
 
-
 .. code-block:: python
 
 
@@ -939,7 +907,6 @@ Define the inverse parameters:
 
 
 Compute the inverse solution:
-
 
 
 .. code-block:: python
@@ -973,7 +940,6 @@ Compute the inverse solution:
 Save the source time courses to disk:
 
 
-
 .. code-block:: python
 
 
@@ -994,7 +960,6 @@ Save the source time courses to disk:
 Now, let's compute dSPM on a raw file within a label:
 
 
-
 .. code-block:: python
 
 
@@ -1008,7 +973,6 @@ Now, let's compute dSPM on a raw file within a label:
 
 
 Compute inverse solution during the first 15s:
-
 
 
 .. code-block:: python
@@ -1042,7 +1006,6 @@ Compute inverse solution during the first 15s:
 
 
 Save result in stc files:
-
 
 
 .. code-block:: python
@@ -1088,7 +1051,6 @@ Want to know more ?
 Browse `the examples gallery <auto_examples/index.html>`_.
 
 
-
 .. code-block:: python
 
 
@@ -1105,7 +1067,7 @@ Browse `the examples gallery <auto_examples/index.html>`_.
 
 
 **Total running time of the script:**
-(0 minutes 14.515 seconds)
+(0 minutes 13.423 seconds)
 
 
 

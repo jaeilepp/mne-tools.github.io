@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -171,7 +171,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -199,7 +199,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="brainstorm-tutorial-datasets">
 <span id="sphx-glr-auto-examples-datasets-plot-brainstorm-data-py"></span><h1>Brainstorm tutorial datasets<a class="headerlink" href="#brainstorm-tutorial-datasets" title="Permalink to this headline">¶</a></h1>
@@ -219,7 +219,7 @@ Computational Intelligence and Neuroscience, vol. 2011, Article ID
 </tbody>
 </table>
 <ul class="sphx-glr-horizontal">
-<li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_brainstorm_data_001.png"><img alt="../../_images/sphx_glr_plot_brainstorm_data_001.png" src="../../_images/sphx_glr_plot_brainstorm_data_001.png" style="width: 376.0px; height: 282.0px;" /></a>
+<li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_brainstorm_data_001.png"><img alt="../../_images/sphx_glr_plot_brainstorm_data_001.png" src="../../_images/sphx_glr_plot_brainstorm_data_001.png" style="width: 802.29px; height: 404.67px;" /></a>
 </li>
 <li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_brainstorm_data_002.png"><img alt="../../_images/sphx_glr_plot_brainstorm_data_002.png" src="../../_images/sphx_glr_plot_brainstorm_data_002.png" style="width: 376.0px; height: 282.0px;" /></a>
 </li>
@@ -228,38 +228,7 @@ Computational Intelligence and Neuroscience, vol. 2011, Article ID
 <li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_brainstorm_data_004.png"><img alt="../../_images/sphx_glr_plot_brainstorm_data_004.png" src="../../_images/sphx_glr_plot_brainstorm_data_004.png" style="width: 235.0px; height: 61.1px;" /></a>
 </li>
 </ul>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-brainstorm-data/bst_raw/MEG/bst_raw/subj001_somatosensory_20111109_01_AUX-f_raw.fif...
-    Read 5 compensation matrices
-Current compensation grade : 3
-    Range : 0 ... 431999 =      0.000 ...   359.999 secs
-Ready.
-Reading 0 ... 431999  =      0.000 ...   359.999 secs...
-Adding average EEG reference projection.
-1 projection items deactivated
-Effective window size : 1.707 (s)
-Effective window size : 1.707 (s)
-200 events found
-Events id: [1 2]
-102 matching events found
-Applying baseline correction (mode: mean)
-1 projection items activated
-    Rejecting  epoch based on EOG : [u&#39;EEG058&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EEG058&#39;]
-No gradiometers found. Forcing n_grad to 0
-No EEG channels found. Forcing n_eeg to 0
-Adding projection: axial--0.100-0.000-PCA-01
-Adding projection: axial--0.100-0.000-PCA-02
-2 projection items deactivated
-Created an SSP operator (subspace dimension = 2)
-3 projection items activated
-SSP projectors applied...
-</pre></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -319,11 +288,11 @@ SSP projectors applied...
 </pre></div>
 </div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 21.665 seconds)</p>
+(0 minutes 20.172 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_brainstorm_data.py"><code class="xref download docutils literal"><span class="pre">plot_brainstorm_data.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_brainstorm_data.py"><tt class="xref download docutils literal"><span class="pre">plot_brainstorm_data.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_brainstorm_data.ipynb"><code class="xref download docutils literal"><span class="pre">plot_brainstorm_data.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_brainstorm_data.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_brainstorm_data.ipynb</span></tt></a></div>
 </div>
 </div>
 
@@ -342,7 +311,7 @@ SSP projectors applied...
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

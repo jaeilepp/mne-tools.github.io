@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-viz-plot-sensors">
 <h1>mne.viz.plot_sensors<a class="headerlink" href="#mne-viz-plot-sensors" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.viz.plot_sensors">
-<code class="descclassname">mne.viz.</code><code class="descname">plot_sensors</code><span class="sig-paren">(</span><em>info</em>, <em>kind='topomap'</em>, <em>ch_type=None</em>, <em>title=None</em>, <em>show_names=False</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.plot_sensors" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.viz.</tt><tt class="descname">plot_sensors</tt><big>(</big><em>info</em>, <em>kind='topomap'</em>, <em>ch_type=None</em>, <em>title=None</em>, <em>show_names=False</em>, <em>show=True</em><big>)</big><a class="headerlink" href="#mne.viz.plot_sensors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot sensors positions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -222,7 +222,7 @@ order given above.</p>
 <p><strong>title</strong> : str | None</p>
 <blockquote>
 <div><p>Title for the figure. If None (default), equals to
-<code class="docutils literal"><span class="pre">'Sensor</span> <span class="pre">positions</span> <span class="pre">(%s)'</span> <span class="pre">%</span> <span class="pre">ch_type</span></code>.</p>
+<tt class="docutils literal"><span class="pre">'Sensor</span> <span class="pre">positions</span> <span class="pre">(%s)'</span> <span class="pre">%</span> <span class="pre">ch_type</span></tt>.</p>
 </div></blockquote>
 <p><strong>show_names</strong> : bool</p>
 <blockquote>
@@ -244,12 +244,12 @@ order given above.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.viz.plot_layout.html#mne.viz.plot_layout" title="mne.viz.plot_layout"><code class="xref py py-obj docutils literal"><span class="pre">mne.viz.plot_layout</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.viz.plot_layout.html#mne.viz.plot_layout" title="mne.viz.plot_layout"><tt class="xref py py-obj docutils literal"><span class="pre">mne.viz.plot_layout</span></tt></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This function plots the sensor locations from the info structure using
 matplotlib. For drawing the sensors using mayavi see
-<a class="reference internal" href="mne.viz.plot_trans.html#mne.viz.plot_trans" title="mne.viz.plot_trans"><code class="xref py py-func docutils literal"><span class="pre">mne.viz.plot_trans()</span></code></a>.</p>
+<a class="reference internal" href="mne.viz.plot_trans.html#mne.viz.plot_trans" title="mne.viz.plot_trans"><tt class="xref py py-func docutils literal"><span class="pre">mne.viz.plot_trans()</span></tt></a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.12.0.</span></p>
 </div>
@@ -272,7 +272,7 @@ matplotlib. For drawing the sensors using mayavi see
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

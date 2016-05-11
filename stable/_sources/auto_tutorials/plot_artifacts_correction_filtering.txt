@@ -19,7 +19,6 @@ frequencies, i.e. the integer multiples of
 the power-line frequency, e.g. 100Hz, 150Hz, ... (or 120Hz, 180Hz, ...).
 
 
-
 .. code-block:: python
 
 
@@ -60,19 +59,7 @@ the power-line frequency, e.g. 100Hz, 150Hz, ... (or 120Hz, 180Hz, ...).
 
  Out::
 
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-        Read a total of 3 projection items:
-            PCA-v1 (1 x 102)  idle
-            PCA-v2 (1 x 102)  idle
-            PCA-v3 (1 x 102)  idle
-    Current compensation grade : 0
-        Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-    Ready.
-    Adding average EEG reference projection.
-    1 projection items deactivated
     The copy parameter is deprecated and will be removed in 0.14. In 0.13 the behavior will be to operate in-place (like copy=False). In 0.12 the default is copy=True. Use inst.copy() if necessary.
-    Reading 0 ... 12012  =      0.000 ...    20.000 secs...
-    Effective window size : 3.410 (s)
 
 
 Removing power-line noise with notch filtering
@@ -80,7 +67,6 @@ Removing power-line noise with notch filtering
 
 Removing power-line noise can be done with a Notch filter, directly on the
 Raw object, specifying an array of frequency to be cut off:
-
 
 
 .. code-block:: python
@@ -96,11 +82,6 @@ Raw object, specifying an array of frequency to be cut off:
     :align: center
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    Effective window size : 3.410 (s)
 
 
 Removing power-line noise with low-pas filtering
@@ -108,7 +89,6 @@ Removing power-line noise with low-pas filtering
 
 If you're only interested in low frequencies, below the peaks of power-line
 noise you can simply low pass filter the data.
-
 
 
 .. code-block:: python
@@ -124,12 +104,6 @@ noise you can simply low pass filter the data.
     :align: center
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    Low-pass filtering at 50 Hz
-    Effective window size : 3.410 (s)
 
 
 High-pass filtering to remove slow drifts
@@ -137,7 +111,6 @@ High-pass filtering to remove slow drifts
 
 If you're only interested in low frequencies, below the peaks of power-line
 noise you can simply high pass filter the data.
-
 
 
 .. code-block:: python
@@ -153,17 +126,10 @@ noise you can simply high pass filter the data.
     :align: center
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    High-pass filtering at 1 Hz
-    Effective window size : 3.410 (s)
 
 
 To do the low-pass and high-pass filtering in one step you can do
 a so-called *band-pass* filter by running
-
 
 
 .. code-block:: python
@@ -175,11 +141,6 @@ a so-called *band-pass* filter by running
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    Band-pass filtering from 1 - 50 Hz
 
 
 Down-sampling (for performance reasons)
@@ -192,7 +153,6 @@ computations operating on the data. To avoid that, you can down-sample
 your time series.
 
 Data resampling can be done with *resample* methods.
-
 
 
 .. code-block:: python
@@ -208,24 +168,14 @@ Data resampling can be done with *resample* methods.
     :align: center
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    25 events found
-    Events id: [ 1  2  3  4  5 32]
-    25 events found
-    Events id: [ 1  2  3  4  5 32]
-    Effective window size : 10.010 (s)
 
 
 Since down-sampling reduces the timing precision of events, you might want to
 first extract epochs and down-sampling the Epochs object. You can do this
 using the :func:`mne.Epochs.resample` method.
 
-
 **Total running time of the script:**
-(0 minutes 5.208 seconds)
+(0 minutes 5.044 seconds)
 
 
 

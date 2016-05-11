@@ -10,7 +10,6 @@ Visualize Raw data
 
 
 
-
 .. code-block:: python
 
     import os.path as op
@@ -29,7 +28,7 @@ Visualize Raw data
 
  Out::
 
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
+    Opening raw data file /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
         Read a total of 3 projection items:
             PCA-v1 (1 x 102)  idle
             PCA-v2 (1 x 102)  idle
@@ -50,7 +49,6 @@ just write ``raw.plot`` and ask the interpreter for suggestions with a
 
 To visually inspect your raw data, you can use the python equivalent of
 ``mne_browse_raw``.
-
 
 
 .. code-block:: python
@@ -91,7 +89,6 @@ this method (along with many other MNE plotting functions) is callable using
 any MNE data container where the channel information is available.
 
 
-
 .. code-block:: python
 
     raw.plot_sensors(kind='3d', ch_type='mag')
@@ -107,7 +104,6 @@ any MNE data container where the channel information is available.
 
 Now let's add some ssp projectors to the raw data. Here we read them from a
 file and plot them.
-
 
 
 .. code-block:: python
@@ -145,7 +141,6 @@ channel type has two projection vectors each. Let's try the raw browser
 again.
 
 
-
 .. code-block:: python
 
     raw.plot()
@@ -170,7 +165,6 @@ projectors.
 
 Raw container also lets us easily plot the power spectra over the raw data.
 See the API documentation for more info.
-
 
 
 .. code-block:: python
@@ -198,7 +192,6 @@ from the data by default when plotting topo plots. This works for most data,
 but it is also possible to define the layouts by hand. Here we select a
 layout with only magnetometer channels and plot it. Then we plot the channel
 wise spectra of first 30 seconds of the data.
-
 
 
 .. code-block:: python
@@ -231,7 +224,7 @@ wise spectra of first 30 seconds of the data.
 
 
 **Total running time of the script:**
-(0 minutes 13.389 seconds)
+(0 minutes 11.385 seconds)
 
 
 

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-filter-high-pass-filter">
 <h1>mne.filter.high_pass_filter<a class="headerlink" href="#mne-filter-high-pass-filter" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.filter.high_pass_filter">
-<code class="descclassname">mne.filter.</code><code class="descname">high_pass_filter</code><span class="sig-paren">(</span><em>x</em>, <em>Fs</em>, <em>Fp</em>, <em>filter_length='10s'</em>, <em>trans_bandwidth=0.5</em>, <em>method='fft'</em>, <em>iir_params=None</em>, <em>picks=None</em>, <em>n_jobs=1</em>, <em>copy=True</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.filter.high_pass_filter" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.filter.</tt><tt class="descname">high_pass_filter</tt><big>(</big><em>x</em>, <em>Fs</em>, <em>Fp</em>, <em>filter_length='10s'</em>, <em>trans_bandwidth=0.5</em>, <em>method='fft'</em>, <em>iir_params=None</em>, <em>picks=None</em>, <em>n_jobs=1</em>, <em>copy=True</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.filter.high_pass_filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Highpass filter for the signal x.</p>
 <p>Applies a zero-phase highpass filter to the signal x, operating on the
 last dimension.</p>
@@ -275,11 +275,11 @@ on x in place.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.filter.low_pass_filter.html#mne.filter.low_pass_filter" title="mne.filter.low_pass_filter"><code class="xref py py-obj docutils literal"><span class="pre">low_pass_filter</span></code></a>, <a class="reference internal" href="mne.filter.band_pass_filter.html#mne.filter.band_pass_filter" title="mne.filter.band_pass_filter"><code class="xref py py-obj docutils literal"><span class="pre">band_pass_filter</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.filter.low_pass_filter.html#mne.filter.low_pass_filter" title="mne.filter.low_pass_filter"><tt class="xref py py-obj docutils literal"><span class="pre">low_pass_filter</span></tt></a>, <a class="reference internal" href="mne.filter.band_pass_filter.html#mne.filter.band_pass_filter" title="mne.filter.band_pass_filter"><tt class="xref py py-obj docutils literal"><span class="pre">band_pass_filter</span></tt></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The frequency response is (approximately) given by:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>               -----------------------
+<div class="highlight-python"><div class="highlight"><pre>               -----------------------
              /|
             / |
            /  |
@@ -309,7 +309,7 @@ on x in place.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

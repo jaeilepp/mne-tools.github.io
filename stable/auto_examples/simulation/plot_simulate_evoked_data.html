@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,11 +193,11 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="generate-simulated-evoked-data">
 <span id="sphx-glr-auto-examples-simulation-plot-simulate-evoked-data-py"></span><h1>Generate simulated evoked data<a class="headerlink" href="#generate-simulated-evoked-data" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Author: Daniel Strohmeier &lt;daniel.strohmeier@tu-ilmenau.de&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Author: Daniel Strohmeier &lt;daniel.strohmeier@tu-ilmenau.de&gt;</span>
 <span class="c1">#         Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
@@ -215,7 +215,7 @@
 </pre></div>
 </div>
 <p>Load real data as templates</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 
 <span class="n">raw</span> <span class="o">=</span> <a href="../../generated/mne.io.read_raw_fif.html#mne.io.read_raw_fif"><span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span></a><span class="p">(</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_raw.fif&#39;</span><span class="p">)</span>
 <span class="n">proj</span> <span class="o">=</span> <a href="../../generated/mne.read_proj.html#mne.read_proj"><span class="n">mne</span><span class="o">.</span><span class="n">read_proj</span></a><span class="p">(</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_ecg-proj.fif&#39;</span><span class="p">)</span>
@@ -236,60 +236,8 @@
           <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">label_names</span><span class="p">]</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-    Read a total of 3 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-Current compensation grade : 0
-    Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-Ready.
-Adding average EEG reference projection.
-1 projection items deactivated
-    Read a total of 6 projection items:
-        ECG-planar-999--0.200-0.400-PCA-01 (1 x 203)  idle
-        ECG-planar-999--0.200-0.400-PCA-02 (1 x 203)  idle
-        ECG-axial-999--0.200-0.400-PCA-01 (1 x 102)  idle
-        ECG-axial-999--0.200-0.400-PCA-02 (1 x 102)  idle
-        ECG-eeg-999--0.200-0.400-PCA-01 (1 x 59)  idle
-        ECG-eeg-999--0.200-0.400-PCA-02 (1 x 59)  idle
-Reading forward solution from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-eeg-oct-6-fwd.fif...
-    Reading a source space...
-    Computing patch statistics...
-    Patch information added...
-    Distance information added...
-    [done]
-    Reading a source space...
-    Computing patch statistics...
-    Patch information added...
-    Distance information added...
-    [done]
-    2 source spaces read
-    Desired named matrix (kind = 3523) not available
-    Read MEG forward solution (7498 sources, 306 channels, free orientations)
-    Desired named matrix (kind = 3523) not available
-    Read EEG forward solution (7498 sources, 60 channels, free orientations)
-    MEG and EEG forward solutions combined
-    Source spaces transformed to the forward solution coordinate frame
-    Changing to fixed-orientation forward solution with surface-based source orientations...
-    [done]
-    364 out of 366 channels remain after picking
-    366 x 366 full covariance (kind = 1) found.
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102) active
-        PCA-v2 (1 x 102) active
-        PCA-v3 (1 x 102) active
-        Average EEG reference (1 x 60) active
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102) active
-        PCA-v2 (1 x 102) active
-        PCA-v3 (1 x 102) active
-        Average EEG reference (1 x 60) active
-</pre></div>
-</div>
 <p>Generate source time courses from 2 dipoles and the correspond evoked data</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">times</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span> <span class="o">/</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.1</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">times</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span> <span class="o">/</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.1</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
 
@@ -303,19 +251,14 @@ Reading forward solution from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/s
 </pre></div>
 </div>
 <p>Generate noisy evoked data</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">picks</span> <span class="o">=</span> <a href="../../generated/mne.pick_types.html#mne.pick_types"><span class="n">mne</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="s1">&#39;bads&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">picks</span> <span class="o">=</span> <a href="../../generated/mne.pick_types.html#mne.pick_types"><span class="n">mne</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="s1">&#39;bads&#39;</span><span class="p">)</span>
 <span class="n">iir_filter</span> <span class="o">=</span> <a href="../../generated/mne.time_frequency.fit_iir_model_raw.html#mne.time_frequency.fit_iir_model_raw"><span class="n">fit_iir_model_raw</span></a><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mi">180</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">snr</span> <span class="o">=</span> <span class="mf">6.</span>  <span class="c1"># dB</span>
 <span class="n">evoked</span> <span class="o">=</span> <a href="../../generated/mne.simulation.simulate_evoked.html#mne.simulation.simulate_evoked"><span class="n">simulate_evoked</span></a><span class="p">(</span><span class="n">fwd</span><span class="p">,</span> <span class="n">stc</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="n">snr</span><span class="p">,</span> <span class="n">iir_filter</span><span class="o">=</span><span class="n">iir_filter</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Projecting source estimate to sensor space...
-[done]
-</pre></div>
-</div>
 <p>Plot</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><a href="../../generated/mne.viz.plot_sparse_source_estimates.html#mne.viz.plot_sparse_source_estimates"><span class="n">plot_sparse_source_estimates</span></a><span class="p">(</span><span class="n">fwd</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">],</span> <span class="n">stc</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<div class="highlight-python"><div class="highlight"><pre><a href="../../generated/mne.viz.plot_sparse_source_estimates.html#mne.viz.plot_sparse_source_estimates"><span class="n">plot_sparse_source_estimates</span></a><span class="p">(</span><span class="n">fwd</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">],</span> <span class="n">stc</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
                              <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">high_resolution</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
@@ -334,16 +277,12 @@ Reading forward solution from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/s
 <li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_simulate_evoked_data_004.png"><img alt="../../_images/sphx_glr_plot_simulate_evoked_data_004.png" src="../../_images/sphx_glr_plot_simulate_evoked_data_004.png" style="width: 282.0px; height: 282.0px;" /></a>
 </li>
 </ul>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Total number of active sources: 2
-</pre></div>
-</div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 5.751 seconds)</p>
+(0 minutes 5.082 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_simulate_evoked_data.py"><code class="xref download docutils literal"><span class="pre">plot_simulate_evoked_data.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_simulate_evoked_data.py"><tt class="xref download docutils literal"><span class="pre">plot_simulate_evoked_data.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_simulate_evoked_data.ipynb"><code class="xref download docutils literal"><span class="pre">plot_simulate_evoked_data.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_simulate_evoked_data.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_simulate_evoked_data.ipynb</span></tt></a></div>
 </div>
 
 
@@ -361,7 +300,7 @@ Reading forward solution from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/s
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

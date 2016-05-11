@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-compute-covariance">
 <h1>mne.compute_covariance<a class="headerlink" href="#mne-compute-covariance" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.compute_covariance">
-<code class="descclassname">mne.</code><code class="descname">compute_covariance</code><span class="sig-paren">(</span><em>epochs</em>, <em>keep_sample_mean=True</em>, <em>tmin=None</em>, <em>tmax=None</em>, <em>projs=None</em>, <em>method='empirical'</em>, <em>method_params=None</em>, <em>cv=3</em>, <em>scalings=None</em>, <em>n_jobs=1</em>, <em>return_estimators=False</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.compute_covariance" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.</tt><tt class="descname">compute_covariance</tt><big>(</big><em>epochs</em>, <em>keep_sample_mean=True</em>, <em>tmin=None</em>, <em>tmax=None</em>, <em>projs=None</em>, <em>method='empirical'</em>, <em>method_params=None</em>, <em>cv=3</em>, <em>scalings=None</em>, <em>n_jobs=1</em>, <em>return_estimators=False</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.compute_covariance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate noise covariance matrix from epochs.</p>
 <p>The noise covariance is typically estimated on pre-stim periods
 when the stim onset is defined from events.</p>
@@ -229,7 +229,7 @@ will only be correct if keep_sample_mean is True.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">The covariance can be unstable if the number of samples is
 not sufficient. In that case it is common to regularize a
-covariance estimate. The <code class="docutils literal"><span class="pre">method</span></code> parameter of this
+covariance estimate. The <tt class="docutils literal"><span class="pre">method</span></tt> parameter of this
 function allows to regularize the covariance in an
 automated way. It also allows to select between different
 alternative estimation algorithms which themselves achieve
@@ -275,30 +275,30 @@ based on log-likelihood and cross-validation on unseen data as
 described in <a class="reference internal" href="#r13" id="id2">[R13]</a>. Valid methods are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">'empirical'</span></code>: the empirical or sample covariance</li>
-<li><code class="docutils literal"><span class="pre">'diagonal_fixed'</span></code>: a diagonal regularization as in
+<li><tt class="docutils literal"><span class="pre">'empirical'</span></tt>: the empirical or sample covariance</li>
+<li><tt class="docutils literal"><span class="pre">'diagonal_fixed'</span></tt>: a diagonal regularization as in
 mne.cov.regularize (see MNE manual)</li>
-<li><code class="docutils literal"><span class="pre">'ledoit_wolf'</span></code>: the Ledoit-Wolf estimator <a class="reference internal" href="#r14" id="id3">[R14]</a></li>
-<li><code class="docutils literal"><span class="pre">'shrunk'</span></code>: like &#8216;ledoit_wolf&#8217; with cross-validation for
+<li><tt class="docutils literal"><span class="pre">'ledoit_wolf'</span></tt>: the Ledoit-Wolf estimator <a class="reference internal" href="#r14" id="id3">[R14]</a></li>
+<li><tt class="docutils literal"><span class="pre">'shrunk'</span></tt>: like &#8216;ledoit_wolf&#8217; with cross-validation for
 optimal alpha (see scikit-learn documentation on covariance
 estimation)</li>
-<li><code class="docutils literal"><span class="pre">'pca'</span></code>: probabilistic PCA with low rank <a class="reference internal" href="#r15" id="id4">[R15]</a></li>
-<li><code class="docutils literal"><span class="pre">'factor_analysis'</span></code>: Factor Analysis with low rank <a class="reference internal" href="#r16" id="id5">[R16]</a></li>
+<li><tt class="docutils literal"><span class="pre">'pca'</span></tt>: probabilistic PCA with low rank <a class="reference internal" href="#r15" id="id4">[R15]</a></li>
+<li><tt class="docutils literal"><span class="pre">'factor_analysis'</span></tt>: Factor Analysis with low rank <a class="reference internal" href="#r16" id="id5">[R16]</a></li>
 </ul>
 </div></blockquote>
-<p>If <code class="docutils literal"><span class="pre">'auto'</span></code>, this expands to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;shrunk&#39;</span><span class="p">,</span> <span class="s1">&#39;diagonal_fixed&#39;</span><span class="p">,</span> <span class="s1">&#39;empirical&#39;</span><span class="p">,</span> <span class="s1">&#39;factor_analysis&#39;</span><span class="p">]</span>
+<p>If <tt class="docutils literal"><span class="pre">'auto'</span></tt>, this expands to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s1">&#39;shrunk&#39;</span><span class="p">,</span> <span class="s1">&#39;diagonal_fixed&#39;</span><span class="p">,</span> <span class="s1">&#39;empirical&#39;</span><span class="p">,</span> <span class="s1">&#39;factor_analysis&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">'ledoit_wolf'</span></code> and <code class="docutils literal"><span class="pre">'pca'</span></code> are similar to
-<code class="docutils literal"><span class="pre">'shrunk'</span></code> and <code class="docutils literal"><span class="pre">'factor_analysis'</span></code>, respectively. They are not
-included to avoid redundancy. In most cases <code class="docutils literal"><span class="pre">'shrunk'</span></code> and
-<code class="docutils literal"><span class="pre">'factor_analysis'</span></code> represent more appropriate default
+<p class="last"><tt class="docutils literal"><span class="pre">'ledoit_wolf'</span></tt> and <tt class="docutils literal"><span class="pre">'pca'</span></tt> are similar to
+<tt class="docutils literal"><span class="pre">'shrunk'</span></tt> and <tt class="docutils literal"><span class="pre">'factor_analysis'</span></tt>, respectively. They are not
+included to avoid redundancy. In most cases <tt class="docutils literal"><span class="pre">'shrunk'</span></tt> and
+<tt class="docutils literal"><span class="pre">'factor_analysis'</span></tt> represent more appropriate default
 choices.</p>
 </div>
-<p>The <code class="docutils literal"><span class="pre">'auto'</span></code> mode is not recommended if there are many
+<p>The <tt class="docutils literal"><span class="pre">'auto'</span></tt> mode is not recommended if there are many
 segments of data, since computation can take a long time.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.9.0.</span></p>
@@ -309,7 +309,7 @@ segments of data, since computation can take a long time.</p>
 <div><p>Additional parameters to the estimation procedure. Only considered if
 method is not None. Keys must correspond to the value(s) of <cite>method</cite>.
 If None (default), expands to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>&#39;empirical&#39;: {&#39;store_precision&#39;: False, &#39;assume_centered&#39;: True},
+<div class="highlight-python"><div class="highlight"><pre>&#39;empirical&#39;: {&#39;store_precision&#39;: False, &#39;assume_centered&#39;: True},
 &#39;diagonal_fixed&#39;: {&#39;grad&#39;: 0.01, &#39;mag&#39;: 0.01, &#39;eeg&#39;: 0.0,
                    &#39;store_precision&#39;: False,
                    &#39;assume_centered&#39;: True},
@@ -328,7 +328,7 @@ internally trigger a default 3-fold shuffle split.</p>
 </div></blockquote>
 <p><strong>scalings</strong> : dict | None (default None)</p>
 <blockquote>
-<div><p>Defaults to <code class="docutils literal"><span class="pre">dict(mag=1e15,</span> <span class="pre">grad=1e13,</span> <span class="pre">eeg=1e6)</span></code>.
+<div><p>Defaults to <tt class="docutils literal"><span class="pre">dict(mag=1e15,</span> <span class="pre">grad=1e13,</span> <span class="pre">eeg=1e6)</span></tt>.
 These defaults will scale magnetometers and gradiometers
 at the same unit.</p>
 </div></blockquote>
@@ -361,7 +361,7 @@ to worst).</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="mne.compute_raw_covariance.html#mne.compute_raw_covariance" title="mne.compute_raw_covariance"><code class="xref py py-obj docutils literal"><span class="pre">compute_raw_covariance</span></code></a></dt>
+<dt><a class="reference internal" href="mne.compute_raw_covariance.html#mne.compute_raw_covariance" title="mne.compute_raw_covariance"><tt class="xref py py-obj docutils literal"><span class="pre">compute_raw_covariance</span></tt></a></dt>
 <dd>Estimate noise covariance from raw data</dd>
 </dl>
 </div>
@@ -416,7 +416,7 @@ Cambridge University Press., Algorithm 21.1</td></tr>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

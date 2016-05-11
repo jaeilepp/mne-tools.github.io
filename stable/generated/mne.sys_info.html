@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-sys-info">
 <h1>mne.sys_info<a class="headerlink" href="#mne-sys-info" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.sys_info">
-<code class="descclassname">mne.</code><code class="descname">sys_info</code><span class="sig-paren">(</span><em>fid=None</em>, <em>show_paths=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.sys_info" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.</tt><tt class="descname">sys_info</tt><big>(</big><em>fid=None</em>, <em>show_paths=False</em><big>)</big><a class="headerlink" href="#mne.sys_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the system information for debugging</p>
 <p>This function is useful for printing system information
 to help triage bugs.</p>
@@ -209,8 +209,8 @@ to help triage bugs.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fid</strong> : file-like | None</p>
 <blockquote>
-<div><p>The file to write to. Will be passed to <a class="reference external" href="http://docs.python.org/library/functions.html#print" title="(in Python v2.7)"><code class="xref py py-func docutils literal"><span class="pre">print()</span></code></a>.
-Can be None to use <a class="reference external" href="http://docs.python.org/library/sys.html#sys.stdout" title="(in Python v2.7)"><code class="xref py py-data docutils literal"><span class="pre">sys.stdout</span></code></a>.</p>
+<div><p>The file to write to. Will be passed to <a class="reference external" href="http://docs.python.org/library/functions.html#print" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">print()</span></tt></a>.
+Can be None to use <a class="reference external" href="http://docs.python.org/library/sys.html#sys.stdout" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">sys.stdout</span></tt></a>.</p>
 </div></blockquote>
 <p><strong>show_paths</strong> : bool</p>
 <blockquote class="last">
@@ -223,7 +223,7 @@ Can be None to use <a class="reference external" href="http://docs.python.org/li
 <p class="rubric">Examples</p>
 <p>Running this function with no arguments prints an output that is
 useful when submitting bug reports:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mne</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mne</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mne</span><span class="o">.</span><span class="n">sys_info</span><span class="p">()</span> 
 <span class="go">Platform:      Linux-4.2.0-27-generic-x86_64-with-Ubuntu-15.10-wily</span>
 <span class="go">Python:        2.7.10 (default, Oct 14 2015, 16:09:02)  [GCC 5.2.1 20151010]</span>
@@ -263,7 +263,7 @@ useful when submitting bug reports:</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

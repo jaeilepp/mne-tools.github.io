@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,18 +193,18 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-make-bem-model">
 <h1>mne.make_bem_model<a class="headerlink" href="#mne-make-bem-model" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.make_bem_model">
-<code class="descclassname">mne.</code><code class="descname">make_bem_model</code><span class="sig-paren">(</span><em>subject</em>, <em>ico=4</em>, <em>conductivity=(0.3</em>, <em>0.006</em>, <em>0.3)</em>, <em>subjects_dir=None</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.make_bem_model" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.</tt><tt class="descname">make_bem_model</tt><big>(</big><em>subject</em>, <em>ico=4</em>, <em>conductivity=(0.3</em>, <em>0.006</em>, <em>0.3)</em>, <em>subjects_dir=None</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.make_bem_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a BEM model for a subject</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">To get a single layer bem corresponding to the &#8211;homog flag in
-the command line tool set the <code class="docutils literal"><span class="pre">conductivity</span></code> parameter
+the command line tool set the <tt class="docutils literal"><span class="pre">conductivity</span></tt> parameter
 to a list/tuple with a single value (e.g. [0.3]).</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -224,8 +224,8 @@ If None, no subsampling is applied.</p>
 <blockquote>
 <div><p>The conductivities to use for each shell. Should be a single element
 for a one-layer model, or three elements for a three-layer model.
-Defaults to <code class="docutils literal"><span class="pre">[0.3,</span> <span class="pre">0.006,</span> <span class="pre">0.3]</span></code>. The MNE-C default for a
-single-layer model would be <code class="docutils literal"><span class="pre">[0.3]</span></code>.</p>
+Defaults to <tt class="docutils literal"><span class="pre">[0.3,</span> <span class="pre">0.006,</span> <span class="pre">0.3]</span></tt>. The MNE-C default for a
+single-layer model would be <tt class="docutils literal"><span class="pre">[0.3]</span></tt>.</p>
 </div></blockquote>
 <p><strong>subjects_dir</strong> : string, or None</p>
 <blockquote>
@@ -248,7 +248,7 @@ single-layer model would be <code class="docutils literal"><span class="pre">[0.
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.make_bem_solution.html#mne.make_bem_solution" title="mne.make_bem_solution"><code class="xref py py-obj docutils literal"><span class="pre">make_bem_solution</span></code></a>, <a class="reference internal" href="mne.make_sphere_model.html#mne.make_sphere_model" title="mne.make_sphere_model"><code class="xref py py-obj docutils literal"><span class="pre">make_sphere_model</span></code></a>, <a class="reference internal" href="mne.read_bem_surfaces.html#mne.read_bem_surfaces" title="mne.read_bem_surfaces"><code class="xref py py-obj docutils literal"><span class="pre">read_bem_surfaces</span></code></a>, <a class="reference internal" href="mne.write_bem_surfaces.html#mne.write_bem_surfaces" title="mne.write_bem_surfaces"><code class="xref py py-obj docutils literal"><span class="pre">write_bem_surfaces</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.make_bem_solution.html#mne.make_bem_solution" title="mne.make_bem_solution"><tt class="xref py py-obj docutils literal"><span class="pre">make_bem_solution</span></tt></a>, <a class="reference internal" href="mne.make_sphere_model.html#mne.make_sphere_model" title="mne.make_sphere_model"><tt class="xref py py-obj docutils literal"><span class="pre">make_sphere_model</span></tt></a>, <a class="reference internal" href="mne.read_bem_surfaces.html#mne.read_bem_surfaces" title="mne.read_bem_surfaces"><tt class="xref py py-obj docutils literal"><span class="pre">read_bem_surfaces</span></tt></a>, <a class="reference internal" href="mne.write_bem_surfaces.html#mne.write_bem_surfaces" title="mne.write_bem_surfaces"><tt class="xref py py-obj docutils literal"><span class="pre">write_bem_surfaces</span></tt></a></p>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -273,7 +273,7 @@ single-layer model would be <code class="docutils literal"><span class="pre">[0.
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

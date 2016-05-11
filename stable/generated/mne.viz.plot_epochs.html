@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-viz-plot-epochs">
 <h1>mne.viz.plot_epochs<a class="headerlink" href="#mne-viz-plot-epochs" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.viz.plot_epochs">
-<code class="descclassname">mne.viz.</code><code class="descname">plot_epochs</code><span class="sig-paren">(</span><em>epochs</em>, <em>picks=None</em>, <em>scalings=None</em>, <em>n_epochs=20</em>, <em>n_channels=20</em>, <em>title=None</em>, <em>show=True</em>, <em>block=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.plot_epochs" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.viz.</tt><tt class="descname">plot_epochs</tt><big>(</big><em>epochs</em>, <em>picks=None</em>, <em>scalings=None</em>, <em>n_epochs=20</em>, <em>n_channels=20</em>, <em>title=None</em>, <em>show=True</em>, <em>block=False</em><big>)</big><a class="headerlink" href="#mne.viz.plot_epochs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Visualize epochs</p>
 <p>Bad epochs can be marked with a left click on top of the epoch. Bad
 channels can be selected by clicking the channel name on the left side of
@@ -225,7 +225,7 @@ the scaling factor is set to match the 99.5th percentile of a subset of
 the corresponding data. If scalings == &#8216;auto&#8217;, all scalings fields are
 set to &#8216;auto&#8217;. If any fields are &#8216;auto&#8217; and data is not preloaded,
 a subset of epochs up to 100mb will be loaded. If None, defaults to:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">(</span><span class="n">mag</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">grad</span><span class="o">=</span><span class="mf">4e-11</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="mf">20e-6</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="mf">150e-6</span><span class="p">,</span> <span class="n">ecg</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">dict</span><span class="p">(</span><span class="n">mag</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">grad</span><span class="o">=</span><span class="mf">4e-11</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="mf">20e-6</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="mf">150e-6</span><span class="p">,</span> <span class="n">ecg</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">,</span>
      <span class="n">emg</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">ref_meg</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">misc</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">stim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">resp</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">chpi</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -267,10 +267,10 @@ Defaults to False.</p>
 <p>The arrow keys (up/down/left/right) can be used to navigate between
 channels and epochs and the scaling can be adjusted with - and + (or =)
 keys, but this depends on the backend matplotlib is configured to use
-(e.g., mpl.use(<code class="docutils literal"><span class="pre">TkAgg</span></code>) should work). Full screen mode can be toggled
+(e.g., mpl.use(<tt class="docutils literal"><span class="pre">TkAgg</span></tt>) should work). Full screen mode can be toggled
 with f11 key. The amount of epochs and channels per view can be adjusted
 with home/end and page down/page up keys. Butterfly plot can be toggled
-with <code class="docutils literal"><span class="pre">b</span></code> key. Right mouse click adds a vertical line to the plot.</p>
+with <tt class="docutils literal"><span class="pre">b</span></tt> key. Right mouse click adds a vertical line to the plot.</p>
 </dd></dl>
 
 <div style='clear:both'></div></div>
@@ -290,7 +290,7 @@ with <code class="docutils literal"><span class="pre">b</span></code> key. Right
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

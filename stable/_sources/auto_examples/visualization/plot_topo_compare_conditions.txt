@@ -15,7 +15,6 @@ evoked responses.
 
 
 
-
 .. code-block:: python
 
 
@@ -42,7 +41,6 @@ evoked responses.
 
 
 Set parameters
-
 
 
 .. code-block:: python
@@ -81,29 +79,9 @@ Set parameters
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-        Read a total of 4 projection items:
-            PCA-v1 (1 x 102)  idle
-            PCA-v2 (1 x 102)  idle
-            PCA-v3 (1 x 102)  idle
-            Average EEG reference (1 x 60)  idle
-    Current compensation grade : 0
-        Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-    Ready.
-    288 matching events found
-    Applying baseline correction (mode: mean)
-    Created an SSP operator (subspace dimension = 3)
-    4 projection items activated
-        Rejecting  epoch based on MAG : [u'MEG 1711']
-        Rejecting  epoch based on MAG : [u'MEG 1711']
 
 
 Show topography for two different conditions
-
 
 
 .. code-block:: python
@@ -130,7 +108,7 @@ Show topography for two different conditions
 
 
 **Total running time of the script:**
-(0 minutes 2.936 seconds)
+(0 minutes 2.622 seconds)
 
 
 

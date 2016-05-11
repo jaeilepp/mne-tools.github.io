@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,7 +193,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="compute-power-and-phase-lock-in-label-of-the-source-space">
 <span id="sphx-glr-auto-examples-time-frequency-plot-source-label-time-frequency-py"></span><h1>Compute power and phase lock in label of the source space<a class="headerlink" href="#compute-power-and-phase-lock-in-label-of-the-source-space" title="Permalink to this headline">¶</a></h1>
@@ -203,7 +203,7 @@ The inverse method is linear based on dSPM inverse operator.</p>
 when they are computed with and without subtracting the evoked response
 from each epoch. The former results in induced activity only while the
 latter also includes evoked (stimulus-locked) activity.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -219,7 +219,7 @@ latter also includes evoked (stimulus-locked) activity.</p>
 </pre></div>
 </div>
 <p>Set parameters</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_raw.fif&#39;</span>
 <span class="n">fname_inv</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif&#39;</span>
 <span class="n">label_name</span> <span class="o">=</span> <span class="s1">&#39;Aud-rh&#39;</span>
@@ -294,112 +294,12 @@ latter also includes evoked (stimulus-locked) activity.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_source_label_time_frequency_001.png" class="align-center" src="../../_images/sphx_glr_plot_source_label_time_frequency_001.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-    Read a total of 3 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-Current compensation grade : 0
-    Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-Ready.
-Adding average EEG reference projection.
-1 projection items deactivated
-320 events found
-Events id: [ 1  2  3  4  5 32]
-Reading inverse operator decomposition from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif...
-    Reading inverse operator info...
-    [done]
-    Reading inverse operator decomposition...
-    [done]
-    305 x 305 full covariance (kind = 1) found.
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102) active
-        PCA-v2 (1 x 102) active
-        PCA-v3 (1 x 102) active
-        Average EEG reference (1 x 60) active
-    Noise covariance matrix read.
-    22494 x 22494 diagonal covariance (kind = 2) found.
-    Source covariance matrix read.
-    22494 x 22494 diagonal covariance (kind = 6) found.
-    Orientation priors read.
-    22494 x 22494 diagonal covariance (kind = 5) found.
-    Depth priors read.
-    Did not find the desired covariance matrix (kind = 3)
-    Reading a source space...
-    Computing patch statistics...
-    Patch information added...
-    Distance information added...
-    [done]
-    Reading a source space...
-    Computing patch statistics...
-    Patch information added...
-    Distance information added...
-    [done]
-    2 source spaces read
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102) active
-        PCA-v2 (1 x 102) active
-        PCA-v3 (1 x 102) active
-        Average EEG reference (1 x 60) active
-    Source spaces transformed to the inverse solution coordinate frame
-73 matching events found
-Applying baseline correction (mode: mean)
-Created an SSP operator (subspace dimension = 3)
-4 projection items activated
-Loading data for 73 events and 421 original time points ...
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on MAG : [u&#39;MEG 1711&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-14 bad epochs dropped
-Subtracting Evoked from Epochs
-    The following channels are not included in the subtraction: EOG 061
-[done]
-Preparing the inverse operator for use...
-    Scaled noise and source covariance from nave = 1 to nave = 1
-    Created the regularized inverter
-    Created an SSP operator (subspace dimension = 3)
-    Created the whitener using a full noise covariance matrix (3 small eigenvalues omitted)
-    Computing noise-normalization factors (dSPM)...
-[done]
-Picked 305 channels from the data
-Computing inverse...
-(eigenleads need to be weighted)...
-Reducing data rank to 81
-Computing source power ...
-Applying baseline correction (mode: percent)
-Preparing the inverse operator for use...
-    Scaled noise and source covariance from nave = 1 to nave = 1
-    Created the regularized inverter
-    Created an SSP operator (subspace dimension = 3)
-    Created the whitener using a full noise covariance matrix (3 small eigenvalues omitted)
-    Computing noise-normalization factors (dSPM)...
-[done]
-Picked 305 channels from the data
-Computing inverse...
-(eigenleads need to be weighted)...
-Reducing data rank to 81
-Computing source power ...
-Applying baseline correction (mode: percent)
-</pre></div>
-</div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 21.038 seconds)</p>
+(0 minutes 29.831 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_source_label_time_frequency.py"><code class="xref download docutils literal"><span class="pre">plot_source_label_time_frequency.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_source_label_time_frequency.py"><tt class="xref download docutils literal"><span class="pre">plot_source_label_time_frequency.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_source_label_time_frequency.ipynb"><code class="xref download docutils literal"><span class="pre">plot_source_label_time_frequency.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_source_label_time_frequency.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_source_label_time_frequency.ipynb</span></tt></a></div>
 </div>
 
 
@@ -417,7 +317,7 @@ Applying baseline correction (mode: percent)
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

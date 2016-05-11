@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-realtime-fieldtripclient">
 <h1>mne.realtime.FieldTripClient<a class="headerlink" href="#mne-realtime-fieldtripclient" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mne.realtime.FieldTripClient">
-<em class="property">class </em><code class="descclassname">mne.realtime.</code><code class="descname">FieldTripClient</code><span class="sig-paren">(</span><em>info=None</em>, <em>host='localhost'</em>, <em>port=1972</em>, <em>wait_max=30</em>, <em>tmin=None</em>, <em>tmax=inf</em>, <em>buffer_size=1000</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">mne.realtime.</tt><tt class="descname">FieldTripClient</tt><big>(</big><em>info=None</em>, <em>host='localhost'</em>, <em>port=1972</em>, <em>wait_max=30</em>, <em>tmin=None</em>, <em>tmax=inf</em>, <em>buffer_size=1000</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Realtime FieldTrip client</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -250,37 +250,37 @@ samples available.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.get_data_as_epoch" title="mne.realtime.FieldTripClient.get_data_as_epoch"><code class="xref py py-obj docutils literal"><span class="pre">get_data_as_epoch</span></code></a>([n_samples,&nbsp;picks])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.get_data_as_epoch" title="mne.realtime.FieldTripClient.get_data_as_epoch"><tt class="xref py py-obj docutils literal"><span class="pre">get_data_as_epoch</span></tt></a>([n_samples,&nbsp;picks])</td>
 <td>Returns last n_samples from current time.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.get_measurement_info" title="mne.realtime.FieldTripClient.get_measurement_info"><code class="xref py py-obj docutils literal"><span class="pre">get_measurement_info</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.get_measurement_info" title="mne.realtime.FieldTripClient.get_measurement_info"><tt class="xref py py-obj docutils literal"><span class="pre">get_measurement_info</span></tt></a>()</td>
 <td>Returns the measurement info.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.iter_raw_buffers" title="mne.realtime.FieldTripClient.iter_raw_buffers"><code class="xref py py-obj docutils literal"><span class="pre">iter_raw_buffers</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.iter_raw_buffers" title="mne.realtime.FieldTripClient.iter_raw_buffers"><tt class="xref py py-obj docutils literal"><span class="pre">iter_raw_buffers</span></tt></a>()</td>
 <td>Return an iterator over raw buffers</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.register_receive_callback" title="mne.realtime.FieldTripClient.register_receive_callback"><code class="xref py py-obj docutils literal"><span class="pre">register_receive_callback</span></code></a>(callback)</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.register_receive_callback" title="mne.realtime.FieldTripClient.register_receive_callback"><tt class="xref py py-obj docutils literal"><span class="pre">register_receive_callback</span></tt></a>(callback)</td>
 <td>Register a raw buffer receive callback.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.start_receive_thread" title="mne.realtime.FieldTripClient.start_receive_thread"><code class="xref py py-obj docutils literal"><span class="pre">start_receive_thread</span></code></a>(nchan)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.start_receive_thread" title="mne.realtime.FieldTripClient.start_receive_thread"><tt class="xref py py-obj docutils literal"><span class="pre">start_receive_thread</span></tt></a>(nchan)</td>
 <td>Start the receive thread.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.stop_receive_thread" title="mne.realtime.FieldTripClient.stop_receive_thread"><code class="xref py py-obj docutils literal"><span class="pre">stop_receive_thread</span></code></a>([stop_measurement])</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.stop_receive_thread" title="mne.realtime.FieldTripClient.stop_receive_thread"><tt class="xref py py-obj docutils literal"><span class="pre">stop_receive_thread</span></tt></a>([stop_measurement])</td>
 <td>Stop the receive thread</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.unregister_receive_callback" title="mne.realtime.FieldTripClient.unregister_receive_callback"><code class="xref py py-obj docutils literal"><span class="pre">unregister_receive_callback</span></code></a>(callback)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.realtime.FieldTripClient.unregister_receive_callback" title="mne.realtime.FieldTripClient.unregister_receive_callback"><tt class="xref py py-obj docutils literal"><span class="pre">unregister_receive_callback</span></tt></a>(callback)</td>
 <td>Unregister a raw buffer receive callback</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="mne.realtime.FieldTripClient.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>info=None</em>, <em>host='localhost'</em>, <em>port=1972</em>, <em>wait_max=30</em>, <em>tmin=None</em>, <em>tmax=inf</em>, <em>buffer_size=1000</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>info=None</em>, <em>host='localhost'</em>, <em>port=1972</em>, <em>wait_max=30</em>, <em>tmin=None</em>, <em>tmax=inf</em>, <em>buffer_size=1000</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="mne.realtime.FieldTripClient.get_data_as_epoch">
-<code class="descname">get_data_as_epoch</code><span class="sig-paren">(</span><em>n_samples=1024</em>, <em>picks=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient.get_data_as_epoch" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_data_as_epoch</tt><big>(</big><em>n_samples=1024</em>, <em>picks=None</em><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient.get_data_as_epoch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns last n_samples from current time.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -307,13 +307,13 @@ otherwise the channels indices in picks are kept.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-obj docutils literal"><span class="pre">Epochs.iter_evoked</span></code></p>
+<p class="last"><tt class="xref py py-obj docutils literal"><span class="pre">Epochs.iter_evoked</span></tt></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="mne.realtime.FieldTripClient.get_measurement_info">
-<code class="descname">get_measurement_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient.get_measurement_info" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_measurement_info</tt><big>(</big><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient.get_measurement_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the measurement info.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -331,7 +331,7 @@ otherwise the channels indices in picks are kept.</p>
 
 <dl class="method">
 <dt id="mne.realtime.FieldTripClient.iter_raw_buffers">
-<code class="descname">iter_raw_buffers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient.iter_raw_buffers" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iter_raw_buffers</tt><big>(</big><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient.iter_raw_buffers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an iterator over raw buffers</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -349,7 +349,7 @@ otherwise the channels indices in picks are kept.</p>
 
 <dl class="method">
 <dt id="mne.realtime.FieldTripClient.register_receive_callback">
-<code class="descname">register_receive_callback</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient.register_receive_callback" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">register_receive_callback</tt><big>(</big><em>callback</em><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient.register_receive_callback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register a raw buffer receive callback.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -368,7 +368,7 @@ to callback.</p>
 
 <dl class="method">
 <dt id="mne.realtime.FieldTripClient.start_receive_thread">
-<code class="descname">start_receive_thread</code><span class="sig-paren">(</span><em>nchan</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient.start_receive_thread" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">start_receive_thread</tt><big>(</big><em>nchan</em><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient.start_receive_thread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the receive thread.</p>
 <p>If the measurement has not been started, it will also be started.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -387,7 +387,7 @@ to callback.</p>
 
 <dl class="method">
 <dt id="mne.realtime.FieldTripClient.stop_receive_thread">
-<code class="descname">stop_receive_thread</code><span class="sig-paren">(</span><em>stop_measurement=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient.stop_receive_thread" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">stop_receive_thread</tt><big>(</big><em>stop_measurement=False</em><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient.stop_receive_thread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the receive thread</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -405,7 +405,7 @@ to callback.</p>
 
 <dl class="method">
 <dt id="mne.realtime.FieldTripClient.unregister_receive_callback">
-<code class="descname">unregister_receive_callback</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.realtime.FieldTripClient.unregister_receive_callback" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">unregister_receive_callback</tt><big>(</big><em>callback</em><big>)</big><a class="headerlink" href="#mne.realtime.FieldTripClient.unregister_receive_callback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unregister a raw buffer receive callback</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -440,7 +440,7 @@ to callback.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

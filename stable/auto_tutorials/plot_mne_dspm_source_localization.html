@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -177,7 +177,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -211,13 +211,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="source-localization-with-mne-dspm-sloreta">
 <span id="tut-inverse-mne-dspm"></span><span id="sphx-glr-auto-tutorials-plot-mne-dspm-source-localization-py"></span><h1>Source localization with MNE/dSPM/sLORETA<a class="headerlink" href="#source-localization-with-mne-dspm-sloreta" title="Permalink to this headline">¶</a></h1>
 <p>The aim of this tutorials is to teach you how to compute and apply a linear
 inverse method such as MNE/dSPM/sLORETA on evoked/raw/epochs data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">import</span> <span class="nn">mne</span>
@@ -227,7 +227,7 @@ inverse method such as MNE/dSPM/sLORETA on evoked/raw/epochs data.</p>
 </pre></div>
 </div>
 <p>Process MEG data</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <a href="../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <a href="../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 
 <span class="n">raw</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span><span class="p">(</span><span class="n">raw_fname</span><span class="p">)</span>
@@ -247,7 +247,7 @@ inverse method such as MNE/dSPM/sLORETA on evoked/raw/epochs data.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Opening raw data file /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
     Read a total of 4 projection items:
         PCA-v1 (1 x 102)  idle
         PCA-v2 (1 x 102)  idle
@@ -266,8 +266,8 @@ Created an SSP operator (subspace dimension = 3)
 </div>
 <div class="section" id="compute-regularized-noise-covariance">
 <h2>Compute regularized noise covariance<a class="headerlink" href="#compute-regularized-noise-covariance" title="Permalink to this headline">¶</a></h2>
-<p>For more details see <a class="reference internal" href="plot_compute_covariance.html#tut-compute-covariance"><span>Computing covariance matrix</span></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">noise_cov</span> <span class="o">=</span> <a href="../generated/mne.compute_covariance.html#mne.compute_covariance"><span class="n">mne</span><span class="o">.</span><span class="n">compute_covariance</span></a><span class="p">(</span>
+<p>For more details see <a class="reference internal" href="plot_compute_covariance.html#tut-compute-covariance"><em>Computing covariance matrix</em></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">noise_cov</span> <span class="o">=</span> <a href="../generated/mne.compute_covariance.html#mne.compute_covariance"><span class="n">mne</span><span class="o">.</span><span class="n">compute_covariance</span></a><span class="p">(</span>
     <span class="n">epochs</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;shrunk&#39;</span><span class="p">,</span> <span class="s1">&#39;empirical&#39;</span><span class="p">])</span>
 
 <span class="n">fig_cov</span><span class="p">,</span> <span class="n">fig_spectra</span> <span class="o">=</span> <a href="../generated/mne.viz.plot_cov.html#mne.viz.plot_cov"><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_cov</span></a><span class="p">(</span><span class="n">noise_cov</span><span class="p">,</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
@@ -280,7 +280,7 @@ Created an SSP operator (subspace dimension = 3)
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Loading data for 72 events and 106 original time points ...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Loading data for 72 events and 106 original time points ...
     Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
     Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
     Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
@@ -317,7 +317,7 @@ selecting best estimator: shrunk
 </div>
 <div class="section" id="compute-the-evoked-response">
 <h2>Compute the evoked response<a class="headerlink" href="#compute-the-evoked-response" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">evoked</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">evoked</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
 <span class="n">evoked</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">evoked</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.linspace.html#numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">ch_type</span><span class="o">=</span><span class="s1">&#39;mag&#39;</span><span class="p">)</span>
 
@@ -334,7 +334,7 @@ selecting best estimator: shrunk
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>estimated rank (grad): 203
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>estimated rank (grad): 203
 estimated rank (mag): 102
 estimated rank (mag + grad): 305
 Setting small MEG eigenvalues to zero.
@@ -344,7 +344,7 @@ Not doing PCA for MEG.
 </div>
 <div class="section" id="inverse-modeling-mne-dspm-on-evoked-and-raw-data">
 <h2>Inverse modeling: MNE/dSPM on evoked and raw data<a class="headerlink" href="#inverse-modeling-mne-dspm-on-evoked-and-raw-data" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Read the forward solution and compute the inverse operator</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Read the forward solution and compute the inverse operator</span>
 
 <span class="n">fname_fwd</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis-meg-oct-6-fwd.fif&#39;</span>
 <span class="n">fwd</span> <span class="o">=</span> <a href="../generated/mne.read_forward_solution.html#mne.read_forward_solution"><span class="n">mne</span><span class="o">.</span><span class="n">read_forward_solution</span></a><span class="p">(</span><span class="n">fname_fwd</span><span class="p">,</span> <span class="n">surf_ori</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -362,7 +362,7 @@ Not doing PCA for MEG.
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Reading forward solution from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-fwd.fif...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Reading forward solution from /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-fwd.fif...
     Reading a source space...
     Computing patch statistics...
     Patch information added...
@@ -415,7 +415,7 @@ Write inverse operator decomposition in sample_audvis-meg-oct-6-inv.fif...
 </div>
 <div class="section" id="compute-inverse-solution">
 <h2>Compute inverse solution<a class="headerlink" href="#compute-inverse-solution" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;dSPM&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;dSPM&quot;</span>
 <span class="n">snr</span> <span class="o">=</span> <span class="mf">3.</span>
 <span class="n">lambda2</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">snr</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="n">stc</span> <span class="o">=</span> <a href="../generated/mne.minimum_norm.apply_inverse.html#mne.minimum_norm.apply_inverse"><span class="n">apply_inverse</span></a><span class="p">(</span><span class="n">evoked</span><span class="p">,</span> <span class="n">inverse_operator</span><span class="p">,</span> <span class="n">lambda2</span><span class="p">,</span>
@@ -425,7 +425,7 @@ Write inverse operator decomposition in sample_audvis-meg-oct-6-inv.fif...
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Preparing the inverse operator for use...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Preparing the inverse operator for use...
     Scaled noise and source covariance from nave = 1 to nave = 55
     Created the regularized inverter
     Created an SSP operator (subspace dimension = 3)
@@ -444,7 +444,7 @@ combining the current components...
 <div class="section" id="visualization">
 <h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
 <p>View activation time-series</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="mf">1e3</span> <span class="o">*</span> <span class="n">stc</span><span class="o">.</span><span class="n">times</span><span class="p">,</span> <span class="n">stc</span><span class="o">.</span><span class="n">data</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="mf">1e3</span> <span class="o">*</span> <span class="n">stc</span><span class="o">.</span><span class="n">times</span><span class="p">,</span> <span class="n">stc</span><span class="o">.</span><span class="n">data</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.xlabel"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s1">&#39;time (ms)&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.ylabel"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> value&#39;</span> <span class="o">%</span> <span class="n">method</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
@@ -453,7 +453,7 @@ combining the current components...
 <img alt="../_images/sphx_glr_plot_mne_dspm_source_localization_006.png" class="align-center" src="../_images/sphx_glr_plot_mne_dspm_source_localization_006.png" />
 <p>Here we use peak getter to move visualization to the time point of the peak
 and draw a marker at the maximum peak vertex.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">vertno_max</span><span class="p">,</span> <span class="n">time_idx</span> <span class="o">=</span> <span class="n">stc</span><span class="o">.</span><span class="n">get_peak</span><span class="p">(</span><span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;rh&#39;</span><span class="p">,</span> <span class="n">time_as_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">vertno_max</span><span class="p">,</span> <span class="n">time_idx</span> <span class="o">=</span> <span class="n">stc</span><span class="o">.</span><span class="n">get_peak</span><span class="p">(</span><span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;rh&#39;</span><span class="p">,</span> <span class="n">time_as_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="n">subjects_dir</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/subjects&#39;</span>
 <span class="n">brain</span> <span class="o">=</span> <span class="n">stc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">surface</span><span class="o">=</span><span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;rh&#39;</span><span class="p">,</span> <span class="n">subjects_dir</span><span class="o">=</span><span class="n">subjects_dir</span><span class="p">)</span>
@@ -467,7 +467,7 @@ and draw a marker at the maximum peak vertex.</p>
 </div>
 <img alt="../_images/sphx_glr_plot_mne_dspm_source_localization_007.png" class="align-center" src="../_images/sphx_glr_plot_mne_dspm_source_localization_007.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Updating smoothing matrix, be patient..
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Updating smoothing matrix, be patient..
 Smoothing matrix creation, step 1
 Smoothing matrix creation, step 2
 Smoothing matrix creation, step 3
@@ -485,7 +485,7 @@ colormap: fmin=8.00e+00 fmid=1.20e+01 fmax=1.50e+01 transparent=1
 </div>
 <div class="section" id="morph-data-to-average-brain">
 <h2>Morph data to average brain<a class="headerlink" href="#morph-data-to-average-brain" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">stc_fsaverage</span> <span class="o">=</span> <span class="n">stc</span><span class="o">.</span><span class="n">morph</span><span class="p">(</span><span class="n">subject_to</span><span class="o">=</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="n">subjects_dir</span><span class="o">=</span><span class="n">subjects_dir</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">stc_fsaverage</span> <span class="o">=</span> <span class="n">stc</span><span class="o">.</span><span class="n">morph</span><span class="p">(</span><span class="n">subject_to</span><span class="o">=</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <span class="n">subjects_dir</span><span class="o">=</span><span class="n">subjects_dir</span><span class="p">)</span>
 
 <span class="n">brain_fsaverage</span> <span class="o">=</span> <span class="n">stc_fsaverage</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">surface</span><span class="o">=</span><span class="s1">&#39;inflated&#39;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;rh&#39;</span><span class="p">,</span>
                                      <span class="n">subjects_dir</span><span class="o">=</span><span class="n">subjects_dir</span><span class="p">)</span>
@@ -496,7 +496,7 @@ colormap: fmin=8.00e+00 fmid=1.20e+01 fmax=1.50e+01 transparent=1
 </div>
 <img alt="../_images/sphx_glr_plot_mne_dspm_source_localization_008.png" class="align-center" src="../_images/sphx_glr_plot_mne_dspm_source_localization_008.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Morphing data...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Morphing data...
 Triangle file: created by gramfort on Thu Sep 15 21:13:45 2011 nvert = 155407 ntri = 310810
 Triangle file: created by gramfort on Fri Sep 16 00:40:11 2011 nvert = 156866 ntri = 313728
     Left-hemisphere map read.
@@ -531,11 +531,11 @@ estimates using the sLORETA method.</li>
 </ul>
 </div></blockquote>
 <p><strong>Total running time of the script:</strong>
-(1 minutes 30.534 seconds)</p>
+(0 minutes 52.183 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_mne_dspm_source_localization.py"><code class="xref download docutils literal"><span class="pre">plot_mne_dspm_source_localization.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_mne_dspm_source_localization.py"><tt class="xref download docutils literal"><span class="pre">plot_mne_dspm_source_localization.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_mne_dspm_source_localization.ipynb"><code class="xref download docutils literal"><span class="pre">plot_mne_dspm_source_localization.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_mne_dspm_source_localization.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_mne_dspm_source_localization.ipynb</span></tt></a></div>
 </div>
 </div>
 
@@ -554,7 +554,7 @@ estimates using the sLORETA method.</li>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

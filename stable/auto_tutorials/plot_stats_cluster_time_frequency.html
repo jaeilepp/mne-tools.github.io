@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,7 +193,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="non-parametric-between-conditions-cluster-statistic-on-single-trial-power">
 <span id="tut-stats-cluster-sensor-2samp-tfr"></span><span id="sphx-glr-auto-tutorials-plot-stats-cluster-time-frequency-py"></span><h1>Non-parametric between conditions cluster statistic on single trial power<a class="headerlink" href="#non-parametric-between-conditions-cluster-statistic-on-single-trial-power" title="Permalink to this headline">¶</a></h1>
@@ -211,7 +211,7 @@ level statistics.</p>
 between conditions.</li>
 </ul>
 </div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -228,7 +228,7 @@ between conditions.</li>
 </pre></div>
 </div>
 <p>Set parameters</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <a href="../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <a href="../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_raw.fif&#39;</span>
 <span class="n">event_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_raw-eve.fif&#39;</span>
 <span class="n">event_id</span> <span class="o">=</span> <span class="mi">1</span>
@@ -274,7 +274,7 @@ between conditions.</li>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Opening raw data file /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
     Read a total of 3 projection items:
         PCA-v1 (1 x 102)  idle
         PCA-v2 (1 x 102)  idle
@@ -330,7 +330,7 @@ single_trial_power.  Decimation occurs after frequency decomposition and can
 be used to reduce memory usage (and possibly comptuational time of downstream
 operations such as nonparametric statistics) if you don&#8217;t need high
 spectrotemporal resolution.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">decim</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">decim</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">frequencies</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># define frequencies of interest</span>
 <span class="n">sfreq</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span>  <span class="c1"># sampling in Hz</span>
 <span class="n">n_cycles</span> <span class="o">=</span> <span class="mf">1.5</span>
@@ -348,7 +348,7 @@ spectrotemporal resolution.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Computing time-frequency power on single epochs...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Computing time-frequency power on single epochs...
 No baseline correction applied
 Computing time-frequency power on single epochs...
 No baseline correction applied
@@ -356,7 +356,7 @@ No baseline correction applied
 </div>
 <p>Compute ratio with baseline power (be sure to correct time vector with
 decimation factor)</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">baseline_mask</span> <span class="o">=</span> <span class="n">times</span><span class="p">[::</span><span class="n">decim</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">baseline_mask</span> <span class="o">=</span> <span class="n">times</span><span class="p">[::</span><span class="n">decim</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span>
 <span class="n">epochs_baseline_1</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.mean.html#numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">epochs_power_1</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">baseline_mask</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">epochs_power_1</span> <span class="o">/=</span> <span class="n">epochs_baseline_1</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/arrays.indexing.html#numpy.newaxis"><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span></a><span class="p">]</span>
 <span class="n">epochs_baseline_2</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.mean.html#numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">epochs_power_2</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">baseline_mask</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -364,14 +364,14 @@ decimation factor)</p>
 </pre></div>
 </div>
 <p>Compute statistic</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mf">6.0</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">threshold</span> <span class="o">=</span> <span class="mf">6.0</span>
 <span class="n">T_obs</span><span class="p">,</span> <span class="n">clusters</span><span class="p">,</span> <span class="n">cluster_p_values</span><span class="p">,</span> <span class="n">H0</span> <span class="o">=</span> \
     <a href="../generated/mne.stats.permutation_cluster_test.html#mne.stats.permutation_cluster_test"><span class="n">permutation_cluster_test</span></a><span class="p">([</span><span class="n">epochs_power_1</span><span class="p">,</span> <span class="n">epochs_power_2</span><span class="p">],</span>
                              <span class="n">n_permutations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">tail</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>stat_fun(H1): min=0.000000 max=18.051130
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>stat_fun(H1): min=0.000000 max=18.051130
 Running initial clustering
 Found 4 clusters
 Permuting ...
@@ -384,7 +384,7 @@ Done.
 </pre></div>
 </div>
 <p>View time-frequency plots</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.clf"><span class="n">plt</span><span class="o">.</span><span class="n">clf</span></a><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.clf"><span class="n">plt</span><span class="o">.</span><span class="n">clf</span></a><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.43</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplot"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">evoked_contrast</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.mean.html#numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">data_condition_1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.mean.html#numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">data_condition_2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -418,11 +418,11 @@ Done.
 </div>
 <img alt="../_images/sphx_glr_plot_stats_cluster_time_frequency_001.png" class="align-center" src="../_images/sphx_glr_plot_stats_cluster_time_frequency_001.png" />
 <p><strong>Total running time of the script:</strong>
-(0 minutes 1.096 seconds)</p>
+(0 minutes 1.114 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_stats_cluster_time_frequency.py"><code class="xref download docutils literal"><span class="pre">plot_stats_cluster_time_frequency.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_stats_cluster_time_frequency.py"><tt class="xref download docutils literal"><span class="pre">plot_stats_cluster_time_frequency.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_stats_cluster_time_frequency.ipynb"><code class="xref download docutils literal"><span class="pre">plot_stats_cluster_time_frequency.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_stats_cluster_time_frequency.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_stats_cluster_time_frequency.ipynb</span></tt></a></div>
 </div>
 
 
@@ -440,7 +440,7 @@ Done.
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

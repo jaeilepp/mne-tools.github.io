@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,7 +193,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="compute-ica-components-on-epochs">
 <span id="sphx-glr-auto-examples-preprocessing-plot-run-ica-py"></span><h1>Compute ICA components on epochs<a class="headerlink" href="#compute-ica-components-on-epochs" title="Permalink to this headline">¶</a></h1>
@@ -204,7 +204,7 @@ Subsequently, artefact detection and rejection quality are assessed.
 Finally, the impact on the evoked ERF is visualized.</p>
 <p>Note that this example does quite a bit of processing, so even on a
 fast machine it can take about a minute to complete.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Denis Engemann &lt;denis.engemann@gmail.com&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Denis Engemann &lt;denis.engemann@gmail.com&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -216,7 +216,7 @@ fast machine it can take about a minute to complete.</p>
 </pre></div>
 </div>
 <p>Fit ICA model using the FastICA algorithm, detect and inspect components</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 
 <span class="n">raw</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span><span class="p">(</span><span class="n">raw_fname</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -236,50 +236,12 @@ fast machine it can take about a minute to complete.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_run_ica_001.png" class="align-center" src="../../_images/sphx_glr_plot_run_ica_001.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-        Average EEG reference (1 x 60)  idle
-Current compensation grade : 0
-    Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-Ready.
-Reading 0 ... 41699  =      0.000 ...   277.709 secs...
-Band-pass filtering from 1 - 30 Hz
-319 events found
-Events id: [ 1  2  3  4  5 32]
-319 matching events found
-Applying baseline correction (mode: mean)
-Created an SSP operator (subspace dimension = 3)
-4 projection items activated
-Fitting ICA to data using 305 channels.
-Please be patient, this may take some time
-Inferring max_pca_components from picks.
-Loading data for 319 events and 106 original time points ...
-0 bad epochs dropped
-Selection by explained variance: 120 components
-Reconstructing ECG signal from Magnetometers
-Reconstructing ECG signal from Magnetometers
-Number of ECG events detected : 284 (average pulse 61 / min.)
-Creating RawArray with float64 data, n_channels=1, n_times=41700
-    Range : 0 ... 41699 =      0.000 ...   277.709 secs
-Ready.
-284 matching events found
-No baseline correction applied
-Created an SSP operator (subspace dimension = 3)
-Loading data for 284 events and 151 original time points ...
-0 bad epochs dropped
-Reconstructing ECG signal from Magnetometers
-</pre></div>
-</div>
 <p><strong>Total running time of the script:</strong>
-(1 minutes 16.650 seconds)</p>
+(1 minutes 11.981 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_run_ica.py"><code class="xref download docutils literal"><span class="pre">plot_run_ica.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_run_ica.py"><tt class="xref download docutils literal"><span class="pre">plot_run_ica.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_run_ica.ipynb"><code class="xref download docutils literal"><span class="pre">plot_run_ica.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_run_ica.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_run_ica.ipynb</span></tt></a></div>
 </div>
 
 
@@ -297,7 +259,7 @@ Reconstructing ECG signal from Magnetometers
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

@@ -10,7 +10,6 @@ Reading BEM surfaces from a forward solution
 Plot BEM surfaces used for forward solution generation.
 
 
-
 .. code-block:: python
 
     # Author: Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
@@ -37,22 +36,10 @@ Plot BEM surfaces used for forward solution generation.
 
  Out::
 
-    3 BEM surfaces found
-        Reading a surface...
-    [done]
-        Reading a surface...
-    [done]
-        Reading a surface...
-    [done]
-        3 BEM surfaces read
-        Triangle neighbors and vertex normals...
-        Triangle neighbors and vertex normals...
-        Triangle neighbors and vertex normals...
     Number of surfaces : 3
 
 
 Show result
-
 
 
 .. code-block:: python
@@ -81,7 +68,7 @@ Show result
 
 
 **Total running time of the script:**
-(0 minutes 0.485 seconds)
+(0 minutes 0.342 seconds)
 
 
 

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,14 +193,14 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="permutation-f-test-on-sensor-data-with-1d-cluster-level">
 <span id="sphx-glr-auto-examples-stats-plot-cluster-stats-evoked-py"></span><h1>Permutation F-test on sensor data with 1D cluster level<a class="headerlink" href="#permutation-f-test-on-sensor-data-with-1d-cluster-level" title="Permalink to this headline">¶</a></h1>
 <p>One tests if the evoked response is significantly different
 between conditions. Multiple comparison problem is addressed
 with cluster level permutation test.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -215,7 +215,7 @@ with cluster level permutation test.</p>
 </pre></div>
 </div>
 <p>Set parameters</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 <span class="n">event_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw-eve.fif&#39;</span>
 <span class="n">event_id</span> <span class="o">=</span> <span class="mi">1</span>
@@ -230,20 +230,8 @@ with cluster level permutation test.</p>
 <span class="n">include</span> <span class="o">=</span> <span class="p">[</span><span class="n">channel</span><span class="p">]</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-        Average EEG reference (1 x 60)  idle
-Current compensation grade : 0
-    Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-Ready.
-</pre></div>
-</div>
 <p>Read epochs for the channel of interest</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">picks</span> <span class="o">=</span> <a href="../../generated/mne.pick_types.html#mne.pick_types"><span class="n">mne</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">picks</span> <span class="o">=</span> <a href="../../generated/mne.pick_types.html#mne.pick_types"><span class="n">mne</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">meg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
                        <span class="n">exclude</span><span class="o">=</span><span class="s1">&#39;bads&#39;</span><span class="p">)</span>
 <span class="n">event_id</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">reject</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">grad</span><span class="o">=</span><span class="mf">4000e-13</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="mf">150e-6</span><span class="p">)</span>
@@ -260,96 +248,15 @@ Ready.
 <span class="n">condition2</span> <span class="o">=</span> <span class="n">condition2</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># take only one channel to get a 2D array</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>72 matching events found
-Applying baseline correction (mode: mean)
-4 projection items activated
-Loading data for 72 events and 106 original time points ...
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-16 bad epochs dropped
-73 matching events found
-Applying baseline correction (mode: mean)
-4 projection items activated
-Loading data for 73 events and 106 original time points ...
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-    Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
-11 bad epochs dropped
-</pre></div>
-</div>
 <p>Compute statistic</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mf">6.0</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">threshold</span> <span class="o">=</span> <span class="mf">6.0</span>
 <span class="n">T_obs</span><span class="p">,</span> <span class="n">clusters</span><span class="p">,</span> <span class="n">cluster_p_values</span><span class="p">,</span> <span class="n">H0</span> <span class="o">=</span> \
     <a href="../../generated/mne.stats.permutation_cluster_test.html#mne.stats.permutation_cluster_test"><span class="n">permutation_cluster_test</span></a><span class="p">([</span><span class="n">condition1</span><span class="p">,</span> <span class="n">condition2</span><span class="p">],</span> <span class="n">n_permutations</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
                              <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">tail</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>stat_fun(H1): min=0.000227 max=38.167093
-Running initial clustering
-Found 4 clusters
-Permuting ...
-
-[                                        ] 0.10000 |
-[.                                       ] 3.20000 /
-[..                                      ] 6.40000 -
-[...                                     ] 9.60000 \
-[.....                                   ] 12.80000 |
-[......                                  ] 16.00000 /
-[.......                                 ] 19.20000 -
-[........                                ] 22.40000 \
-[..........                              ] 25.60000 |
-[...........                             ] 28.80000 /
-[............                            ] 32.00000 -
-[..............                          ] 35.20000 \
-[...............                         ] 38.40000 |
-[................                        ] 41.60000 /
-[.................                       ] 44.80000 -
-[...................                     ] 48.00000 \
-[....................                    ] 51.20000 |
-[.....................                   ] 54.40000 /
-[.......................                 ] 57.60000 -
-[........................                ] 60.80000 \
-[.........................               ] 64.00000 |
-[..........................              ] 67.20000 /
-[............................            ] 70.40000 -
-[.............................           ] 73.60000 \
-[..............................          ] 76.80000 |
-[................................        ] 80.00000 /
-[.................................       ] 83.20000 -
-[..................................      ] 86.40000 \
-[...................................     ] 89.60000 |
-[.....................................   ] 92.80000 /
-[......................................  ] 96.00000 -
-[....................................... ] 99.20000 \    Computing cluster p-values
-Done.
-</pre></div>
-</div>
 <p>Plot</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">times</span> <span class="o">=</span> <span class="n">epochs1</span><span class="o">.</span><span class="n">times</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">times</span> <span class="o">=</span> <span class="n">epochs1</span><span class="o">.</span><span class="n">times</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.close"><span class="n">plt</span><span class="o">.</span><span class="n">close</span></a><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplot"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s1">&#39;Channel : &#39;</span> <span class="o">+</span> <span class="n">channel</span><span class="p">)</span>
@@ -375,11 +282,11 @@ Done.
 </div>
 <img alt="../../_images/sphx_glr_plot_cluster_stats_evoked_001.png" class="align-center" src="../../_images/sphx_glr_plot_cluster_stats_evoked_001.png" />
 <p><strong>Total running time of the script:</strong>
-(0 minutes 1.698 seconds)</p>
+(0 minutes 1.586 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_cluster_stats_evoked.py"><code class="xref download docutils literal"><span class="pre">plot_cluster_stats_evoked.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_cluster_stats_evoked.py"><tt class="xref download docutils literal"><span class="pre">plot_cluster_stats_evoked.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_cluster_stats_evoked.ipynb"><code class="xref download docutils literal"><span class="pre">plot_cluster_stats_evoked.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_cluster_stats_evoked.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_cluster_stats_evoked.ipynb</span></tt></a></div>
 </div>
 
 
@@ -397,7 +304,7 @@ Done.
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

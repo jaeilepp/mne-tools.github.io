@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-preprocessing-maxwell-filter">
 <h1>mne.preprocessing.maxwell_filter<a class="headerlink" href="#mne-preprocessing-maxwell-filter" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.preprocessing.maxwell_filter">
-<code class="descclassname">mne.preprocessing.</code><code class="descname">maxwell_filter</code><span class="sig-paren">(</span><em>raw</em>, <em>origin='auto'</em>, <em>int_order=8</em>, <em>ext_order=3</em>, <em>calibration=None</em>, <em>cross_talk=None</em>, <em>st_duration=None</em>, <em>st_correlation=0.98</em>, <em>coord_frame='head'</em>, <em>destination=None</em>, <em>regularize='in'</em>, <em>ignore_ref=False</em>, <em>bad_condition='error'</em>, <em>head_pos=None</em>, <em>st_fixed=True</em>, <em>st_only=False</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.preprocessing.maxwell_filter" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.preprocessing.</tt><tt class="descname">maxwell_filter</tt><big>(</big><em>raw</em>, <em>origin='auto'</em>, <em>int_order=8</em>, <em>ext_order=3</em>, <em>calibration=None</em>, <em>cross_talk=None</em>, <em>st_duration=None</em>, <em>st_correlation=0.98</em>, <em>coord_frame='head'</em>, <em>destination=None</em>, <em>regularize='in'</em>, <em>ignore_ref=False</em>, <em>bad_condition='error'</em>, <em>head_pos=None</em>, <em>st_fixed=True</em>, <em>st_only=False</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.preprocessing.maxwell_filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply Maxwell filter to data using multipole moments</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -225,9 +225,9 @@ is not designed for clinical use.</p>
 <p><strong>origin</strong> : array-like, shape (3,) | str</p>
 <blockquote>
 <div><p>Origin of internal and external multipolar moment space in meters.
-The default is <code class="docutils literal"><span class="pre">'auto'</span></code>, which means a head-digitization-based
-origin fit when <code class="docutils literal"><span class="pre">coord_frame='head'</span></code>, and <code class="docutils literal"><span class="pre">(0.,</span> <span class="pre">0.,</span> <span class="pre">0.)</span></code> when
-<code class="docutils literal"><span class="pre">coord_frame='meg'</span></code>.</p>
+The default is <tt class="docutils literal"><span class="pre">'auto'</span></tt>, which means a head-digitization-based
+origin fit when <tt class="docutils literal"><span class="pre">coord_frame='head'</span></tt>, and <tt class="docutils literal"><span class="pre">(0.,</span> <span class="pre">0.,</span> <span class="pre">0.)</span></tt> when
+<tt class="docutils literal"><span class="pre">coord_frame='meg'</span></tt>.</p>
 </div></blockquote>
 <p><strong>int_order</strong> : int</p>
 <blockquote>
@@ -239,7 +239,7 @@ origin fit when <code class="docutils literal"><span class="pre">coord_frame='he
 </div></blockquote>
 <p><strong>calibration</strong> : str | None</p>
 <blockquote>
-<div><p>Path to the <code class="docutils literal"><span class="pre">'.dat'</span></code> file with fine calibration coefficients.
+<div><p>Path to the <tt class="docutils literal"><span class="pre">'.dat'</span></tt> file with fine calibration coefficients.
 File can have 1D or 3D gradiometer imbalance correction.
 This file is machine/site-specific.</p>
 </div></blockquote>
@@ -266,19 +266,19 @@ ovwrlapping intersecting inner/outer signals during spatiotemporal SSS.</p>
 </div></blockquote>
 <p><strong>coord_frame</strong> : str</p>
 <blockquote>
-<div><p>The coordinate frame that the <code class="docutils literal"><span class="pre">origin</span></code> is specified in, either
-<code class="docutils literal"><span class="pre">'meg'</span></code> or <code class="docutils literal"><span class="pre">'head'</span></code>. For empty-room recordings that do not have
-a head&lt;-&gt;meg transform <code class="docutils literal"><span class="pre">info['dev_head_t']</span></code>, the MEG coordinate
+<div><p>The coordinate frame that the <tt class="docutils literal"><span class="pre">origin</span></tt> is specified in, either
+<tt class="docutils literal"><span class="pre">'meg'</span></tt> or <tt class="docutils literal"><span class="pre">'head'</span></tt>. For empty-room recordings that do not have
+a head&lt;-&gt;meg transform <tt class="docutils literal"><span class="pre">info['dev_head_t']</span></tt>, the MEG coordinate
 frame should be used.</p>
 </div></blockquote>
 <p><strong>destination</strong> : str | array-like, shape (3,) | None</p>
 <blockquote>
-<div><p>The destination location for the head. Can be <code class="docutils literal"><span class="pre">None</span></code>, which
+<div><p>The destination location for the head. Can be <tt class="docutils literal"><span class="pre">None</span></tt>, which
 will not change the head position, or a string path to a FIF file
 containing a MEG device&lt;-&gt;head transformation, or a 3-element array
 giving the coordinates to translate to (with no rotations).
-For example, <code class="docutils literal"><span class="pre">destination=(0,</span> <span class="pre">0,</span> <span class="pre">0.04)</span></code> would translate the bases
-as <code class="docutils literal"><span class="pre">--trans</span> <span class="pre">default</span></code> would in MaxFilter™ (i.e., to the default
+For example, <tt class="docutils literal"><span class="pre">destination=(0,</span> <span class="pre">0,</span> <span class="pre">0.04)</span></tt> would translate the bases
+as <tt class="docutils literal"><span class="pre">--trans</span> <span class="pre">default</span></tt> would in MaxFilter™ (i.e., to the default
 head location).</p>
 </div></blockquote>
 <p><strong>regularize</strong> : str | None</p>
@@ -310,7 +310,7 @@ parameters as returned by e.g. <cite>read_head_pos</cite>.</p>
 <p><strong>st_fixed</strong> : bool</p>
 <blockquote>
 <div><p>If True (default), do tSSS using the median head position during the
-<code class="docutils literal"><span class="pre">st_duration</span></code> window. This is the default behavior of MaxFilter
+<tt class="docutils literal"><span class="pre">st_duration</span></tt> window. This is the default behavior of MaxFilter
 and has been most extensively tested.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.12.</span></p>
@@ -320,14 +320,14 @@ and has been most extensively tested.</p>
 <blockquote>
 <div><p>If True, only tSSS (temporal) projection of MEG data will be
 performed on the output data. The non-tSSS parameters (e.g.,
-<code class="docutils literal"><span class="pre">int_order</span></code>, <code class="docutils literal"><span class="pre">calibration</span></code>, <code class="docutils literal"><span class="pre">head_pos</span></code>, etc.) will still be
+<tt class="docutils literal"><span class="pre">int_order</span></tt>, <tt class="docutils literal"><span class="pre">calibration</span></tt>, <tt class="docutils literal"><span class="pre">head_pos</span></tt>, etc.) will still be
 used to form the SSS bases used to calculate temporal projectors,
 but the ouptut MEG data will <em>only</em> have temporal projections
 performed. Noise reduction from SSS basis multiplication,
 cross-talk cancellation, movement compensation, and so forth
 will not be applied to the data. This is useful, for example, when
 evoked movement compensation will be performed with
-<a class="reference internal" href="mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><code class="xref py py-func docutils literal"><span class="pre">mne.epochs.average_movements()</span></code></a>.</p>
+<a class="reference internal" href="mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><tt class="xref py py-func docutils literal"><span class="pre">mne.epochs.average_movements()</span></tt></a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.12.</span></p>
 </div>
@@ -348,7 +348,7 @@ evoked movement compensation will be performed with
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><code class="xref py py-obj docutils literal"><span class="pre">mne.epochs.average_movements</span></code></a>, <a class="reference internal" href="mne.chpi.read_head_pos.html#mne.chpi.read_head_pos" title="mne.chpi.read_head_pos"><code class="xref py py-obj docutils literal"><span class="pre">mne.chpi.read_head_pos</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><tt class="xref py py-obj docutils literal"><span class="pre">mne.epochs.average_movements</span></tt></a>, <a class="reference internal" href="mne.chpi.read_head_pos.html#mne.chpi.read_head_pos" title="mne.chpi.read_head_pos"><tt class="xref py py-obj docutils literal"><span class="pre">mne.chpi.read_head_pos</span></tt></a></p>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -369,7 +369,7 @@ algorithm currently provides the following features:</p>
 <li>Regularization of internal components using information theory</li>
 <li>Raw movement compensation
 (using head positions estimated by MaxFilter)</li>
-<li>cHPI subtraction (see <a class="reference internal" href="mne.chpi.filter_chpi.html#mne.chpi.filter_chpi" title="mne.chpi.filter_chpi"><code class="xref py py-func docutils literal"><span class="pre">mne.chpi.filter_chpi()</span></code></a>)</li>
+<li>cHPI subtraction (see <a class="reference internal" href="mne.chpi.filter_chpi.html#mne.chpi.filter_chpi" title="mne.chpi.filter_chpi"><tt class="xref py py-func docutils literal"><span class="pre">mne.chpi.filter_chpi()</span></tt></a>)</li>
 </ul>
 </div></blockquote>
 <p>The following features are not yet implemented:</p>
@@ -387,7 +387,7 @@ algorithm currently provides the following features:</p>
 <li>Handling of 3D (in addition to 1D) fine calibration files</li>
 <li>Automated processing of split (-1.fif) and concatenated files</li>
 <li>Epoch-based movement compensation as described in <a class="reference internal" href="#r24" id="id3">[R24]</a> through
-<a class="reference internal" href="mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><code class="xref py py-func docutils literal"><span class="pre">mne.epochs.average_movements()</span></code></a></li>
+<a class="reference internal" href="mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><tt class="xref py py-func docutils literal"><span class="pre">mne.epochs.average_movements()</span></tt></a></li>
 <li><strong>Experimental</strong> processing of data from (un-compensated)
 non-Elekta systems</li>
 </ul>
@@ -462,7 +462,7 @@ Physics in Medicine and Biology, vol. 51, pp. 1759-1768, 2006.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

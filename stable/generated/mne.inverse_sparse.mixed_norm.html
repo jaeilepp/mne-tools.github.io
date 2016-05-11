@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-inverse-sparse-mixed-norm">
 <h1>mne.inverse_sparse.mixed_norm<a class="headerlink" href="#mne-inverse-sparse-mixed-norm" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.inverse_sparse.mixed_norm">
-<code class="descclassname">mne.inverse_sparse.</code><code class="descname">mixed_norm</code><span class="sig-paren">(</span><em>evoked</em>, <em>forward</em>, <em>noise_cov</em>, <em>alpha</em>, <em>loose=0.2</em>, <em>depth=0.8</em>, <em>maxit=3000</em>, <em>tol=0.0001</em>, <em>active_set_size=10</em>, <em>pca=True</em>, <em>debias=True</em>, <em>time_pca=True</em>, <em>weights=None</em>, <em>weights_min=None</em>, <em>solver='auto'</em>, <em>n_mxne_iter=1</em>, <em>return_residual=False</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.inverse_sparse.mixed_norm" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.inverse_sparse.</tt><tt class="descname">mixed_norm</tt><big>(</big><em>evoked</em>, <em>forward</em>, <em>noise_cov</em>, <em>alpha</em>, <em>loose=0.2</em>, <em>depth=0.8</em>, <em>maxit=3000</em>, <em>tol=0.0001</em>, <em>active_set_size=10</em>, <em>pca=True</em>, <em>debias=True</em>, <em>time_pca=True</em>, <em>weights=None</em>, <em>weights_min=None</em>, <em>solver='auto'</em>, <em>n_mxne_iter=1</em>, <em>return_residual=False</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.inverse_sparse.mixed_norm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mixed-norm estimate (MxNE) and iterative reweighted MxNE (irMxNE)</p>
 <p>Compute L1/L2 mixed-norm solution or L0.5/L2 mixed-norm solution
 on evoked data.</p>
@@ -316,7 +316,7 @@ Only returned if return_residual is True.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.inverse_sparse.tf_mixed_norm.html#mne.inverse_sparse.tf_mixed_norm" title="mne.inverse_sparse.tf_mixed_norm"><code class="xref py py-obj docutils literal"><span class="pre">tf_mixed_norm</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.inverse_sparse.tf_mixed_norm.html#mne.inverse_sparse.tf_mixed_norm" title="mne.inverse_sparse.tf_mixed_norm"><tt class="xref py py-obj docutils literal"><span class="pre">tf_mixed_norm</span></tt></a></p>
 </div>
 </dd></dl>
 
@@ -337,7 +337,7 @@ Only returned if return_residual is True.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

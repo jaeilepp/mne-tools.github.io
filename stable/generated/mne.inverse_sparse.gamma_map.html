@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-inverse-sparse-gamma-map">
 <h1>mne.inverse_sparse.gamma_map<a class="headerlink" href="#mne-inverse-sparse-gamma-map" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.inverse_sparse.gamma_map">
-<code class="descclassname">mne.inverse_sparse.</code><code class="descname">gamma_map</code><span class="sig-paren">(</span><em>evoked</em>, <em>forward</em>, <em>noise_cov</em>, <em>alpha</em>, <em>loose=0.2</em>, <em>depth=0.8</em>, <em>xyz_same_gamma=True</em>, <em>maxit=10000</em>, <em>tol=1e-06</em>, <em>update_mode=1</em>, <em>gammas=None</em>, <em>pca=True</em>, <em>return_residual=False</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.inverse_sparse.gamma_map" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.inverse_sparse.</tt><tt class="descname">gamma_map</tt><big>(</big><em>evoked</em>, <em>forward</em>, <em>noise_cov</em>, <em>alpha</em>, <em>loose=0.2</em>, <em>depth=0.8</em>, <em>xyz_same_gamma=True</em>, <em>maxit=10000</em>, <em>tol=1e-06</em>, <em>update_mode=1</em>, <em>gammas=None</em>, <em>pca=True</em>, <em>return_residual=False</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.inverse_sparse.gamma_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hierarchical Bayes (Gamma-MAP) sparse source localization method</p>
 <p>Models each source time course using a zero-mean Gaussian prior with an
 unknown variance (gamma) parameter. During estimation, most gammas are
@@ -312,7 +312,7 @@ NeuroImage, vol. 44, no. 3, pp. 947-66, Mar. 2009.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

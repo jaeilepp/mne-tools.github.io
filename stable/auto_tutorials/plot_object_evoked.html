@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -140,7 +140,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">The <code class="docutils literal"><span class="pre">Evoked</span></code> data structure: evoked/averaged data</a></li>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Evoked</span></tt> data structure: evoked/averaged data</a></li>
 </ul>
 </ul>
 </li>
@@ -168,12 +168,12 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
             </a></p><ul>
-<li><a class="reference internal" href="#">The <code class="docutils literal"><span class="pre">Evoked</span></code> data structure: evoked/averaged data</a></li>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Evoked</span></tt> data structure: evoked/averaged data</a></li>
 </ul>
 
   <li>
@@ -193,27 +193,27 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="the-evoked-data-structure-evoked-averaged-data">
-<span id="tut-evoked-objects"></span><span id="sphx-glr-auto-tutorials-plot-object-evoked-py"></span><h1>The <a class="reference internal" href="../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal"><span class="pre">Evoked</span></code></a> data structure: evoked/averaged data<a class="headerlink" href="#the-evoked-data-structure-evoked-averaged-data" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">op</span>
+<span id="tut-evoked-objects"></span><span id="sphx-glr-auto-tutorials-plot-object-evoked-py"></span><h1>The <a class="reference internal" href="../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><tt class="xref py py-class docutils literal"><span class="pre">Evoked</span></tt></a> data structure: evoked/averaged data<a class="headerlink" href="#the-evoked-data-structure-evoked-averaged-data" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">op</span>
 
 <span class="kn">import</span> <span class="nn">mne</span>
 </pre></div>
 </div>
-<p>The <a class="reference internal" href="../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal"><span class="pre">Evoked</span></code></a> data structure is mainly used for storing
+<p>The <a class="reference internal" href="../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><tt class="xref py py-class docutils literal"><span class="pre">Evoked</span></tt></a> data structure is mainly used for storing
 averaged data over trials. In MNE the evoked objects are created by averaging
-epochs data with <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.average" title="mne.Epochs.average"><code class="xref py py-func docutils literal"><span class="pre">mne.Epochs.average()</span></code></a>. Here we read the evoked dataset
+epochs data with <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.average" title="mne.Epochs.average"><tt class="xref py py-func docutils literal"><span class="pre">mne.Epochs.average()</span></tt></a>. Here we read the evoked dataset
 from a file.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
 <span class="n">fname</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_audvis-ave.fif&#39;</span><span class="p">)</span>
 <span class="n">evokeds</span> <span class="o">=</span> <a href="../generated/mne.read_evokeds.html#mne.read_evokeds"><span class="n">mne</span><span class="o">.</span><span class="n">read_evokeds</span></a><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">proj</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">evokeds</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Reading /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Reading /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
     Read a total of 4 projection items:
         PCA-v1 (1 x 102) active
         PCA-v2 (1 x 102) active
@@ -264,15 +264,15 @@ Applying baseline correction (mode: mean)
 <p>Notice that the reader function returned a list of evoked instances. This is
 because you can store multiple categories into a single file. Here we have
 categories of
-<code class="docutils literal"><span class="pre">['Left</span> <span class="pre">Auditory',</span> <span class="pre">'Right</span> <span class="pre">Auditory',</span> <span class="pre">'Left</span> <span class="pre">Visual',</span> <span class="pre">'Right</span> <span class="pre">Visual']</span></code>.
-We can also use <code class="docutils literal"><span class="pre">condition</span></code> parameter to read in only one category.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">evoked</span> <span class="o">=</span> <a href="../generated/mne.read_evokeds.html#mne.read_evokeds"><span class="n">mne</span><span class="o">.</span><span class="n">read_evokeds</span></a><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="s1">&#39;Left Auditory&#39;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<tt class="docutils literal"><span class="pre">['Left</span> <span class="pre">Auditory',</span> <span class="pre">'Right</span> <span class="pre">Auditory',</span> <span class="pre">'Left</span> <span class="pre">Visual',</span> <span class="pre">'Right</span> <span class="pre">Visual']</span></tt>.
+We can also use <tt class="docutils literal"><span class="pre">condition</span></tt> parameter to read in only one category.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">evoked</span> <span class="o">=</span> <a href="../generated/mne.read_evokeds.html#mne.read_evokeds"><span class="n">mne</span><span class="o">.</span><span class="n">read_evokeds</span></a><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="s1">&#39;Left Auditory&#39;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
                           <span class="n">proj</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Reading /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Reading /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
     Read a total of 4 projection items:
         PCA-v1 (1 x 102) active
         PCA-v2 (1 x 102) active
@@ -288,15 +288,15 @@ Applying baseline correction (mode: mean)
 </pre></div>
 </div>
 <p>If you&#8217;re gone through the tutorials of raw and epochs datasets, you&#8217;re
-probably already familiar with the <a class="reference internal" href="../generated/mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-class docutils literal"><span class="pre">Info</span></code></a> attribute.
-There is nothing new or special with the <code class="docutils literal"><span class="pre">evoked.info</span></code>. All the relevant
+probably already familiar with the <a class="reference internal" href="../generated/mne.Info.html#mne.Info" title="mne.Info"><tt class="xref py py-class docutils literal"><span class="pre">Info</span></tt></a> attribute.
+There is nothing new or special with the <tt class="docutils literal"><span class="pre">evoked.info</span></tt>. All the relevant
 info is still there.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">times</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>&lt;Info | 19 non-empty fields
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>&lt;Info | 19 non-empty fields
     bads : list | MEG 2443, EEG 053
     ch_names : list | MEG 0113, MEG 0112, MEG 0111, MEG 0122, MEG 0123, ...
     chs : list | 376 items (EOG: 1, EEG: 60, STIM: 9, GRAD: 204, MAG: 102)
@@ -306,12 +306,12 @@ info is still there.</p>
     dig : list | 146 items
     events : list | 0 items
     file_id : dict | 4 items
-    filename : unicode | /home/ubun.../sample_audvis-ave.fif
+    filename : str | /home/jaak.../sample_audvis-ave.fif
     highpass : float | 0.10000000149 Hz
     hpi_meas : list | 1 items
     hpi_results : list | 1 items
     lowpass : float | 40.0 Hz
-    meas_date : numpy.ndarray | 2002-12-03 19:01:10
+    meas_date : numpy.ndarray | 2002-12-03 20:01:10
     meas_id : dict | 4 items
     nchan : int | 376
     projs : list | PCA-v1: on, PCA-v2: on, PCA-v3: on, ...
@@ -404,7 +404,7 @@ info is still there.</p>
 </div>
 <p>The evoked data structure also contains some new attributes easily
 accessible:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">nave</span><span class="p">)</span>  <span class="c1"># Number of averaged epochs.</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">nave</span><span class="p">)</span>  <span class="c1"># Number of averaged epochs.</span>
 <span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">first</span><span class="p">)</span>  <span class="c1"># First time sample.</span>
 <span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>  <span class="c1"># Last time sample.</span>
 <span class="k">print</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>  <span class="c1"># Comment on dataset. Usually the condition.</span>
@@ -412,7 +412,7 @@ accessible:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>55
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>55
 -120
 300
 Left Auditory
@@ -423,24 +423,24 @@ average
 much smaller than raw or epochs datasets, they are preloaded into the memory
 when the evoked object is constructed. You can access the data as a numpy
 array.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">evoked</span><span class="o">.</span><span class="n">data</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">evoked</span><span class="o">.</span><span class="n">data</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">376</span><span class="p">,</span> <span class="mi">421</span><span class="p">)</span>
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="mi">376</span><span class="p">,</span> <span class="mi">421</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The data is arranged in an array of shape <cite>(n_channels, n_times)</cite>. Notice
 that unlike epochs, evoked object does not support indexing. This means that
 to access the data of a specific channel you must use the data array
 directly.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Data from channel {0}:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">ch_names</span><span class="p">[</span><span class="mi">10</span><span class="p">]))</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Data from channel {0}:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">evoked</span><span class="o">.</span><span class="n">ch_names</span><span class="p">[</span><span class="mi">10</span><span class="p">]))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Data from channel MEG 0142:
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Data from channel MEG 0142:
 [ -5.23565064e-13  -4.71585139e-13  -3.86683209e-13  -2.83273649e-13
   -1.77306112e-13  -8.40611219e-14  -1.61924078e-14   1.77381210e-14
    1.40744336e-14  -2.58271015e-14  -9.61522377e-14  -1.87714557e-13
@@ -550,22 +550,22 @@ directly.</p>
 </pre></div>
 </div>
 <p>If you want to import evoked data from some other system and you have it in a
-numpy array you can use <a class="reference internal" href="../generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray"><code class="xref py py-class docutils literal"><span class="pre">mne.EvokedArray</span></code></a> for that. All you need is
+numpy array you can use <a class="reference internal" href="../generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray"><tt class="xref py py-class docutils literal"><span class="pre">mne.EvokedArray</span></tt></a> for that. All you need is
 the data and some info about the evoked data. For more information, see
-<a class="reference internal" href="plot_creating_data_structures.html#tut-creating-data-structures"><span>Creating MNE-Python&#8217;s data structures from scratch</span></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">evoked</span> <span class="o">=</span> <a href="../generated/mne.EvokedArray.html#mne.EvokedArray"><span class="n">mne</span><span class="o">.</span><span class="n">EvokedArray</span></a><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">evoked</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=</span><span class="n">evoked</span><span class="o">.</span><span class="n">times</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a class="reference internal" href="plot_creating_data_structures.html#tut-creating-data-structures"><em>Creating MNE-Python&#8217;s data structures from scratch</em></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">evoked</span> <span class="o">=</span> <a href="../generated/mne.EvokedArray.html#mne.EvokedArray"><span class="n">mne</span><span class="o">.</span><span class="n">EvokedArray</span></a><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">evoked</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=</span><span class="n">evoked</span><span class="o">.</span><span class="n">times</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">evoked</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_object_evoked_001.png" class="align-center" src="../_images/sphx_glr_plot_object_evoked_001.png" />
-<p>To write an evoked dataset to a file, use the <code class="xref py py-func docutils literal"><span class="pre">mne.Evoked.save'</span> <span class="pre">method.</span>
-<span class="pre">To</span> <span class="pre">save</span> <span class="pre">multiple</span> <span class="pre">categories</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">file,</span> <span class="pre">see</span> <span class="pre">:func:`mne.write_evokeds()</span></code>.</p>
+<p>To write an evoked dataset to a file, use the <tt class="xref py py-func docutils literal"><span class="pre">mne.Evoked.save'</span> <span class="pre">method.</span>
+<span class="pre">To</span> <span class="pre">save</span> <span class="pre">multiple</span> <span class="pre">categories</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">file,</span> <span class="pre">see</span> <span class="pre">:func:`mne.write_evokeds()</span></tt>.</p>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 1.811 seconds)</p>
+(0 minutes 1.557 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_object_evoked.py"><code class="xref download docutils literal"><span class="pre">plot_object_evoked.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_object_evoked.py"><tt class="xref download docutils literal"><span class="pre">plot_object_evoked.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_object_evoked.ipynb"><code class="xref download docutils literal"><span class="pre">plot_object_evoked.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_object_evoked.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_object_evoked.ipynb</span></tt></a></div>
 </div>
 
 
@@ -583,7 +583,7 @@ the data and some info about the evoked data. For more information, see
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

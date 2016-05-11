@@ -11,7 +11,6 @@ Locate QRS component of ECG.
 
 
 
-
 .. code-block:: python
 
     # Authors: Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
@@ -37,7 +36,6 @@ Locate QRS component of ECG.
 
 
 Set parameters
-
 
 
 .. code-block:: python
@@ -69,31 +67,13 @@ Set parameters
 
  Out::
 
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-        Read a total of 3 projection items:
-            PCA-v1 (1 x 102)  idle
-            PCA-v2 (1 x 102)  idle
-            PCA-v3 (1 x 102)  idle
-    Current compensation grade : 0
-        Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-    Ready.
-    Adding average EEG reference projection.
-    1 projection items deactivated
-    Using channel MEG 1531 to identify heart beats.
-    Number of ECG events detected : 284 (average pulse 61 / min.)
-    284 matching events found
-    Applying baseline correction (mode: mean)
     Projection vector "PCA-v1" has magnitude 0.08 (should be unity), applying projector with 1/102 of the original channels available may be dangerous, consider recomputing and adding projection vectors for channels that are eventually used. If this is intentional, consider using info.normalize_proj()
     Projection vector "PCA-v2" has magnitude 0.00 (should be unity), applying projector with 1/102 of the original channels available may be dangerous, consider recomputing and adding projection vectors for channels that are eventually used. If this is intentional, consider using info.normalize_proj()
     Projection vector "PCA-v3" has magnitude 0.13 (should be unity), applying projector with 1/102 of the original channels available may be dangerous, consider recomputing and adding projection vectors for channels that are eventually used. If this is intentional, consider using info.normalize_proj()
-    Created an SSP operator (subspace dimension = 1)
-    Loading data for 284 events and 121 original time points ...
-    0 bad epochs dropped
     Number of detected ECG artifacts : 284
 
 
 Plot ECG artifacts
-
 
 
 .. code-block:: python
@@ -112,7 +92,7 @@ Plot ECG artifacts
 
 
 **Total running time of the script:**
-(0 minutes 1.795 seconds)
+(0 minutes 1.698 seconds)
 
 
 

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,7 +193,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="maxwell-filter-data-with-movement-compensation">
 <span id="sphx-glr-auto-examples-preprocessing-plot-movement-compensation-py"></span><h1>Maxwell filter data with movement compensation<a class="headerlink" href="#maxwell-filter-data-with-movement-compensation" title="Permalink to this headline">¶</a></h1>
@@ -203,7 +203,7 @@ different head rotations (head center held fixed). See the following for
 details:</p>
 <blockquote>
 <div><a class="reference external" href="https://github.com/mne-tools/mne-misc-data/blob/master/movement/simulate.py">https://github.com/mne-tools/mne-misc-data/blob/master/movement/simulate.py</a></div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Eric Larson &lt;larson.eric.d@gmail.com&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Eric Larson &lt;larson.eric.d@gmail.com&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -222,20 +222,8 @@ details:</p>
                                        <span class="s1">&#39;simulated_stationary_raw.fif&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Overwriting existing file.
-Opening raw data file /home/ubuntu/mne_data/MNE-misc-data/movement/simulated_movement_raw.fif...
-Current compensation grade : 0
-    Range : 25800 ... 34208 =     42.956 ...    56.955 secs
-Ready.
-Opening raw data file /home/ubuntu/mne_data/MNE-misc-data/movement/simulated_stationary_raw.fif...
-Current compensation grade : 0
-    Range : 25800 ... 34208 =     42.956 ...    56.955 secs
-Ready.
-</pre></div>
-</div>
 <p>Process our simulated raw data (taking into account head movements)</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># extract our resulting events</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># extract our resulting events</span>
 <span class="n">events</span> <span class="o">=</span> <a href="../../generated/mne.find_events.html#mne.find_events"><span class="n">mne</span><span class="o">.</span><span class="n">find_events</span></a><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">stim_channel</span><span class="o">=</span><span class="s1">&#39;STI 014&#39;</span><span class="p">)</span>
 <span class="n">events</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">raw</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">events</span><span class="o">=</span><span class="n">events</span><span class="p">)</span>
@@ -257,7 +245,7 @@ Ready.
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_movement_compensation_001.png"><img alt="../../_images/sphx_glr_plot_movement_compensation_001.png" src="../../_images/sphx_glr_plot_movement_compensation_001.png" style="width: 376.0px; height: 282.0px;" /></a>
+<li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_movement_compensation_001.png"><img alt="../../_images/sphx_glr_plot_movement_compensation_001.png" src="../../_images/sphx_glr_plot_movement_compensation_001.png" style="width: 802.29px; height: 404.67px;" /></a>
 </li>
 <li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_movement_compensation_002.png"><img alt="../../_images/sphx_glr_plot_movement_compensation_002.png" src="../../_images/sphx_glr_plot_movement_compensation_002.png" style="width: 188.0px; height: 84.6px;" /></a>
 </li>
@@ -266,38 +254,12 @@ Ready.
 <li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_movement_compensation_004.png"><img alt="../../_images/sphx_glr_plot_movement_compensation_004.png" src="../../_images/sphx_glr_plot_movement_compensation_004.png" style="width: 188.0px; height: 84.6px;" /></a>
 </li>
 </ul>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>14 events found
-Events id: [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14]
-14 matching events found
-Applying baseline correction (mode: mean)
-0 projection items activated
-14 matching events found
-Applying baseline correction (mode: mean)
-0 projection items activated
-Maxwell filtering raw data
-    Appending head position result channels and loading raw data from disk
-    No bad MEG channels
-    Processing 203 gradiometers and 102 magnetometers
-    Automatic origin fit: head of radius 91.0 mm
-    Using origin -4.1, 16.0, 51.7 mm in the head frame
-    Computing regularization
-        Resulting information: 462.4 bits/sample (98.3% of peak 470.1)
-        Using 75/80 inside and 15/15 outside harmonic components
-    Processing 1 data chunk of (at least) 10.0 sec
-        Used  14 head positions for     0.00 -    14.00 sec
-[done]
-14 matching events found
-Applying baseline correction (mode: mean)
-0 projection items activated
-</pre></div>
-</div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 9.175 seconds)</p>
+(0 minutes 7.768 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_movement_compensation.py"><code class="xref download docutils literal"><span class="pre">plot_movement_compensation.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_movement_compensation.py"><tt class="xref download docutils literal"><span class="pre">plot_movement_compensation.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_movement_compensation.ipynb"><code class="xref download docutils literal"><span class="pre">plot_movement_compensation.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_movement_compensation.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_movement_compensation.ipynb</span></tt></a></div>
 </div>
 
 
@@ -315,7 +277,7 @@ Applying baseline correction (mode: mean)
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

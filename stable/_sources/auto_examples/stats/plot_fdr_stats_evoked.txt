@@ -13,7 +13,6 @@ False Discovery Rate (FDR) correction.
 
 
 
-
 .. code-block:: python
 
     # Authors: Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
@@ -40,7 +39,6 @@ False Discovery Rate (FDR) correction.
 Set parameters
 
 
-
 .. code-block:: python
 
     data_path = sample.data_path()
@@ -59,23 +57,9 @@ Set parameters
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-        Read a total of 4 projection items:
-            PCA-v1 (1 x 102)  idle
-            PCA-v2 (1 x 102)  idle
-            PCA-v3 (1 x 102)  idle
-            Average EEG reference (1 x 60)  idle
-    Current compensation grade : 0
-        Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-    Ready.
 
 
 Read epochs for the channel of interest
-
 
 
 .. code-block:: python
@@ -93,19 +77,9 @@ Read epochs for the channel of interest
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    7 matching events found
-    Applying baseline correction (mode: mean)
-    4 projection items activated
-    Loading data for 7 events and 106 original time points ...
-    0 bad epochs dropped
 
 
 Compute statistic
-
 
 
 .. code-block:: python
@@ -129,7 +103,6 @@ Compute statistic
 
 
 Plot
-
 
 
 .. code-block:: python
@@ -159,7 +132,7 @@ Plot
 
 
 **Total running time of the script:**
-(0 minutes 0.392 seconds)
+(0 minutes 0.108 seconds)
 
 
 

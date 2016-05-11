@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,18 +193,18 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-dipole">
 <h1>mne.Dipole<a class="headerlink" href="#mne-dipole" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mne.Dipole">
-<em class="property">class </em><code class="descclassname">mne.</code><code class="descname">Dipole</code><span class="sig-paren">(</span><em>times</em>, <em>pos</em>, <em>amplitude</em>, <em>ori</em>, <em>gof</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">mne.</tt><tt class="descname">Dipole</tt><big>(</big><em>times</em>, <em>pos</em>, <em>amplitude</em>, <em>ori</em>, <em>gof</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#mne.Dipole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dipole class for sequential dipole fits</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This class should usually not be instantiated directly,
-instead <a class="reference internal" href="mne.read_dipole.html#mne.read_dipole" title="mne.read_dipole"><code class="xref py py-func docutils literal"><span class="pre">mne.read_dipole()</span></code></a> should be used.</p>
+instead <a class="reference internal" href="mne.read_dipole.html#mne.read_dipole" title="mne.read_dipole"><tt class="xref py py-func docutils literal"><span class="pre">mne.read_dipole()</span></tt></a> should be used.</p>
 </div>
 <p>Used to store positions, orientations, amplitudes, times, goodness of fit
 of dipoles, typically obtained with Neuromag/xfit, mne_dipole_fit
@@ -244,12 +244,12 @@ the head coordinate frame.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.read_dipole.html#mne.read_dipole" title="mne.read_dipole"><code class="xref py py-obj docutils literal"><span class="pre">read_dipole</span></code></a>, <a class="reference internal" href="mne.DipoleFixed.html#mne.DipoleFixed" title="mne.DipoleFixed"><code class="xref py py-obj docutils literal"><span class="pre">DipoleFixed</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.read_dipole.html#mne.read_dipole" title="mne.read_dipole"><tt class="xref py py-obj docutils literal"><span class="pre">read_dipole</span></tt></a>, <a class="reference internal" href="mne.DipoleFixed.html#mne.DipoleFixed" title="mne.DipoleFixed"><tt class="xref py py-obj docutils literal"><span class="pre">DipoleFixed</span></tt></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This class is for sequential dipole fits, where the position
 changes as a function of time. For fixed dipole fits, where the
-position is fixed as a function of time, use <a class="reference internal" href="mne.DipoleFixed.html#mne.DipoleFixed" title="mne.DipoleFixed"><code class="xref py py-class docutils literal"><span class="pre">mne.DipoleFixed</span></code></a>.</p>
+position is fixed as a function of time, use <a class="reference internal" href="mne.DipoleFixed.html#mne.DipoleFixed" title="mne.DipoleFixed"><tt class="xref py py-class docutils literal"><span class="pre">mne.DipoleFixed</span></tt></a>.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -257,31 +257,31 @@ position is fixed as a function of time, use <a class="reference internal" href=
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#mne.Dipole.copy" title="mne.Dipole.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.Dipole.copy" title="mne.Dipole.copy"><tt class="xref py py-obj docutils literal"><span class="pre">copy</span></tt></a>()</td>
 <td>Copy the Dipoles object</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.Dipole.crop" title="mne.Dipole.crop"><code class="xref py py-obj docutils literal"><span class="pre">crop</span></code></a>([tmin,&nbsp;tmax])</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.Dipole.crop" title="mne.Dipole.crop"><tt class="xref py py-obj docutils literal"><span class="pre">crop</span></tt></a>([tmin,&nbsp;tmax])</td>
 <td>Crop data to a given time interval</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.Dipole.plot_amplitudes" title="mne.Dipole.plot_amplitudes"><code class="xref py py-obj docutils literal"><span class="pre">plot_amplitudes</span></code></a>([color,&nbsp;show])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.Dipole.plot_amplitudes" title="mne.Dipole.plot_amplitudes"><tt class="xref py py-obj docutils literal"><span class="pre">plot_amplitudes</span></tt></a>([color,&nbsp;show])</td>
 <td>Plot the dipole amplitudes as a function of time</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.Dipole.plot_locations" title="mne.Dipole.plot_locations"><code class="xref py py-obj docutils literal"><span class="pre">plot_locations</span></code></a>(trans,&nbsp;subject[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.Dipole.plot_locations" title="mne.Dipole.plot_locations"><tt class="xref py py-obj docutils literal"><span class="pre">plot_locations</span></tt></a>(trans,&nbsp;subject[,&nbsp;...])</td>
 <td>Plot dipole locations as arrows</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.Dipole.save" title="mne.Dipole.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(fname)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.Dipole.save" title="mne.Dipole.save"><tt class="xref py py-obj docutils literal"><span class="pre">save</span></tt></a>(fname)</td>
 <td>Save dipole in a .dip file</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="mne.Dipole.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>times</em>, <em>pos</em>, <em>amplitude</em>, <em>ori</em>, <em>gof</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>times</em>, <em>pos</em>, <em>amplitude</em>, <em>ori</em>, <em>gof</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#mne.Dipole.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="mne.Dipole.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole.copy" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#mne.Dipole.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy the Dipoles object</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -299,7 +299,7 @@ position is fixed as a function of time, use <a class="reference internal" href=
 
 <dl class="method">
 <dt id="mne.Dipole.crop">
-<code class="descname">crop</code><span class="sig-paren">(</span><em>tmin=None</em>, <em>tmax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole.crop" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">crop</tt><big>(</big><em>tmin=None</em>, <em>tmax=None</em><big>)</big><a class="headerlink" href="#mne.Dipole.crop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Crop data to a given time interval</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -321,7 +321,7 @@ position is fixed as a function of time, use <a class="reference internal" href=
 
 <dl class="method">
 <dt id="mne.Dipole.plot_amplitudes">
-<code class="descname">plot_amplitudes</code><span class="sig-paren">(</span><em>color='k'</em>, <em>show=True</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole.plot_amplitudes" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">plot_amplitudes</tt><big>(</big><em>color='k'</em>, <em>show=True</em><big>)</big><a class="headerlink" href="#mne.Dipole.plot_amplitudes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the dipole amplitudes as a function of time</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -349,7 +349,7 @@ position is fixed as a function of time, use <a class="reference internal" href=
 
 <dl class="method">
 <dt id="mne.Dipole.plot_locations">
-<code class="descname">plot_locations</code><span class="sig-paren">(</span><em>trans</em>, <em>subject</em>, <em>subjects_dir=None</em>, <em>bgcolor=(1</em>, <em>1</em>, <em>1)</em>, <em>opacity=0.3</em>, <em>brain_color=(1</em>, <em>1</em>, <em>0)</em>, <em>fig_name=None</em>, <em>fig_size=(600</em>, <em>600)</em>, <em>mode='cone'</em>, <em>scale_factor=0.01</em>, <em>colors=None</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole.plot_locations" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">plot_locations</tt><big>(</big><em>trans</em>, <em>subject</em>, <em>subjects_dir=None</em>, <em>bgcolor=(1</em>, <em>1</em>, <em>1)</em>, <em>opacity=0.3</em>, <em>brain_color=(1</em>, <em>1</em>, <em>0)</em>, <em>fig_name=None</em>, <em>fig_size=(600</em>, <em>600)</em>, <em>mode='cone'</em>, <em>scale_factor=0.01</em>, <em>colors=None</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.Dipole.plot_locations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot dipole locations as arrows</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -392,7 +392,7 @@ The default is None.</p>
 </div></blockquote>
 <p><strong>mode</strong> : str</p>
 <blockquote>
-<div><p>Should be <code class="docutils literal"><span class="pre">'cone'</span></code> or <code class="docutils literal"><span class="pre">'sphere'</span></code> to specify how the
+<div><p>Should be <tt class="docutils literal"><span class="pre">'cone'</span></tt> or <tt class="docutils literal"><span class="pre">'sphere'</span></tt> to specify how the
 dipoles should be shown.</p>
 </div></blockquote>
 <p><strong>scale_factor</strong> : float</p>
@@ -421,7 +421,7 @@ dipoles should be shown.</p>
 
 <dl class="method">
 <dt id="mne.Dipole.save">
-<code class="descname">save</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole.save" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">save</tt><big>(</big><em>fname</em><big>)</big><a class="headerlink" href="#mne.Dipole.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save dipole in a .dip file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -456,7 +456,7 @@ dipoles should be shown.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-time-frequency-psd-welch">
 <h1>mne.time_frequency.psd_welch<a class="headerlink" href="#mne-time-frequency-psd-welch" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.time_frequency.psd_welch">
-<code class="descclassname">mne.time_frequency.</code><code class="descname">psd_welch</code><span class="sig-paren">(</span><em>inst</em>, <em>fmin=0</em>, <em>fmax=inf</em>, <em>tmin=None</em>, <em>tmax=None</em>, <em>n_fft=256</em>, <em>n_overlap=0</em>, <em>picks=None</em>, <em>proj=False</em>, <em>n_jobs=1</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.time_frequency.psd_welch" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.time_frequency.</tt><tt class="descname">psd_welch</tt><big>(</big><em>inst</em>, <em>fmin=0</em>, <em>fmax=inf</em>, <em>tmin=None</em>, <em>tmax=None</em>, <em>n_fft=256</em>, <em>n_overlap=0</em>, <em>picks=None</em>, <em>proj=False</em>, <em>n_jobs=1</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.time_frequency.psd_welch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the power spectral density (PSD) using Welch&#8217;s method.</p>
 <p>Calculates periodigrams for a sliding window over the
 time dimension, then averages them together for each channel/epoch.</p>
@@ -231,8 +231,8 @@ time dimension, then averages them together for each channel/epoch.</p>
 <blockquote>
 <div><p>The length of the tapers ie. the windows. The smaller
 it is the smoother are the PSDs. The default value is 256.
-If <code class="docutils literal"><span class="pre">n_fft</span> <span class="pre">&gt;</span> <span class="pre">len(inst.times)</span></code>, it will be adjusted down to
-<code class="docutils literal"><span class="pre">len(inst.times)</span></code>.</p>
+If <tt class="docutils literal"><span class="pre">n_fft</span> <span class="pre">&gt;</span> <span class="pre">len(inst.times)</span></tt>, it will be adjusted down to
+<tt class="docutils literal"><span class="pre">len(inst.times)</span></tt>.</p>
 </div></blockquote>
 <p><strong>n_overlap</strong> : int</p>
 <blockquote>
@@ -274,7 +274,7 @@ then psds will be shape (n_epochs, n_channels, n_freqs).</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.io.Raw.html#mne.io.Raw.plot_psd" title="mne.io.Raw.plot_psd"><code class="xref py py-obj docutils literal"><span class="pre">mne.io.Raw.plot_psd</span></code></a>, <a class="reference internal" href="mne.Epochs.html#mne.Epochs.plot_psd" title="mne.Epochs.plot_psd"><code class="xref py py-obj docutils literal"><span class="pre">mne.Epochs.plot_psd</span></code></a>, <a class="reference internal" href="mne.time_frequency.psd_multitaper.html#mne.time_frequency.psd_multitaper" title="mne.time_frequency.psd_multitaper"><code class="xref py py-obj docutils literal"><span class="pre">psd_multitaper</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.io.Raw.html#mne.io.Raw.plot_psd" title="mne.io.Raw.plot_psd"><tt class="xref py py-obj docutils literal"><span class="pre">mne.io.Raw.plot_psd</span></tt></a>, <a class="reference internal" href="mne.Epochs.html#mne.Epochs.plot_psd" title="mne.Epochs.plot_psd"><tt class="xref py py-obj docutils literal"><span class="pre">mne.Epochs.plot_psd</span></tt></a>, <a class="reference internal" href="mne.time_frequency.psd_multitaper.html#mne.time_frequency.psd_multitaper" title="mne.time_frequency.psd_multitaper"><tt class="xref py py-obj docutils literal"><span class="pre">psd_multitaper</span></tt></a></p>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -299,7 +299,7 @@ then psds will be shape (n_epochs, n_channels, n_freqs).</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

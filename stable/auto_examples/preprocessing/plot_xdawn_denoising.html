@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -171,7 +171,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -199,7 +199,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="xdawn-denoising">
 <span id="sphx-glr-auto-examples-preprocessing-plot-xdawn-denoising-py"></span><h1>XDAWN Denoising<a class="headerlink" href="#xdawn-denoising" title="Permalink to this headline">¶</a></h1>
@@ -221,7 +221,7 @@ interface. Biomedical Engineering, IEEE Transactions on, 56(8), 2035-2043.</p>
 August). Theoretical analysis of xDAWN algorithm: application to an
 efficient sensor selection in a P300 BCI. In Signal Processing Conference,
 2011 19th European (pp. 1382-1386). IEEE.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alexandre Barachant &lt;alexandre.barachant@gmail.com&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Alexandre Barachant &lt;alexandre.barachant@gmail.com&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -238,7 +238,7 @@ efficient sensor selection in a P300 BCI. In Signal Processing Conference,
 </pre></div>
 </div>
 <p>Set parameters and read data</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 <span class="n">event_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw-eve.fif&#39;</span>
 <span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span>
 <span class="n">event_id</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">vis_r</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -281,32 +281,12 @@ efficient sensor selection in a P300 BCI. In Signal Processing Conference,
 <li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_xdawn_denoising_002.png"><img alt="../../_images/sphx_glr_plot_xdawn_denoising_002.png" src="../../_images/sphx_glr_plot_xdawn_denoising_002.png" style="width: 376.0px; height: 282.0px;" /></a>
 </li>
 </ul>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-        Average EEG reference (1 x 60)  idle
-Current compensation grade : 0
-    Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-Ready.
-Reading 0 ... 41699  =      0.000 ...   277.709 secs...
-Band-pass filtering from 1 - 20 Hz
-Using up to 1388 segments
-Number of samples used : 41640
-[done]
-Transforming to Xdawn space
-Zeroing out 303 Xdawn components
-Inverse transforming to sensor space
-</pre></div>
-</div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 4.762 seconds)</p>
+(0 minutes 4.849 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_xdawn_denoising.py"><code class="xref download docutils literal"><span class="pre">plot_xdawn_denoising.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_xdawn_denoising.py"><tt class="xref download docutils literal"><span class="pre">plot_xdawn_denoising.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_xdawn_denoising.ipynb"><code class="xref download docutils literal"><span class="pre">plot_xdawn_denoising.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_xdawn_denoising.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_xdawn_denoising.ipynb</span></tt></a></div>
 </div>
 </div>
 
@@ -325,7 +305,7 @@ Inverse transforming to sensor space
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

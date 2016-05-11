@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-annotations">
 <h1>mne.Annotations<a class="headerlink" href="#mne-annotations" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mne.Annotations">
-<em class="property">class </em><code class="descclassname">mne.</code><code class="descname">Annotations</code><span class="sig-paren">(</span><em>onset</em>, <em>duration</em>, <em>description</em>, <em>orig_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Annotations" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">mne.</tt><tt class="descname">Annotations</tt><big>(</big><em>onset</em>, <em>duration</em>, <em>description</em>, <em>orig_time=None</em><big>)</big><a class="headerlink" href="#mne.Annotations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Annotation object for annotating segments of raw data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -224,7 +224,7 @@ string, all the annotations are given the same description.</p>
 first element and microseconds as the second element. Determines the
 starting time of annotation acquisition. If None (default),
 starting time is determined from beginning of raw data acquisition.
-In general, <code class="docutils literal"><span class="pre">raw.info['meas_date']</span></code> (or None) can be used for syncing
+In general, <tt class="docutils literal"><span class="pre">raw.info['meas_date']</span></tt> (or None) can be used for syncing
 the annotations with raw data if their acquisiton is started at the
 same time.</p>
 </div></blockquote>
@@ -233,7 +233,7 @@ same time.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Annotations are synced to sample 0. <code class="docutils literal"><span class="pre">raw.first_samp</span></code> is taken
+<p>Annotations are synced to sample 0. <tt class="docutils literal"><span class="pre">raw.first_samp</span></tt> is taken
 into account in the same way as with events.
 .. automethod:: __init__</p>
 </dd></dl>
@@ -255,7 +255,7 @@ into account in the same way as with events.
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

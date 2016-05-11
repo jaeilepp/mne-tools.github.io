@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-viz-plot-evoked-joint">
 <h1>mne.viz.plot_evoked_joint<a class="headerlink" href="#mne-viz-plot-evoked-joint" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.viz.plot_evoked_joint">
-<code class="descclassname">mne.viz.</code><code class="descname">plot_evoked_joint</code><span class="sig-paren">(</span><em>evoked</em>, <em>times='peaks'</em>, <em>title=''</em>, <em>picks=None</em>, <em>exclude=None</em>, <em>show=True</em>, <em>ts_args=None</em>, <em>topomap_args=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.plot_evoked_joint" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.viz.</tt><tt class="descname">plot_evoked_joint</tt><big>(</big><em>evoked</em>, <em>times='peaks'</em>, <em>title=''</em>, <em>picks=None</em>, <em>exclude=None</em>, <em>show=True</em>, <em>ts_args=None</em>, <em>topomap_args=None</em><big>)</big><a class="headerlink" href="#mne.viz.plot_evoked_joint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot evoked data as butterfly plot and add topomaps for selected
 time points.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -239,16 +239,16 @@ bad channels are excluded. Defaults to None.</p>
 <div><p>A dict of <cite>kwargs</cite> that are forwarded to <cite>evoked.plot</cite> to
 style the butterfly plot. <cite>axes</cite> and <cite>show</cite> are ignored.
 If <cite>spatial_colors</cite> is not in this dict, <cite>spatial_colors=True</cite>
-will be passed. Beyond that, if <code class="docutils literal"><span class="pre">None</span></code>, no customizable arguments
-will be passed. Defaults to <code class="docutils literal"><span class="pre">None</span></code>.</p>
+will be passed. Beyond that, if <tt class="docutils literal"><span class="pre">None</span></tt>, no customizable arguments
+will be passed. Defaults to <tt class="docutils literal"><span class="pre">None</span></tt>.</p>
 </div></blockquote>
 <p><strong>topomap_args</strong> : None | dict</p>
 <blockquote>
 <div><p>A dict of <cite>kwargs</cite> that are forwarded to <cite>evoked.plot_topomap</cite>
 to style the topomaps. <cite>axes</cite> and <cite>show</cite> are ignored. If <cite>times</cite>
 is not in this dict, automatic peak detection is used. Beyond that,
-if <code class="docutils literal"><span class="pre">None`,</span> <span class="pre">no</span> <span class="pre">customizable</span> <span class="pre">arguments</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">passed.</span>
-<span class="pre">Defaults</span> <span class="pre">to</span> <span class="pre">``None</span></code>.</p>
+if <tt class="docutils literal"><span class="pre">None`,</span> <span class="pre">no</span> <span class="pre">customizable</span> <span class="pre">arguments</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">passed.</span>
+<span class="pre">Defaults</span> <span class="pre">to</span> <span class="pre">``None</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -285,7 +285,7 @@ returned.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

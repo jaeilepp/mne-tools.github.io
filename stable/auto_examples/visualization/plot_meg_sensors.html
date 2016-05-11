@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,7 +193,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="plotting-sensor-layouts-of-meg-systems">
 <span id="sphx-glr-auto-examples-visualization-plot-meg-sensors-py"></span><h1>Plotting sensor layouts of MEG systems<a class="headerlink" href="#plotting-sensor-layouts-of-meg-systems" title="Permalink to this headline">¶</a></h1>
@@ -210,55 +210,13 @@ are shown.</p>
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-    Read a total of 3 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-Current compensation grade : 0
-    Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-Ready.
-Adding average EEG reference projection.
-1 projection items deactivated
-ds directory : /home/ubuntu/mne_data/MNE-spm-face/MEG/spm/SPM_CTF_MEG_example_faces1_3D.ds
-    res4 data read.
-    hc data read.
-    Separate EEG position data file not present.
-    Quaternion matching (desired vs. transformed):
-      -0.90   72.01    0.00 mm &lt;-&gt;   -0.90   72.01    0.00 mm (orig :  -43.09   61.46 -252.17 mm) diff =    0.000 mm
-       0.90  -72.01    0.00 mm &lt;-&gt;    0.90  -72.01    0.00 mm (orig :   53.49  -45.24 -258.02 mm) diff =    0.000 mm
-      98.30    0.00    0.00 mm &lt;-&gt;   98.30   -0.00    0.00 mm (orig :   78.60   72.16 -241.87 mm) diff =    0.000 mm
-    Coordinate transformations established.
-    Polhemus data for 3 HPI coils added
-    Device coordinate locations for 3 HPI coils added
-    Measurement info composed.
-Finding samples for /home/ubuntu/mne_data/MNE-spm-face/MEG/spm/SPM_CTF_MEG_example_faces1_3D.ds/SPM_CTF_MEG_example_faces1_3D.meg4:
-    System clock channel is available, checking which samples are valid.
-    1 x 324474 = 324474 samples from 340 chs
-Reading 4D PDF file /home/ubuntu/mne-python/mne/io/bti/tests/data/test_pdf_linux...
-Creating Neuromag info structure ...
-... Setting channel info structure.
-... putting coil transforms in Neuromag coordinates
-... Reading digitization points from /home/ubuntu/mne-python/mne/io/bti/tests/data/test_hs_linux
-... putting digitization points in Neuromag coordinates
-... Computing new device to head transform.
-Done.
-Currently direct inclusion of 4D weight tables is not supported. For critical use cases please take into account the MNE command &quot;mne_create_comp_data&quot; to include weights as printed out by the 4D &quot;print_table&quot; routine.
-Extracting SQD Parameters from /home/ubuntu/mne-python/mne/io/kit/tests/data/test.sqd...
-Creating Raw.info structure...
-Setting channel info structure...
-Creating Info structure...
-Ready.
-Getting helmet for system KIT
-Getting helmet for system CTF_275
-Getting helmet for system 306m
-Getting helmet for system Magnes_3600wh
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Currently direct inclusion of 4D weight tables is not supported. For critical use cases please take into account the MNE command &quot;mne_create_comp_data&quot; to include weights as printed out by the 4D &quot;print_table&quot; routine.
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Author: Eric Larson &lt;larson.eric.d@gmail.com&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Author: Eric Larson &lt;larson.eric.d@gmail.com&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -295,11 +253,11 @@ Getting helmet for system Magnes_3600wh
 </pre></div>
 </div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 2.797 seconds)</p>
+(0 minutes 1.389 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_meg_sensors.py"><code class="xref download docutils literal"><span class="pre">plot_meg_sensors.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_meg_sensors.py"><tt class="xref download docutils literal"><span class="pre">plot_meg_sensors.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_meg_sensors.ipynb"><code class="xref download docutils literal"><span class="pre">plot_meg_sensors.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_meg_sensors.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_meg_sensors.ipynb</span></tt></a></div>
 </div>
 
 
@@ -317,7 +275,7 @@ Getting helmet for system Magnes_3600wh
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

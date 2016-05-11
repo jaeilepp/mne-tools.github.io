@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-make-field-map">
 <h1>mne.make_field_map<a class="headerlink" href="#mne-make-field-map" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.make_field_map">
-<code class="descclassname">mne.</code><code class="descname">make_field_map</code><span class="sig-paren">(</span><em>evoked</em>, <em>trans='auto'</em>, <em>subject=None</em>, <em>subjects_dir=None</em>, <em>ch_type=None</em>, <em>mode='fast'</em>, <em>meg_surf='helmet'</em>, <em>origin=(0.0</em>, <em>0.0</em>, <em>0.04)</em>, <em>n_jobs=1</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.make_field_map" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.</tt><tt class="descname">make_field_map</tt><big>(</big><em>evoked</em>, <em>trans='auto'</em>, <em>subject=None</em>, <em>subjects_dir=None</em>, <em>ch_type=None</em>, <em>mode='fast'</em>, <em>meg_surf='helmet'</em>, <em>origin=(0.0</em>, <em>0.0</em>, <em>0.04)</em>, <em>n_jobs=1</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.make_field_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute surface maps used for field display in 3D</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -239,13 +239,13 @@ for most applications.</p>
 </div></blockquote>
 <p><strong>meg_surf</strong> : str</p>
 <blockquote>
-<div><p>Should be <code class="docutils literal"><span class="pre">'helmet'</span></code> or <code class="docutils literal"><span class="pre">'head'</span></code> to specify in which surface
-to compute the MEG field map. The default value is <code class="docutils literal"><span class="pre">'helmet'</span></code></p>
+<div><p>Should be <tt class="docutils literal"><span class="pre">'helmet'</span></tt> or <tt class="docutils literal"><span class="pre">'head'</span></tt> to specify in which surface
+to compute the MEG field map. The default value is <tt class="docutils literal"><span class="pre">'helmet'</span></tt></p>
 </div></blockquote>
 <p><strong>origin</strong> : array-like, shape (3,) | str</p>
 <blockquote>
 <div><p>Origin of internal and external multipolar moment space in head
-coords and in meters. The default is <code class="docutils literal"><span class="pre">'auto'</span></code>, which means
+coords and in meters. The default is <tt class="docutils literal"><span class="pre">'auto'</span></tt>, which means
 a head-digitization-based origin fit.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.11.</span></p>
@@ -292,7 +292,7 @@ separate ones for MEG and EEG (if both MEG and EEG are present).</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -173,7 +173,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -203,7 +203,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="maxwell-filtering">
 <span id="maxwell"></span><h1>Maxwell filtering<a class="headerlink" href="#maxwell-filtering" title="Permalink to this headline">¶</a></h1>
@@ -223,7 +223,7 @@ intereference and compensate for subject head movements.</p>
 <a class="footnote-reference" href="#id4" id="id1">[1]</a> <a class="footnote-reference" href="#id5" id="id2">[2]</a> as well as the Elekta MaxFilter manual; see those materials
 for basic principles and algorithm descriptions.</p>
 <p>In mne-python Maxwell filtering of raw data can be done using the
-<a class="reference internal" href="../../generated/mne.preprocessing.maxwell_filter.html#mne.preprocessing.maxwell_filter" title="mne.preprocessing.maxwell_filter"><code class="xref py py-func docutils literal"><span class="pre">mne.preprocessing.maxwell_filter()</span></code></a> function.</p>
+<a class="reference internal" href="../../generated/mne.preprocessing.maxwell_filter.html#mne.preprocessing.maxwell_filter" title="mne.preprocessing.maxwell_filter"><tt class="xref py py-func docutils literal"><span class="pre">mne.preprocessing.maxwell_filter()</span></tt></a> function.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Automatic bad channel detection is not currently implemented.
@@ -243,10 +243,10 @@ including:</p>
 <li>Regularization of internal components using information theory</li>
 <li>Raw movement compensation
 (using head positions estimated by MaxFilter)</li>
-<li>cHPI subtraction (see <a class="reference internal" href="../../generated/mne.chpi.filter_chpi.html#mne.chpi.filter_chpi" title="mne.chpi.filter_chpi"><code class="xref py py-func docutils literal"><span class="pre">mne.chpi.filter_chpi()</span></code></a>)</li>
+<li>cHPI subtraction (see <a class="reference internal" href="../../generated/mne.chpi.filter_chpi.html#mne.chpi.filter_chpi" title="mne.chpi.filter_chpi"><tt class="xref py py-func docutils literal"><span class="pre">mne.chpi.filter_chpi()</span></tt></a>)</li>
 <li>Handling of 3D (in addition to 1D) fine calibration files</li>
 <li>Epoch-based movement compensation as described in <a class="footnote-reference" href="#id4" id="id3">[1]</a> through
-<a class="reference internal" href="../../generated/mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><code class="xref py py-func docutils literal"><span class="pre">mne.epochs.average_movements()</span></code></a></li>
+<a class="reference internal" href="../../generated/mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><tt class="xref py py-func docutils literal"><span class="pre">mne.epochs.average_movements()</span></tt></a></li>
 <li><strong>Experimental</strong> processing of data from (un-compensated)
 non-Elekta systems</li>
 </ul>
@@ -259,15 +259,15 @@ non-Elekta systems</li>
 recording data in children), movement compensation can be performed to
 correct for head movements. Movement compensation can be performed two ways:</p>
 <ol class="arabic simple">
-<li>Raw movement compensation: <a class="reference internal" href="../../generated/mne.preprocessing.maxwell_filter.html#mne.preprocessing.maxwell_filter" title="mne.preprocessing.maxwell_filter"><code class="xref py py-func docutils literal"><span class="pre">mne.preprocessing.maxwell_filter()</span></code></a> using
-the <code class="docutils literal"><span class="pre">pos</span></code> argument.</li>
-<li>Evoked movement compensation: <a class="reference internal" href="../../generated/mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><code class="xref py py-func docutils literal"><span class="pre">mne.epochs.average_movements()</span></code></a>.</li>
+<li>Raw movement compensation: <a class="reference internal" href="../../generated/mne.preprocessing.maxwell_filter.html#mne.preprocessing.maxwell_filter" title="mne.preprocessing.maxwell_filter"><tt class="xref py py-func docutils literal"><span class="pre">mne.preprocessing.maxwell_filter()</span></tt></a> using
+the <tt class="docutils literal"><span class="pre">pos</span></tt> argument.</li>
+<li>Evoked movement compensation: <a class="reference internal" href="../../generated/mne.epochs.average_movements.html#mne.epochs.average_movements" title="mne.epochs.average_movements"><tt class="xref py py-func docutils literal"><span class="pre">mne.epochs.average_movements()</span></tt></a>.</li>
 </ol>
 <p>Each of these requires time-varying estimates of head positions, which can
-currently be obtained from MaxFilter using the <code class="docutils literal"><span class="pre">-headpos</span></code> and <code class="docutils literal"><span class="pre">-hp</span></code>
+currently be obtained from MaxFilter using the <tt class="docutils literal"><span class="pre">-headpos</span></tt> and <tt class="docutils literal"><span class="pre">-hp</span></tt>
 arguments (see the MaxFilter manual for details). The resulting
 MaxFilter-style head position information can be read using
-<a class="reference internal" href="../../generated/mne.chpi.read_head_pos.html#mne.chpi.read_head_pos" title="mne.chpi.read_head_pos"><code class="xref py py-func docutils literal"><span class="pre">mne.chpi.read_head_pos()</span></code></a> and passed to mne-python&#8217;s movement
+<a class="reference internal" href="../../generated/mne.chpi.read_head_pos.html#mne.chpi.read_head_pos" title="mne.chpi.read_head_pos"><tt class="xref py py-func docutils literal"><span class="pre">mne.chpi.read_head_pos()</span></tt></a> and passed to mne-python&#8217;s movement
 compensation algorithms.</p>
 </div>
 <div class="section" id="references">
@@ -310,7 +310,7 @@ Physics in Medicine and Biology, vol. 51, pp. 1759-1768, 2006.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

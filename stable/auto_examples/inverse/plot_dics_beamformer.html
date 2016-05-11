@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,7 +193,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="compute-dics-beamfomer-on-evoked-data">
 <span id="sphx-glr-auto-examples-inverse-plot-dics-beamformer-py"></span><h1>Compute DICS beamfomer on evoked data<a class="headerlink" href="#compute-dics-beamfomer-on-evoked-data" title="Permalink to this headline">¶</a></h1>
@@ -203,7 +203,7 @@ on evoked data.</p>
 <p>The original reference for DICS is:
 Gross et al. Dynamic imaging of coherent sources: Studying neural interactions
 in the human brain. PNAS (2001) vol. 98 (2) pp. 694-699</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Author: Roman Goj &lt;roman.goj@gmail.com&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Author: Roman Goj &lt;roman.goj@gmail.com&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -228,7 +228,7 @@ in the human brain. PNAS (2001) vol. 98 (2) pp. 694-699</p>
 </pre></div>
 </div>
 <p>Read raw data</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span><span class="p">(</span><span class="n">raw_fname</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span><span class="p">(</span><span class="n">raw_fname</span><span class="p">)</span>
 <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;bads&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MEG 2443&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 053&#39;</span><span class="p">]</span>  <span class="c1"># 2 bads channels</span>
 
 <span class="c1"># Set picks</span>
@@ -284,53 +284,7 @@ in the human brain. PNAS (2001) vol. 98 (2) pp. 694-699</p>
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-    Read a total of 3 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-Current compensation grade : 0
-    Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-Ready.
-Adding average EEG reference projection.
-1 projection items deactivated
-72 matching events found
-Applying baseline correction (mode: mean)
-Created an SSP operator (subspace dimension = 3)
-4 projection items activated
-Loading data for 72 events and 421 original time points ...
-    Rejecting  epoch based on MAG : [u&#39;MEG 1711&#39;]
-1 bad epochs dropped
-Reading forward solution from /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-eeg-oct-6-fwd.fif...
-    Reading a source space...
-    Computing patch statistics...
-    Patch information added...
-    Distance information added...
-    [done]
-    Reading a source space...
-    Computing patch statistics...
-    Patch information added...
-    Distance information added...
-    [done]
-    2 source spaces read
-    Desired named matrix (kind = 3523) not available
-    Read MEG forward solution (7498 sources, 306 channels, free orientations)
-    Desired named matrix (kind = 3523) not available
-    Read EEG forward solution (7498 sources, 60 channels, free orientations)
-    MEG and EEG forward solutions combined
-    Source spaces transformed to the forward solution coordinate frame
-    Converting to surface-based source orientations...
-    Average patch normals will be employed in the rotation to the local surface coordinates....
-[done]
-Computing cross-spectral density from epochs...
-    using multitaper spectrum estimation with 3 DPSS windows
-[done]
-Computing cross-spectral density from epochs...
-    using multitaper spectrum estimation with 3 DPSS windows
-[done]
-    305 out of 366 channels remain after picking
-combining the current components...
-Updating smoothing matrix, be patient..
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Updating smoothing matrix, be patient..
 Smoothing matrix creation, step 1
 Smoothing matrix creation, step 2
 Smoothing matrix creation, step 3
@@ -345,11 +299,11 @@ colormap: fmin=3.21e+00 fmid=3.71e+00 fmax=1.00e+01 transparent=1
 </pre></div>
 </div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 29.643 seconds)</p>
+(0 minutes 14.985 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_dics_beamformer.py"><code class="xref download docutils literal"><span class="pre">plot_dics_beamformer.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_dics_beamformer.py"><tt class="xref download docutils literal"><span class="pre">plot_dics_beamformer.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_dics_beamformer.ipynb"><code class="xref download docutils literal"><span class="pre">plot_dics_beamformer.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_dics_beamformer.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_dics_beamformer.ipynb</span></tt></a></div>
 </div>
 
 
@@ -367,7 +321,7 @@ colormap: fmin=3.21e+00 fmid=3.71e+00 fmax=1.00e+01 transparent=1
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

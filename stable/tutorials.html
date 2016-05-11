@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -71,7 +71,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -169,7 +169,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/mne_logo_small.png" alt="Logo"/>
@@ -196,12 +196,12 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="tutorials">
 <span id="id1"></span><h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
 <p>Once you have
-<a class="reference internal" href="install_mne_python.html#install-python-and-mne-python"><span>Python and MNE-Python up and running</span></a>,
+<a class="reference internal" href="install_mne_python.html#install-python-and-mne-python"><em>Python and MNE-Python up and running</em></a>,
 you can use these tutorials to get started processing MEG/EEG.
 You can find each step of the processing pipeline, and re-run the
 Python code by copy-paste.</p>
@@ -209,11 +209,11 @@ Python code by copy-paste.</p>
 For further reading:</p>
 <ul class="simple">
 <li>For a high-level overview of what you can do with MNE-Python:
-<a class="reference internal" href="getting_started.html#what-can-you-do"><span>What can you do with MNE using Python?</span></a></li>
+<a class="reference internal" href="getting_started.html#what-can-you-do"><em>What can you do with MNE using Python?</em></a></li>
 <li>For more examples of analyzing M/EEG data, including more sophisticated
-analysis: <a class="reference internal" href="auto_examples/index.html#general-examples"><span>Examples Gallery</span></a></li>
-<li>For details about analysis steps: <a class="reference internal" href="manual/index.html#manual"><span>User Manual</span></a></li>
-<li>For details about specific functions and classes: <a class="reference internal" href="python_reference.html#api-reference"><span>Python API Reference</span></a></li>
+analysis: <a class="reference internal" href="auto_examples/index.html#general-examples"><em>Examples Gallery</em></a></li>
+<li>For details about analysis steps: <a class="reference internal" href="manual/index.html#manual"><em>User Manual</em></a></li>
+<li>For details about specific functions and classes: <a class="reference internal" href="python_reference.html#api-reference"><em>Python API Reference</em></a></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -222,14 +222,14 @@ my-path-to/mne-python/examples. If you downloaded data and an
 example asks you whether to download it again, make sure
 the data reside in the examples directory
 and that you run the script from its current directory.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> examples/preprocessing
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> examples/preprocessing
 </pre></div>
 </div>
 <p>Then in Python you can do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>In [1]: %run plot_find_ecg_artifacts.py
+<div class="highlight-python"><div class="highlight"><pre>In [1]: %run plot_find_ecg_artifacts.py
 </pre></div>
 </div>
-<p class="last">See <a class="reference internal" href="manual/datasets_index.html#datasets"><span>Datasets</span></a> for a list of all available datasets and some
+<p class="last">See <a class="reference internal" href="manual/datasets_index.html#datasets"><em>Datasets</em></a> for a list of all available datasets and some
 advanced configuration options, e.g. to specify a custom
 location for storing the datasets.</p>
 </div>
@@ -276,11 +276,11 @@ location for storing the datasets.</p>
 <div class="span box container">
 <h2>Manipulating Data Structures and Containers</h2><div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_object_raw.html">The <code class="docutils literal"><span class="pre">Raw</span></code> data structure: continuous data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_object_epochs.html">The <code class="docutils literal"><span class="pre">Epochs</span></code> data structure: epoched data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_object_evoked.html">The <code class="docutils literal"><span class="pre">Evoked</span></code> data structure: evoked/averaged data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_object_raw.html">The <tt class="docutils literal"><span class="pre">Raw</span></tt> data structure: continuous data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_object_epochs.html">The <tt class="docutils literal"><span class="pre">Epochs</span></tt> data structure: epoched data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_object_evoked.html">The <tt class="docutils literal"><span class="pre">Evoked</span></tt> data structure: evoked/averaged data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_creating_data_structures.html">Creating MNE-Python&#8217;s data structures from scratch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_info.html">The <code class="docutils literal"><span class="pre">Info</span></code> data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/plot_info.html">The <tt class="docutils literal"><span class="pre">Info</span></tt> data structure</a></li>
 </ul>
 </div>
 </div>
@@ -347,7 +347,7 @@ location for storing the datasets.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

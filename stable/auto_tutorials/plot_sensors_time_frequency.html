@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -175,7 +175,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -207,7 +207,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="frequency-and-time-frequency-sensors-analysis">
 <span id="tut-sensors-time-frequency"></span><span id="sphx-glr-auto-tutorials-plot-sensors-time-frequency-py"></span><h1>Frequency and time-frequency sensors analysis<a class="headerlink" href="#frequency-and-time-frequency-sensors-analysis" title="Permalink to this headline">¶</a></h1>
@@ -216,7 +216,7 @@ of your data (frequency and time-frequency). Here we&#8217;ll work on Epochs.</p
 <p>We will use the somatosensory dataset that contains so
 called event related synchronizations (ERS) / desynchronizations (ERD) in
 the beta band.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">import</span> <span class="nn">mne</span>
@@ -225,7 +225,7 @@ the beta band.</p>
 </pre></div>
 </div>
 <p>Set parameters</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">somato</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <span class="n">somato</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
 <span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/somato/sef_raw_sss.fif&#39;</span>
 
 <span class="c1"># Setup for reading the raw data</span>
@@ -246,7 +246,7 @@ the beta band.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-somato-data/MEG/somato/sef_raw_sss.fif...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Opening raw data file /home/jaakko/examples/MNE-somato-data/MEG/somato/sef_raw_sss.fif...
 Current compensation grade : 0
     Range : 237600 ... 506999 =    791.189 ...  1688.266 secs
 Ready.
@@ -266,20 +266,20 @@ Loading data for 111 events and 1202 original time points ...
 <h2>Frequency analysis<a class="headerlink" href="#frequency-analysis" title="Permalink to this headline">¶</a></h2>
 <p>We start by exploring the frequence content of our epochs.</p>
 <p>Let&#8217;s first check out all channel types by averaging across epochs.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">fmin</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mf">40.</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">epochs</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">fmin</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mf">40.</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_sensors_time_frequency_001.png" class="align-center" src="../_images/sphx_glr_plot_sensors_time_frequency_001.png" />
 <p>Now let&#8217;s take a look at the spatial distributions of the PSD.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">plot_psd_topomap</span><span class="p">(</span><span class="n">ch_type</span><span class="o">=</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">epochs</span><span class="o">.</span><span class="n">plot_psd_topomap</span><span class="p">(</span><span class="n">ch_type</span><span class="o">=</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_sensors_time_frequency_002.png" class="align-center" src="../_images/sphx_glr_plot_sensors_time_frequency_002.png" />
 <p>Alternatively, you can also create PSDs from Epochs objects with functions
 that start with <a href="#id1"><span class="problematic" id="id2">psd_</span></a> such as
-<a class="reference internal" href="../generated/mne.time_frequency.psd_multitaper.html#mne.time_frequency.psd_multitaper" title="mne.time_frequency.psd_multitaper"><code class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.psd_multitaper()</span></code></a> and
-<a class="reference internal" href="../generated/mne.time_frequency.psd_welch.html#mne.time_frequency.psd_welch" title="mne.time_frequency.psd_welch"><code class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.psd_welch()</span></code></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">()</span>
+<a class="reference internal" href="../generated/mne.time_frequency.psd_multitaper.html#mne.time_frequency.psd_multitaper" title="mne.time_frequency.psd_multitaper"><tt class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.psd_multitaper()</span></tt></a> and
+<a class="reference internal" href="../generated/mne.time_frequency.psd_welch.html#mne.time_frequency.psd_welch" title="mne.time_frequency.psd_welch"><tt class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.psd_welch()</span></tt></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">()</span>
 <span class="n">psds</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <a href="../generated/mne.time_frequency.psd_multitaper.html#mne.time_frequency.psd_multitaper"><span class="n">psd_multitaper</span></a><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">fmin</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">psds</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.log10.html#numpy.log10"><span class="n">np</span><span class="o">.</span><span class="n">log10</span></a><span class="p">(</span><span class="n">psds</span><span class="p">)</span>
 <span class="n">psds_mean</span> <span class="o">=</span> <span class="n">psds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -299,10 +299,10 @@ that start with <a href="#id1"><span class="problematic" id="id2">psd_</span></a
 <h2>Time-frequency analysis: power and intertrial coherence<a class="headerlink" href="#time-frequency-analysis-power-and-intertrial-coherence" title="Permalink to this headline">¶</a></h2>
 <p>We now compute time-frequency representations (TFRs) from our Epochs.
 We&#8217;ll look at power and intertrial coherence (ITC).</p>
-<p>To this we&#8217;ll use the function <a class="reference internal" href="../generated/mne.time_frequency.tfr_morlet.html#mne.time_frequency.tfr_morlet" title="mne.time_frequency.tfr_morlet"><code class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.tfr_morlet()</span></code></a>
-but you can also use <a class="reference internal" href="../generated/mne.time_frequency.tfr_multitaper.html#mne.time_frequency.tfr_multitaper" title="mne.time_frequency.tfr_multitaper"><code class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.tfr_multitaper()</span></code></a>
-or <a class="reference internal" href="../generated/mne.time_frequency.tfr_stockwell.html#mne.time_frequency.tfr_stockwell" title="mne.time_frequency.tfr_stockwell"><code class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.tfr_stockwell()</span></code></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">freqs</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># define frequencies of interest</span>
+<p>To this we&#8217;ll use the function <a class="reference internal" href="../generated/mne.time_frequency.tfr_morlet.html#mne.time_frequency.tfr_morlet" title="mne.time_frequency.tfr_morlet"><tt class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.tfr_morlet()</span></tt></a>
+but you can also use <a class="reference internal" href="../generated/mne.time_frequency.tfr_multitaper.html#mne.time_frequency.tfr_multitaper" title="mne.time_frequency.tfr_multitaper"><tt class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.tfr_multitaper()</span></tt></a>
+or <a class="reference internal" href="../generated/mne.time_frequency.tfr_stockwell.html#mne.time_frequency.tfr_stockwell" title="mne.time_frequency.tfr_stockwell"><tt class="xref py py-func docutils literal"><span class="pre">mne.time_frequency.tfr_stockwell()</span></tt></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">freqs</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># define frequencies of interest</span>
 <span class="n">n_cycles</span> <span class="o">=</span> <span class="n">freqs</span> <span class="o">/</span> <span class="mf">2.</span>  <span class="c1"># different number of cycle per frequency</span>
 <span class="n">power</span><span class="p">,</span> <span class="n">itc</span> <span class="o">=</span> <a href="../generated/mne.time_frequency.tfr_morlet.html#mne.time_frequency.tfr_morlet"><span class="n">tfr_morlet</span></a><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">freqs</span><span class="o">=</span><span class="n">freqs</span><span class="p">,</span> <span class="n">n_cycles</span><span class="o">=</span><span class="n">n_cycles</span><span class="p">,</span> <span class="n">use_fft</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
                         <span class="n">return_itc</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">decim</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -318,7 +318,7 @@ on an image to visualize the data for one censor.
 You can also select a portion in the time-frequency plane to
 obtain a topomap for a certain time-frequency region.</p>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">power</span><span class="o">.</span><span class="n">plot_topo</span><span class="p">(</span><span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;logratio&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Average power&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">power</span><span class="o">.</span><span class="n">plot_topo</span><span class="p">(</span><span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;logratio&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Average power&#39;</span><span class="p">)</span>
 <span class="n">power</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">82</span><span class="p">],</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;logratio&#39;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -341,7 +341,7 @@ obtain a topomap for a certain time-frequency region.</p>
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Applying baseline correction (mode: logratio)
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Applying baseline correction (mode: logratio)
 Applying baseline correction (mode: logratio)
 Applying baseline correction (mode: logratio)
 Applying baseline correction (mode: logratio)
@@ -350,12 +350,12 @@ Applying baseline correction (mode: logratio)
 </div>
 <div class="section" id="inspect-itc">
 <h2>Inspect ITC<a class="headerlink" href="#inspect-itc" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">itc</span><span class="o">.</span><span class="n">plot_topo</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Inter-Trial coherence&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">itc</span><span class="o">.</span><span class="n">plot_topo</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Inter-Trial coherence&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_sensors_time_frequency_007.png" class="align-center" src="../_images/sphx_glr_plot_sensors_time_frequency_007.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>No baseline correction applied
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>No baseline correction applied
 </pre></div>
 </div>
 <div class="admonition note">
@@ -374,11 +374,11 @@ power.</li>
 </ul>
 </div></blockquote>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 39.993 seconds)</p>
+(0 minutes 28.638 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_sensors_time_frequency.py"><code class="xref download docutils literal"><span class="pre">plot_sensors_time_frequency.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_sensors_time_frequency.py"><tt class="xref download docutils literal"><span class="pre">plot_sensors_time_frequency.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_sensors_time_frequency.ipynb"><code class="xref download docutils literal"><span class="pre">plot_sensors_time_frequency.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_sensors_time_frequency.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_sensors_time_frequency.ipynb</span></tt></a></div>
 </div>
 </div>
 
@@ -397,7 +397,7 @@ power.</li>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

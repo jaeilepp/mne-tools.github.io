@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-viz-clickableimage">
 <h1>mne.viz.ClickableImage<a class="headerlink" href="#mne-viz-clickableimage" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mne.viz.ClickableImage">
-<em class="property">class </em><code class="descclassname">mne.viz.</code><code class="descname">ClickableImage</code><span class="sig-paren">(</span><em>imdata</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.ClickableImage" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">mne.viz.</tt><tt class="descname">ClickableImage</tt><big>(</big><em>imdata</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mne.viz.ClickableImage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display an image so you can click on it and store x/y positions.</p>
 <p>Takes as input an image array (can be any array that works with imshow,
 but will work best with images.  Displays the image and lets you
@@ -234,26 +234,26 @@ self.coords, which is a list of (x, y) tuples.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#mne.viz.ClickableImage.onclick" title="mne.viz.ClickableImage.onclick"><code class="xref py py-obj docutils literal"><span class="pre">onclick</span></code></a>(event)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.viz.ClickableImage.onclick" title="mne.viz.ClickableImage.onclick"><tt class="xref py py-obj docutils literal"><span class="pre">onclick</span></tt></a>(event)</td>
 <td>Mouse click handler.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.viz.ClickableImage.plot_clicks" title="mne.viz.ClickableImage.plot_clicks"><code class="xref py py-obj docutils literal"><span class="pre">plot_clicks</span></code></a>(**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.viz.ClickableImage.plot_clicks" title="mne.viz.ClickableImage.plot_clicks"><tt class="xref py py-obj docutils literal"><span class="pre">plot_clicks</span></tt></a>(**kwargs)</td>
 <td>Plot the x/y positions stored in self.coords.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.viz.ClickableImage.to_layout" title="mne.viz.ClickableImage.to_layout"><code class="xref py py-obj docutils literal"><span class="pre">to_layout</span></code></a>(**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.viz.ClickableImage.to_layout" title="mne.viz.ClickableImage.to_layout"><tt class="xref py py-obj docutils literal"><span class="pre">to_layout</span></tt></a>(**kwargs)</td>
 <td>Turn coordinates into an MNE Layout object.</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="mne.viz.ClickableImage.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>imdata</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.ClickableImage.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>imdata</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mne.viz.ClickableImage.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the image for clicking.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="mne.viz.ClickableImage.onclick">
-<code class="descname">onclick</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.ClickableImage.onclick" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">onclick</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#mne.viz.ClickableImage.onclick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mouse click handler.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -271,7 +271,7 @@ self.coords, which is a list of (x, y) tuples.</p>
 
 <dl class="method">
 <dt id="mne.viz.ClickableImage.plot_clicks">
-<code class="descname">plot_clicks</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.ClickableImage.plot_clicks" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">plot_clicks</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#mne.viz.ClickableImage.plot_clicks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the x/y positions stored in self.coords.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -289,7 +289,7 @@ self.coords, which is a list of (x, y) tuples.</p>
 
 <dl class="method">
 <dt id="mne.viz.ClickableImage.to_layout">
-<code class="descname">to_layout</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.ClickableImage.to_layout" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">to_layout</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#mne.viz.ClickableImage.to_layout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn coordinates into an MNE Layout object.</p>
 <p>Normalizes by the image you used to generate clicks</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -325,7 +325,7 @@ self.coords, which is a list of (x, y) tuples.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

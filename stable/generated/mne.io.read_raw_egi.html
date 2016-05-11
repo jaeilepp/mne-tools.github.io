@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,23 +193,23 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-io-read-raw-egi">
 <h1>mne.io.read_raw_egi<a class="headerlink" href="#mne-io-read-raw-egi" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.io.read_raw_egi">
-<code class="descclassname">mne.io.</code><code class="descname">read_raw_egi</code><span class="sig-paren">(</span><em>input_fname</em>, <em>montage=None</em>, <em>eog=None</em>, <em>misc=None</em>, <em>include=None</em>, <em>exclude=None</em>, <em>preload=False</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.io.read_raw_egi" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.io.</tt><tt class="descname">read_raw_egi</tt><big>(</big><em>input_fname</em>, <em>montage=None</em>, <em>eog=None</em>, <em>misc=None</em>, <em>include=None</em>, <em>exclude=None</em>, <em>preload=False</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.io.read_raw_egi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read EGI simple binary as raw object</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>The trigger channel names are based on the
 arbitrary user dependent event codes used. However this
 function will attempt to generate a synthetic trigger channel
-named <code class="docutils literal"><span class="pre">STI</span> <span class="pre">014</span></code> in accordance with the general
+named <tt class="docutils literal"><span class="pre">STI</span> <span class="pre">014</span></tt> in accordance with the general
 Neuromag / MNE naming pattern.</p>
 <p>The event_id assignment equals
-<code class="docutils literal"><span class="pre">np.arange(n_events</span> <span class="pre">-</span> <span class="pre">n_excluded)</span> <span class="pre">+</span> <span class="pre">1</span></code>. The resulting
+<tt class="docutils literal"><span class="pre">np.arange(n_events</span> <span class="pre">-</span> <span class="pre">n_excluded)</span> <span class="pre">+</span> <span class="pre">1</span></tt>. The resulting
 <cite>event_id</cite> mapping is stored as attribute to the resulting
 raw object but will be ignored when saving to a fiff.
 Note. The trigger channel is artificially constructed based
@@ -229,7 +229,7 @@ triggers have only short durations.</p>
 <blockquote>
 <div><p>Path or instance of montage containing electrode positions.
 If None, sensor locations are (0,0,0). See the documentation of
-<a class="reference internal" href="mne.channels.read_montage.html#mne.channels.read_montage" title="mne.channels.read_montage"><code class="xref py py-func docutils literal"><span class="pre">mne.channels.read_montage()</span></code></a> for more information.</p>
+<a class="reference internal" href="mne.channels.read_montage.html#mne.channels.read_montage" title="mne.channels.read_montage"><tt class="xref py py-func docutils literal"><span class="pre">mne.channels.read_montage()</span></tt></a> for more information.</p>
 </div></blockquote>
 <p><strong>eog</strong> : list or tuple</p>
 <blockquote>
@@ -251,7 +251,7 @@ Note. Overrides <cite>exclude</cite> parameter.</p>
 <blockquote>
 <div><p>The event channels to be ignored when creating the synthetic
 trigger. Defaults to None. If None, channels that have more than
-one event and the <code class="docutils literal"><span class="pre">sync</span></code> and <code class="docutils literal"><span class="pre">TREV</span></code> channels will be
+one event and the <tt class="docutils literal"><span class="pre">sync</span></tt> and <tt class="docutils literal"><span class="pre">TREV</span></tt> channels will be
 ignored.</p>
 </div></blockquote>
 <p><strong>preload</strong> : bool or str (default False)</p>
@@ -280,7 +280,7 @@ on the hard drive (slower, requires less memory).</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-obj docutils literal"><span class="pre">mne.io.Raw</span></code></a></dt>
+<dt><a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><tt class="xref py py-obj docutils literal"><span class="pre">mne.io.Raw</span></tt></a></dt>
 <dd>Documentation of attribute and methods.</dd>
 </dl>
 </div>
@@ -303,7 +303,7 @@ on the hard drive (slower, requires less memory).</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

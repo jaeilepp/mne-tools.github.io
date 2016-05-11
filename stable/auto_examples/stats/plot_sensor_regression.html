@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,7 +193,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="sensor-space-least-squares-regression">
 <span id="sphx-glr-auto-examples-stats-plot-sensor-regression-py"></span><h1>Sensor space least squares regression<a class="headerlink" href="#sensor-space-least-squares-regression" title="Permalink to this headline">¶</a></h1>
@@ -207,7 +207,7 @@ p-values.</p>
 here do not contain any significant effect.</p>
 <p>(See Hauk et al. (2006). The time course of visual word recognition as
 revealed by linear regression analysis of ERP data. Neuroimage.)</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Tal Linzen &lt;linzen@nyu.edu&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># Authors: Tal Linzen &lt;linzen@nyu.edu&gt;</span>
 <span class="c1">#          Denis A. Engemann &lt;denis.engemann@gmail.com&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
@@ -224,7 +224,7 @@ revealed by linear regression analysis of ERP data. Neuroimage.)</p>
 </pre></div>
 </div>
 <p>Set parameters and read data</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
 <span class="n">event_fname</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw-eve.fif&#39;</span>
 <span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span>
 <span class="n">event_id</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">aud_l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">aud_r</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -243,28 +243,8 @@ revealed by linear regression analysis of ERP data. Neuroimage.)</p>
                     <span class="n">reject</span><span class="o">=</span><span class="n">reject</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-    Read a total of 4 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-        Average EEG reference (1 x 60)  idle
-Current compensation grade : 0
-    Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-Ready.
-145 matching events found
-Applying baseline correction (mode: mean)
-Created an SSP operator (subspace dimension = 3)
-4 projection items activated
-Loading data for 145 events and 106 original time points ...
-    Rejecting  epoch based on MAG : [u&#39;MEG 1711&#39;]
-    Rejecting  epoch based on MAG : [u&#39;MEG 1711&#39;]
-2 bad epochs dropped
-</pre></div>
-</div>
 <p>Run regression</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;trial-count&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;trial-count&#39;</span><span class="p">]</span>
 
 <span class="n">intercept</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.ones.html#numpy.ones"><span class="n">np</span><span class="o">.</span><span class="n">ones</span></a><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">epochs</span><span class="p">),),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
 <span class="n">design_matrix</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.column_stack.html#numpy.column_stack"><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span></a><span class="p">([</span><span class="n">intercept</span><span class="p">,</span>  <span class="c1"># intercept</span>
@@ -296,17 +276,12 @@ Loading data for 145 events and 106 original time points ...
 <li><a class="first reference internal image-reference" href="../../_images/sphx_glr_plot_sensor_regression_004.png"><img alt="../../_images/sphx_glr_plot_sensor_regression_004.png" src="../../_images/sphx_glr_plot_sensor_regression_004.png" style="width: 423.0px; height: 82.25px;" /></a>
 </li>
 </ul>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Fitting linear model to epochs, (10812 targets, 2 regressors)
-Done
-</pre></div>
-</div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 9.207 seconds)</p>
+(0 minutes 6.406 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_sensor_regression.py"><code class="xref download docutils literal"><span class="pre">plot_sensor_regression.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_sensor_regression.py"><tt class="xref download docutils literal"><span class="pre">plot_sensor_regression.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_sensor_regression.ipynb"><code class="xref download docutils literal"><span class="pre">plot_sensor_regression.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../../_downloads/plot_sensor_regression.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_sensor_regression.ipynb</span></tt></a></div>
 </div>
 
 
@@ -324,7 +299,7 @@ Done
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

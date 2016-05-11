@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -35,7 +35,7 @@
     <link rel="top" title="MNE 0.12.0 documentation" href="../index.html" />
     <link rel="up" title="Python API Reference" href="../python_reference.html" />
     <link rel="next" title="mne.datasets.sample.data_path" href="mne.datasets.sample.data_path.html" />
-    <link rel="prev" title="mne.EpochsArray" href="mne.EpochsArray.html" />
+    <link rel="prev" title="mne.io.RawArray" href="mne.io.RawArray.html" />
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -177,7 +177,7 @@
 </ul>
 
   <li>
-    <a href="mne.EpochsArray.html" title="Previous Chapter: mne.EpochsArray"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; mne.EpochsArray</span>
+    <a href="mne.io.RawArray.html" title="Previous Chapter: mne.io.RawArray"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; mne.io.RawArray</span>
     </a>
   </li>
   <li>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-create-info">
 <h1>mne.create_info<a class="headerlink" href="#mne-create-info" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.create_info">
-<code class="descclassname">mne.</code><code class="descname">create_info</code><span class="sig-paren">(</span><em>ch_names</em>, <em>sfreq</em>, <em>ch_types=None</em>, <em>montage=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.create_info" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.</tt><tt class="descname">create_info</tt><big>(</big><em>ch_names</em>, <em>sfreq</em>, <em>ch_types=None</em>, <em>montage=None</em><big>)</big><a class="headerlink" href="#mne.create_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a basic Info instance suitable for use with create_raw</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -228,7 +228,7 @@ specified, the channel info will be updated with the channel
 positions. Default is None. If DigMontage is specified, the
 digitizer information will be updated. A list of unique montages,
 can be specifed and applied to the info. See also the documentation of
-<a class="reference internal" href="mne.channels.read_montage.html#mne.channels.read_montage" title="mne.channels.read_montage"><code class="xref py py-func docutils literal"><span class="pre">mne.channels.read_montage()</span></code></a> for more information.</p>
+<a class="reference internal" href="mne.channels.read_montage.html#mne.channels.read_montage" title="mne.channels.read_montage"><tt class="xref py py-func docutils literal"><span class="pre">mne.channels.read_montage()</span></tt></a> for more information.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -239,7 +239,7 @@ can be specifed and applied to the info. See also the documentation of
 within the rest of the package. Advanced functionality such as source
 localization can only be obtained through substantial, proper
 modifications of the info structure (not recommended).</p>
-<p>Note that the MEG device-to-head transform <code class="docutils literal"><span class="pre">info['dev_head_t']</span></code> will
+<p>Note that the MEG device-to-head transform <tt class="docutils literal"><span class="pre">info['dev_head_t']</span></tt> will
 be initialized to the identity transform.</p>
 </dd></dl>
 
@@ -260,7 +260,7 @@ be initialized to the identity transform.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

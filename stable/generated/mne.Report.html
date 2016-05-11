@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-report">
 <h1>mne.Report<a class="headerlink" href="#mne-report" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mne.Report">
-<em class="property">class </em><code class="descclassname">mne.</code><code class="descname">Report</code><span class="sig-paren">(</span><em>info_fname=None</em>, <em>subjects_dir=None</em>, <em>subject=None</em>, <em>title=None</em>, <em>cov_fname=None</em>, <em>baseline=None</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">mne.</tt><tt class="descname">Report</tt><big>(</big><em>info_fname=None</em>, <em>subjects_dir=None</em>, <em>subject=None</em>, <em>title=None</em>, <em>cov_fname=None</em>, <em>baseline=None</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.Report" title="Permalink to this definition">¶</a></dt>
 <dd><p>Object for rendering HTML</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -258,37 +258,37 @@ timepoints t such that a &lt;= t &lt;= b.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#mne.Report.add_bem_to_section" title="mne.Report.add_bem_to_section"><code class="xref py py-obj docutils literal"><span class="pre">add_bem_to_section</span></code></a>(subject[,&nbsp;caption,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.Report.add_bem_to_section" title="mne.Report.add_bem_to_section"><tt class="xref py py-obj docutils literal"><span class="pre">add_bem_to_section</span></tt></a>(subject[,&nbsp;caption,&nbsp;...])</td>
 <td>Renders a bem slider html str.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.Report.add_figs_to_section" title="mne.Report.add_figs_to_section"><code class="xref py py-obj docutils literal"><span class="pre">add_figs_to_section</span></code></a>(figs,&nbsp;captions[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.Report.add_figs_to_section" title="mne.Report.add_figs_to_section"><tt class="xref py py-obj docutils literal"><span class="pre">add_figs_to_section</span></tt></a>(figs,&nbsp;captions[,&nbsp;...])</td>
 <td>Append custom user-defined figures.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.Report.add_htmls_to_section" title="mne.Report.add_htmls_to_section"><code class="xref py py-obj docutils literal"><span class="pre">add_htmls_to_section</span></code></a>(htmls,&nbsp;captions[,&nbsp;section])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.Report.add_htmls_to_section" title="mne.Report.add_htmls_to_section"><tt class="xref py py-obj docutils literal"><span class="pre">add_htmls_to_section</span></tt></a>(htmls,&nbsp;captions[,&nbsp;section])</td>
 <td>Append htmls to the report.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.Report.add_images_to_section" title="mne.Report.add_images_to_section"><code class="xref py py-obj docutils literal"><span class="pre">add_images_to_section</span></code></a>(fnames,&nbsp;captions[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.Report.add_images_to_section" title="mne.Report.add_images_to_section"><tt class="xref py py-obj docutils literal"><span class="pre">add_images_to_section</span></tt></a>(fnames,&nbsp;captions[,&nbsp;...])</td>
 <td>Append custom user-defined images.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.Report.add_slider_to_section" title="mne.Report.add_slider_to_section"><code class="xref py py-obj docutils literal"><span class="pre">add_slider_to_section</span></code></a>(figs[,&nbsp;captions,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.Report.add_slider_to_section" title="mne.Report.add_slider_to_section"><tt class="xref py py-obj docutils literal"><span class="pre">add_slider_to_section</span></tt></a>(figs[,&nbsp;captions,&nbsp;...])</td>
 <td>Renders a slider of figs to the report.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#mne.Report.parse_folder" title="mne.Report.parse_folder"><code class="xref py py-obj docutils literal"><span class="pre">parse_folder</span></code></a>(data_path[,&nbsp;pattern,&nbsp;n_jobs,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#mne.Report.parse_folder" title="mne.Report.parse_folder"><tt class="xref py py-obj docutils literal"><span class="pre">parse_folder</span></tt></a>(data_path[,&nbsp;pattern,&nbsp;n_jobs,&nbsp;...])</td>
 <td>Renders all the files in the folder.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#mne.Report.save" title="mne.Report.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>([fname,&nbsp;open_browser,&nbsp;overwrite])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#mne.Report.save" title="mne.Report.save"><tt class="xref py py-obj docutils literal"><span class="pre">save</span></tt></a>([fname,&nbsp;open_browser,&nbsp;overwrite])</td>
 <td>Save html report and open it in browser.</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="mne.Report.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>info_fname=None</em>, <em>subjects_dir=None</em>, <em>subject=None</em>, <em>title=None</em>, <em>cov_fname=None</em>, <em>baseline=None</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>info_fname=None</em>, <em>subjects_dir=None</em>, <em>subject=None</em>, <em>title=None</em>, <em>cov_fname=None</em>, <em>baseline=None</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.Report.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="mne.Report.add_bem_to_section">
-<code class="descname">add_bem_to_section</code><span class="sig-paren">(</span><em>subject</em>, <em>caption='BEM'</em>, <em>section='bem'</em>, <em>decim=2</em>, <em>n_jobs=1</em>, <em>subjects_dir=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report.add_bem_to_section" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">add_bem_to_section</tt><big>(</big><em>subject</em>, <em>caption='BEM'</em>, <em>section='bem'</em>, <em>decim=2</em>, <em>n_jobs=1</em>, <em>subjects_dir=None</em><big>)</big><a class="headerlink" href="#mne.Report.add_bem_to_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renders a bem slider html str.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -333,7 +333,7 @@ the environment variable SUBJECTS_DIR.</p>
 
 <dl class="method">
 <dt id="mne.Report.add_figs_to_section">
-<code class="descname">add_figs_to_section</code><span class="sig-paren">(</span><em>figs</em>, <em>captions</em>, <em>section='custom'</em>, <em>scale=None</em>, <em>image_format='png'</em>, <em>comments=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report.add_figs_to_section" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">add_figs_to_section</tt><big>(</big><em>figs</em>, <em>captions</em>, <em>section='custom'</em>, <em>scale=None</em>, <em>image_format='png'</em>, <em>comments=None</em><big>)</big><a class="headerlink" href="#mne.Report.add_figs_to_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append custom user-defined figures.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -379,7 +379,7 @@ the figure.</p>
 
 <dl class="method">
 <dt id="mne.Report.add_htmls_to_section">
-<code class="descname">add_htmls_to_section</code><span class="sig-paren">(</span><em>htmls</em>, <em>captions</em>, <em>section='custom'</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report.add_htmls_to_section" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">add_htmls_to_section</tt><big>(</big><em>htmls</em>, <em>captions</em>, <em>section='custom'</em><big>)</big><a class="headerlink" href="#mne.Report.add_htmls_to_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append htmls to the report.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -410,7 +410,7 @@ will be appended to the end of the section.</p>
 
 <dl class="method">
 <dt id="mne.Report.add_images_to_section">
-<code class="descname">add_images_to_section</code><span class="sig-paren">(</span><em>fnames</em>, <em>captions</em>, <em>scale=None</em>, <em>section='custom'</em>, <em>comments=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report.add_images_to_section" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">add_images_to_section</tt><big>(</big><em>fnames</em>, <em>captions</em>, <em>scale=None</em>, <em>section='custom'</em>, <em>comments=None</em><big>)</big><a class="headerlink" href="#mne.Report.add_images_to_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append custom user-defined images.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -448,7 +448,7 @@ the image.</p>
 
 <dl class="method">
 <dt id="mne.Report.add_slider_to_section">
-<code class="descname">add_slider_to_section</code><span class="sig-paren">(</span><em>figs</em>, <em>captions=None</em>, <em>section='custom'</em>, <em>title='Slider'</em>, <em>scale=None</em>, <em>image_format='png'</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report.add_slider_to_section" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">add_slider_to_section</tt><big>(</big><em>figs</em>, <em>captions=None</em>, <em>section='custom'</em>, <em>title='Slider'</em>, <em>scale=None</em>, <em>image_format='png'</em><big>)</big><a class="headerlink" href="#mne.Report.add_slider_to_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renders a slider of figs to the report.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -499,7 +499,7 @@ parameter. Defaults to None.</p>
 
 <dl class="method">
 <dt id="mne.Report.parse_folder">
-<code class="descname">parse_folder</code><span class="sig-paren">(</span><em>data_path</em>, <em>pattern='*.fif'</em>, <em>n_jobs=1</em>, <em>mri_decim=2</em>, <em>sort_sections=True</em>, <em>on_error='warn'</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report.parse_folder" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">parse_folder</tt><big>(</big><em>data_path</em>, <em>pattern='*.fif'</em>, <em>n_jobs=1</em>, <em>mri_decim=2</em>, <em>sort_sections=True</em>, <em>on_error='warn'</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.Report.parse_folder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renders all the files in the folder.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -550,7 +550,7 @@ files.</p>
 
 <dl class="method">
 <dt id="mne.Report.save">
-<code class="descname">save</code><span class="sig-paren">(</span><em>fname=None</em>, <em>open_browser=True</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Report.save" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">save</tt><big>(</big><em>fname=None</em>, <em>open_browser=True</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#mne.Report.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save html report and open it in browser.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -593,7 +593,7 @@ files.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

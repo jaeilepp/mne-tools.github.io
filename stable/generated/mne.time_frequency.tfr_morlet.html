@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-time-frequency-tfr-morlet">
 <h1>mne.time_frequency.tfr_morlet<a class="headerlink" href="#mne-time-frequency-tfr-morlet" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.time_frequency.tfr_morlet">
-<code class="descclassname">mne.time_frequency.</code><code class="descname">tfr_morlet</code><span class="sig-paren">(</span><em>inst</em>, <em>freqs</em>, <em>n_cycles</em>, <em>use_fft=False</em>, <em>return_itc=True</em>, <em>decim=1</em>, <em>n_jobs=1</em>, <em>picks=None</em>, <em>verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.time_frequency.tfr_morlet" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.time_frequency.</tt><tt class="descname">tfr_morlet</tt><big>(</big><em>inst</em>, <em>freqs</em>, <em>n_cycles</em>, <em>use_fft=False</em>, <em>return_itc=True</em>, <em>decim=1</em>, <em>n_jobs=1</em>, <em>picks=None</em>, <em>verbose=None</em><big>)</big><a class="headerlink" href="#mne.time_frequency.tfr_morlet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Time-Frequency Representation (TFR) using Morlet wavelets</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -224,7 +224,7 @@
 <p><strong>return_itc</strong> : bool</p>
 <blockquote>
 <div><p>Return intertrial coherence (ITC) as well as averaged power.
-Must be <code class="docutils literal"><span class="pre">False</span></code> for evoked data.</p>
+Must be <tt class="docutils literal"><span class="pre">False</span></tt> for evoked data.</p>
 </div></blockquote>
 <p><strong>decim</strong> : int | slice</p>
 <blockquote>
@@ -265,7 +265,7 @@ is True.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="mne.time_frequency.tfr_multitaper.html#mne.time_frequency.tfr_multitaper" title="mne.time_frequency.tfr_multitaper"><code class="xref py py-obj docutils literal"><span class="pre">tfr_multitaper</span></code></a>, <a class="reference internal" href="mne.time_frequency.tfr_stockwell.html#mne.time_frequency.tfr_stockwell" title="mne.time_frequency.tfr_stockwell"><code class="xref py py-obj docutils literal"><span class="pre">tfr_stockwell</span></code></a></p>
+<p class="last"><a class="reference internal" href="mne.time_frequency.tfr_multitaper.html#mne.time_frequency.tfr_multitaper" title="mne.time_frequency.tfr_multitaper"><tt class="xref py py-obj docutils literal"><span class="pre">tfr_multitaper</span></tt></a>, <a class="reference internal" href="mne.time_frequency.tfr_stockwell.html#mne.time_frequency.tfr_stockwell" title="mne.time_frequency.tfr_stockwell"><tt class="xref py py-obj docutils literal"><span class="pre">tfr_stockwell</span></tt></a></p>
 </div>
 </dd></dl>
 
@@ -286,7 +286,7 @@ is True.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

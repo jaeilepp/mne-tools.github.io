@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-create-default-subject">
 <h1>mne.create_default_subject<a class="headerlink" href="#mne-create-default-subject" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.create_default_subject">
-<code class="descclassname">mne.</code><code class="descname">create_default_subject</code><span class="sig-paren">(</span><em>mne_root=None</em>, <em>fs_home=None</em>, <em>update=False</em>, <em>subjects_dir=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.create_default_subject" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.</tt><tt class="descname">create_default_subject</tt><big>(</big><em>mne_root=None</em>, <em>fs_home=None</em>, <em>update=False</em>, <em>subjects_dir=None</em><big>)</big><a class="headerlink" href="#mne.create_default_subject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an average brain subject for subjects without structural MRI</p>
 <p>Create a copy of fsaverage from the Freesurfer directory in subjects_dir
 and add auxiliary files from the mne package.</p>
@@ -236,11 +236,11 @@ exist in the fsaverage directory.</p>
 <p>When no structural MRI is available for a subject, an average brain can be
 substituted. Freesurfer comes with such an average brain model, and MNE
 comes with some auxiliary files which make coregistration easier.
-<a class="reference internal" href="#mne.create_default_subject" title="mne.create_default_subject"><code class="xref py py-func docutils literal"><span class="pre">create_default_subject()</span></code></a> copies the relevant files from Freesurfer
+<a class="reference internal" href="#mne.create_default_subject" title="mne.create_default_subject"><tt class="xref py py-func docutils literal"><span class="pre">create_default_subject()</span></tt></a> copies the relevant files from Freesurfer
 into the current subjects_dir, and also adds the auxiliary files provided
 by MNE.</p>
 <p>The files provided by MNE are listed below and can be found under
-<code class="docutils literal"><span class="pre">share/mne/mne_analyze/fsaverage</span></code> in the MNE directory (see MNE manual
+<tt class="docutils literal"><span class="pre">share/mne/mne_analyze/fsaverage</span></tt> in the MNE directory (see MNE manual
 section 7.19 Working with the average brain):</p>
 <dl class="docutils">
 <dt>fsaverage_head.fif:</dt>
@@ -272,7 +272,7 @@ fsaverage.</dd>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

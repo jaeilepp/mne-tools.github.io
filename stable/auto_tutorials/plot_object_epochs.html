@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -140,7 +140,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">The <code class="docutils literal"><span class="pre">Epochs</span></code> data structure: epoched data</a></li>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Epochs</span></tt> data structure: epoched data</a></li>
 </ul>
 </ul>
 </li>
@@ -168,12 +168,12 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
             </a></p><ul>
-<li><a class="reference internal" href="#">The <code class="docutils literal"><span class="pre">Epochs</span></code> data structure: epoched data</a></li>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">Epochs</span></tt> data structure: epoched data</a></li>
 </ul>
 
   <li>
@@ -193,11 +193,11 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="the-epochs-data-structure-epoched-data">
-<span id="tut-epochs-objects"></span><span id="sphx-glr-auto-tutorials-plot-object-epochs-py"></span><h1>The <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal"><span class="pre">Epochs</span></code></a> data structure: epoched data<a class="headerlink" href="#the-epochs-data-structure-epoched-data" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span id="tut-epochs-objects"></span><span id="sphx-glr-auto-tutorials-plot-object-epochs-py"></span><h1>The <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><tt class="xref py py-class docutils literal"><span class="pre">Epochs</span></tt></a> data structure: epoched data<a class="headerlink" href="#the-epochs-data-structure-epoched-data" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">mne</span>
 <span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">op</span>
@@ -205,23 +205,23 @@
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal"><span class="pre">Epochs</span></code></a> objects are a way of representing continuous
+<p><a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><tt class="xref py py-class docutils literal"><span class="pre">Epochs</span></tt></a> objects are a way of representing continuous
 data as a collection of time-locked trials, stored in an array of
 <cite>shape(n_events, n_channels, n_times)</cite>. They are useful for many statistical
 methods in neuroscience, and make it easy to quickly overview what occurs
 during a trial.</p>
 <dl class="docutils">
-<dt><a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal"><span class="pre">Epochs</span></code></a> objects can be created in three ways:</dt>
+<dt><a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><tt class="xref py py-class docutils literal"><span class="pre">Epochs</span></tt></a> objects can be created in three ways:</dt>
 <dd><ol class="first last arabic simple">
-<li>From a <a class="reference internal" href="../generated/mne.io.RawFIF.html#mne.io.RawFIF" title="mne.io.RawFIF"><code class="xref py py-class docutils literal"><span class="pre">Raw</span></code></a> object, along with event times</li>
-<li>From an <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal"><span class="pre">Epochs</span></code></a> object that has been saved as a
+<li>From a <a class="reference internal" href="../generated/mne.io.RawFIF.html#mne.io.RawFIF" title="mne.io.RawFIF"><tt class="xref py py-class docutils literal"><span class="pre">Raw</span></tt></a> object, along with event times</li>
+<li>From an <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><tt class="xref py py-class docutils literal"><span class="pre">Epochs</span></tt></a> object that has been saved as a
 <cite>.fif</cite> file</li>
-<li>From scratch using <a class="reference internal" href="../generated/mne.EpochsArray.html#mne.EpochsArray" title="mne.EpochsArray"><code class="xref py py-class docutils literal"><span class="pre">EpochsArray</span></code></a>. See
-<a class="reference internal" href="plot_creating_data_structures.html#tut-creating-data-structures"><span>Creating MNE-Python&#8217;s data structures from scratch</span></a></li>
+<li>From scratch using <a class="reference internal" href="../generated/mne.EpochsArray.html#mne.EpochsArray" title="mne.EpochsArray"><tt class="xref py py-class docutils literal"><span class="pre">EpochsArray</span></tt></a>. See
+<a class="reference internal" href="plot_creating_data_structures.html#tut-creating-data-structures"><em>Creating MNE-Python&#8217;s data structures from scratch</em></a></li>
 </ol>
 </dd>
 </dl>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data_path</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
 <span class="c1"># Load a dataset that contains events</span>
 <span class="n">raw</span> <span class="o">=</span> <a href="../generated/mne.io.RawFIF.html#mne.io.RawFIF"><span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">RawFIF</span></a><span class="p">(</span>
     <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_audvis_raw.fif&#39;</span><span class="p">))</span>
@@ -244,7 +244,7 @@ during a trial.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Opening raw data file /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
     Read a total of 3 projection items:
         PCA-v1 (1 x 102)  idle
         PCA-v2 (1 x 102)  idle
@@ -260,20 +260,20 @@ Number of events: 320
 Unique event codes: [ 1  2  3  4  5 32]
 </pre></div>
 </div>
-<p>Now, we can create an <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal"><span class="pre">mne.Epochs</span></code></a> object with the events we&#8217;ve
+<p>Now, we can create an <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><tt class="xref py py-class docutils literal"><span class="pre">mne.Epochs</span></tt></a> object with the events we&#8217;ve
 extracted. Note that epochs constructed in this manner will not have their
 data available until explicitly read into memory, which you can do with
-<a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.get_data" title="mne.Epochs.get_data"><code class="xref py py-func docutils literal"><span class="pre">get_data</span></code></a>. Alternatively, you can use
+<a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.get_data" title="mne.Epochs.get_data"><tt class="xref py py-func docutils literal"><span class="pre">get_data</span></tt></a>. Alternatively, you can use
 <cite>preload=True</cite>.</p>
 <p>Expose the raw data as epochs, cut from -0.1 s to 1.0 s relative to the event
 onsets</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <a href="../generated/mne.Epochs.html#mne.Epochs"><span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span></a><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">event_id</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">epochs</span> <span class="o">=</span> <a href="../generated/mne.Epochs.html#mne.Epochs"><span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span></a><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">event_id</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                     <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">preload</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">epochs</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>145 matching events found
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>145 matching events found
 Applying baseline correction (mode: mean)
 Created an SSP operator (subspace dimension = 4)
 4 projection items activated
@@ -283,38 +283,38 @@ Loading data for 145 events and 662 original time points ...
  &#39;Auditory/Left&#39;: 72, &#39;Auditory/Right&#39;: 73&gt;
 </pre></div>
 </div>
-<p>Epochs behave similarly to <a class="reference internal" href="../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-class docutils literal"><span class="pre">mne.io.Raw</span></code></a> objects. They have an
-<a class="reference internal" href="../generated/mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-class docutils literal"><span class="pre">info</span></code></a> attribute that has all of the same
+<p>Epochs behave similarly to <a class="reference internal" href="../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><tt class="xref py py-class docutils literal"><span class="pre">mne.io.Raw</span></tt></a> objects. They have an
+<a class="reference internal" href="../generated/mne.Info.html#mne.Info" title="mne.Info"><tt class="xref py py-class docutils literal"><span class="pre">info</span></tt></a> attribute that has all of the same
 information, as well as a number of attributes unique to the events contained
 within the object.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">epochs</span><span class="o">.</span><span class="n">event_id</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">epochs</span><span class="o">.</span><span class="n">event_id</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>[[27977     0     2]
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>[[27977     0     2]
  [28771     0     1]
  [29652     0     2]]
 
 {&#39;Auditory/Right&#39;: 2, &#39;Auditory/Left&#39;: 1}
 </pre></div>
 </div>
-<p>You can select subsets of epochs by indexing the <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal"><span class="pre">Epochs</span></code></a>
+<p>You can select subsets of epochs by indexing the <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><tt class="xref py py-class docutils literal"><span class="pre">Epochs</span></tt></a>
 object directly. Alternatively, if you have epoch names specified in
 <cite>event_id</cite> then you may index with strings instead.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;Auditory/Right&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>&lt;Epochs  |  n_events : 4 (all good), tmin : -0.0998976065792 (s), tmax : 1.0006410259 (s), baseline : (None, 0),
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>&lt;Epochs  |  n_events : 4 (all good), tmin : -0.0998976065792 (s), tmax : 1.0006410259 (s), baseline : (None, 0),
  &#39;Auditory/Left&#39;: 2, &#39;Auditory/Right&#39;: 2&gt;
 &lt;Epochs  |  n_events : 73 (all good), tmin : -0.0998976065792 (s), tmax : 1.0006410259 (s), baseline : (None, 0)&gt;
 </pre></div>
 </div>
-<p>It is also possible to iterate through <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal"><span class="pre">Epochs</span></code></a> objects
+<p>It is also possible to iterate through <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><tt class="xref py py-class docutils literal"><span class="pre">Epochs</span></tt></a> objects
 in this way. Note that behavior is different if you iterate on <cite>Epochs</cite>
 directly rather than indexing:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># These will be epochs objects</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># These will be epochs objects</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
@@ -324,7 +324,7 @@ directly rather than indexing:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>&lt;Epochs  |  n_events : 1 (all good), tmin : -0.0998976065792 (s), tmax : 1.0006410259 (s), baseline : (None, 0)&gt;
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>&lt;Epochs  |  n_events : 1 (all good), tmin : -0.0998976065792 (s), tmax : 1.0006410259 (s), baseline : (None, 0)&gt;
 &lt;Epochs  |  n_events : 1 (all good), tmin : -0.0998976065792 (s), tmax : 1.0006410259 (s), baseline : (None, 0)&gt;
 &lt;Epochs  |  n_events : 1 (all good), tmin : -0.0998976065792 (s), tmax : 1.0006410259 (s), baseline : (None, 0)&gt;
 [[ -1.56510152e-12  -6.00746037e-13   3.63609444e-13 ...,  -5.42252344e-12
@@ -356,13 +356,13 @@ directly rather than indexing:</p>
 </pre></div>
 </div>
 <p>You can manually remove epochs from the Epochs object by using
-<a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.drop" title="mne.Epochs.drop"><code class="xref py py-func docutils literal"><span class="pre">epochs.drop(idx)</span></code></a>, or by using rejection or flat
-thresholds with <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.drop_bad" title="mne.Epochs.drop_bad"><code class="xref py py-func docutils literal"><span class="pre">epochs.drop_bad(reject,</span> <span class="pre">flat)</span></code></a>.
+<a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.drop" title="mne.Epochs.drop"><tt class="xref py py-func docutils literal"><span class="pre">epochs.drop(idx)</span></tt></a>, or by using rejection or flat
+thresholds with <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.drop_bad" title="mne.Epochs.drop_bad"><tt class="xref py py-func docutils literal"><span class="pre">epochs.drop_bad(reject,</span> <span class="pre">flat)</span></tt></a>.
 You can also inspect the reason why epochs were dropped by looking at the
-list stored in <code class="docutils literal"><span class="pre">epochs.drop_log</span></code> or plot them with
-<a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.plot_drop_log" title="mne.Epochs.plot_drop_log"><code class="xref py py-func docutils literal"><span class="pre">epochs.plot_drop_log()</span></code></a>. The indices
-from the original set of events are stored in <code class="docutils literal"><span class="pre">epochs.selection</span></code>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;User reason&#39;</span><span class="p">)</span>
+list stored in <tt class="docutils literal"><span class="pre">epochs.drop_log</span></tt> or plot them with
+<a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.plot_drop_log" title="mne.Epochs.plot_drop_log"><tt class="xref py py-func docutils literal"><span class="pre">epochs.plot_drop_log()</span></tt></a>. The indices
+from the original set of events are stored in <tt class="docutils literal"><span class="pre">epochs.selection</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">epochs</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;User reason&#39;</span><span class="p">)</span>
 <span class="n">epochs</span><span class="o">.</span><span class="n">drop_bad</span><span class="p">(</span><span class="n">reject</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">grad</span><span class="o">=</span><span class="mf">2500e-13</span><span class="p">,</span> <span class="n">mag</span><span class="o">=</span><span class="mf">4e-12</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="mf">200e-6</span><span class="p">),</span> <span class="n">flat</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">drop_log</span><span class="p">)</span>
 <span class="n">epochs</span><span class="o">.</span><span class="n">plot_drop_log</span><span class="p">()</span>
@@ -375,7 +375,7 @@ from the original set of events are stored in <code class="docutils literal"><sp
 </div>
 <img alt="../_images/sphx_glr_plot_object_epochs_001.png" class="align-center" src="../_images/sphx_glr_plot_object_epochs_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Dropped 1 epoch
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Dropped 1 epoch
     Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
     Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
     Rejecting  epoch based on EOG : [u&#39;EOG 061&#39;]
@@ -416,20 +416,20 @@ Removed events (from list comprehension -- should match!):
 </pre></div>
 </div>
 <p>If you wish to save the epochs as a file, you can do it with
-<a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.save" title="mne.Epochs.save"><code class="xref py py-func docutils literal"><span class="pre">mne.Epochs.save()</span></code></a>. To conform to MNE naming conventions, the
+<a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.save" title="mne.Epochs.save"><tt class="xref py py-func docutils literal"><span class="pre">mne.Epochs.save()</span></tt></a>. To conform to MNE naming conventions, the
 epochs file names should end with &#8216;-epo.fif&#8217;.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">epochs_fname</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;sample-epo.fif&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">epochs_fname</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;sample-epo.fif&#39;</span><span class="p">)</span>
 <span class="n">epochs</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">epochs_fname</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Later on you can read the epochs with <a class="reference internal" href="../generated/mne.read_epochs.html#mne.read_epochs" title="mne.read_epochs"><code class="xref py py-func docutils literal"><span class="pre">mne.read_epochs()</span></code></a>. For reading
-EEGLAB epochs files see <a class="reference internal" href="../generated/mne.read_epochs_eeglab.html#mne.read_epochs_eeglab" title="mne.read_epochs_eeglab"><code class="xref py py-func docutils literal"><span class="pre">mne.read_epochs_eeglab()</span></code></a>. We can also use
-<code class="docutils literal"><span class="pre">preload=False</span></code> to save memory, loading the epochs from disk on demand.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <a href="../generated/mne.read_epochs.html#mne.read_epochs"><span class="n">mne</span><span class="o">.</span><span class="n">read_epochs</span></a><span class="p">(</span><span class="n">epochs_fname</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<p>Later on you can read the epochs with <a class="reference internal" href="../generated/mne.read_epochs.html#mne.read_epochs" title="mne.read_epochs"><tt class="xref py py-func docutils literal"><span class="pre">mne.read_epochs()</span></tt></a>. For reading
+EEGLAB epochs files see <a class="reference internal" href="../generated/mne.read_epochs_eeglab.html#mne.read_epochs_eeglab" title="mne.read_epochs_eeglab"><tt class="xref py py-func docutils literal"><span class="pre">mne.read_epochs_eeglab()</span></tt></a>. We can also use
+<tt class="docutils literal"><span class="pre">preload=False</span></tt> to save memory, loading the epochs from disk on demand.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">epochs</span> <span class="o">=</span> <a href="../generated/mne.read_epochs.html#mne.read_epochs"><span class="n">mne</span><span class="o">.</span><span class="n">read_epochs</span></a><span class="p">(</span><span class="n">epochs_fname</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Reading /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample-epo.fif ...
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>Reading /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample-epo.fif ...
     Read a total of 4 projection items:
         PCA-v1 (1 x 102) active
         PCA-v2 (1 x 102) active
@@ -448,11 +448,11 @@ Created an SSP operator (subspace dimension = 4)
 </pre></div>
 </div>
 <p>If you wish to look at the average across trial types, then you may do so,
-creating an <a class="reference internal" href="../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal"><span class="pre">Evoked</span></code></a> object in the process. Instances
-of <cite>Evoked</cite> are usually created by calling <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.average" title="mne.Epochs.average"><code class="xref py py-func docutils literal"><span class="pre">mne.Epochs.average()</span></code></a>. For
-creating <cite>Evoked</cite> from other data structures see <a class="reference internal" href="../generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray"><code class="xref py py-class docutils literal"><span class="pre">mne.EvokedArray</span></code></a> and
-<a class="reference internal" href="plot_creating_data_structures.html#tut-creating-data-structures"><span>Creating MNE-Python&#8217;s data structures from scratch</span></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ev_left</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;Auditory/Left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+creating an <a class="reference internal" href="../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><tt class="xref py py-class docutils literal"><span class="pre">Evoked</span></tt></a> object in the process. Instances
+of <cite>Evoked</cite> are usually created by calling <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.average" title="mne.Epochs.average"><tt class="xref py py-func docutils literal"><span class="pre">mne.Epochs.average()</span></tt></a>. For
+creating <cite>Evoked</cite> from other data structures see <a class="reference internal" href="../generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray"><tt class="xref py py-class docutils literal"><span class="pre">mne.EvokedArray</span></tt></a> and
+<a class="reference internal" href="plot_creating_data_structures.html#tut-creating-data-structures"><em>Creating MNE-Python&#8217;s data structures from scratch</em></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ev_left</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;Auditory/Left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
 <span class="n">ev_right</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;Auditory/Right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
 
 <span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -463,13 +463,13 @@ creating <cite>Evoked</cite> from other data structures see <a class="reference 
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_object_epochs_002.png" class="align-center" src="../_images/sphx_glr_plot_object_epochs_002.png" />
-<p>To export and manipulate Epochs using Pandas see <a class="reference internal" href="plot_epochs_to_data_frame.html#tut-io-export-pandas"><span>Export epochs to Pandas DataFrame</span></a>.</p>
+<p>To export and manipulate Epochs using Pandas see <a class="reference internal" href="plot_epochs_to_data_frame.html#tut-io-export-pandas"><em>Export epochs to Pandas DataFrame</em></a>.</p>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 9.765 seconds)</p>
+(0 minutes 11.571 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_object_epochs.py"><code class="xref download docutils literal"><span class="pre">plot_object_epochs.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_object_epochs.py"><tt class="xref download docutils literal"><span class="pre">plot_object_epochs.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_object_epochs.ipynb"><code class="xref download docutils literal"><span class="pre">plot_object_epochs.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_object_epochs.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_object_epochs.ipynb</span></tt></a></div>
 </div>
 
 
@@ -487,7 +487,7 @@ creating <cite>Evoked</cite> from other data structures see <a class="reference 
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

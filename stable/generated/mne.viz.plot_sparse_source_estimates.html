@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -168,7 +168,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -193,13 +193,13 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="mne-viz-plot-sparse-source-estimates">
 <h1>mne.viz.plot_sparse_source_estimates<a class="headerlink" href="#mne-viz-plot-sparse-source-estimates" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne.viz.plot_sparse_source_estimates">
-<code class="descclassname">mne.viz.</code><code class="descname">plot_sparse_source_estimates</code><span class="sig-paren">(</span><em>src</em>, <em>stcs</em>, <em>colors=None</em>, <em>linewidth=2</em>, <em>fontsize=18</em>, <em>bgcolor=(0.05</em>, <em>0</em>, <em>0.1)</em>, <em>opacity=0.2</em>, <em>brain_color=(0.7</em>, <em>0.7</em>, <em>0.7)</em>, <em>show=True</em>, <em>high_resolution=False</em>, <em>fig_name=None</em>, <em>fig_number=None</em>, <em>labels=None</em>, <em>modes=('cone'</em>, <em>'sphere')</em>, <em>scale_factors=(1</em>, <em>0.6)</em>, <em>verbose=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.viz.plot_sparse_source_estimates" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">mne.viz.</tt><tt class="descname">plot_sparse_source_estimates</tt><big>(</big><em>src</em>, <em>stcs</em>, <em>colors=None</em>, <em>linewidth=2</em>, <em>fontsize=18</em>, <em>bgcolor=(0.05</em>, <em>0</em>, <em>0.1)</em>, <em>opacity=0.2</em>, <em>brain_color=(0.7</em>, <em>0.7</em>, <em>0.7)</em>, <em>show=True</em>, <em>high_resolution=False</em>, <em>fig_name=None</em>, <em>fig_number=None</em>, <em>labels=None</em>, <em>modes=('cone'</em>, <em>'sphere')</em>, <em>scale_factors=(1</em>, <em>0.6)</em>, <em>verbose=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mne.viz.plot_sparse_source_estimates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot source estimates obtained with sparse solver</p>
 <p>Active dipoles are represented in a &#8220;Glass&#8221; brain.
 If the same source is active in multiple source estimates it is
@@ -265,7 +265,7 @@ stcs is a list ie. one label for each stc.</p>
 </div></blockquote>
 <p><strong>modes</strong> : list</p>
 <blockquote>
-<div><p>Should be a list, with each entry being <code class="docutils literal"><span class="pre">'cone'</span></code> or <code class="docutils literal"><span class="pre">'sphere'</span></code>
+<div><p>Should be a list, with each entry being <tt class="docutils literal"><span class="pre">'cone'</span></tt> or <tt class="docutils literal"><span class="pre">'sphere'</span></tt>
 to specify how the dipoles should be shown.</p>
 </div></blockquote>
 <p><strong>scale_factors</strong> : list</p>
@@ -303,7 +303,7 @@ to specify how the dipoles should be shown.</p>
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

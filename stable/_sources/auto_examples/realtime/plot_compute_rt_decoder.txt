@@ -13,7 +13,6 @@ accuracy is plotted
 
 
 
-
 .. image:: /auto_examples/realtime/images/sphx_glr_plot_compute_rt_decoder_001.png
     :align: center
 
@@ -22,44 +21,6 @@ accuracy is plotted
 
  Out::
 
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
-        Read a total of 4 projection items:
-            PCA-v1 (1 x 102)  idle
-            PCA-v2 (1 x 102)  idle
-            PCA-v3 (1 x 102)  idle
-            Average EEG reference (1 x 60)  idle
-    Current compensation grade : 0
-        Range : 6450 ... 48149 =     42.956 ...   320.665 secs
-    Ready.
-    Reading 0 ... 41699  =      0.000 ...   277.709 secs...
-    Applying baseline correction (mode: mean)
-    4 projection items activated
-    5 events found
-    Events id: [1 2 3 4]
-    10 events found
-    Events id: [1 2 3 4]
-    10 events found
-    Events id: [ 1  2  3  4  5 32]
-    10 events found
-    Events id: [1 2 3 4]
-    10 events found
-    Events id: [ 1  2  3  4  5 32]
-    10 events found
-    Events id: [1 2 3 4]
-    11 events found
-    Events id: [ 1  2  3  4  5 32]
-    10 events found
-    Events id: [1 2 3 4]
-    10 events found
-    Events id: [ 1  2  3  4  5 32]
-    10 events found
-    Events id: [1 2 3 4]
-    10 events found
-    Events id: [ 1  2  3  4  5 32]
-    10 events found
-    Events id: [1 2 3 4]
-    11 events found
-    Events id: [ 1  2  3  4  5 32]
     Just got epoch 1
     Just got epoch 2
     Just got epoch 3
@@ -312,7 +273,160 @@ accuracy is plotted
     Attenuation at stop frequency 0.5Hz is only 1.8dB.
     Attenuation at stop frequency 0.5Hz is only 1.8dB.
     Attenuation at stop frequency 0.5Hz is only 1.8dB.
-    Time of 2.0 seconds exceeded.
+    Just got epoch 33
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 34
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 35
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 36
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 37
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 38
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 39
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 40
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 41
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 42
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 43
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 44
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 45
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Just got epoch 46
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
+    Attenuation at stop frequency 0.5Hz is only 1.8dB.
 
 
 
@@ -428,7 +542,7 @@ accuracy is plotted
     plt.show()
 
 **Total running time of the script:**
-(0 minutes 33.808 seconds)
+(0 minutes 49.329 seconds)
 
 
 

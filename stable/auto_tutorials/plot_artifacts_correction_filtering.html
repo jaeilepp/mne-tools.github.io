@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -72,7 +72,7 @@
 
 
   </head>
-  <body role="document">
+  <body>
 
 
 
@@ -174,7 +174,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.png" alt="Logo"/>
@@ -205,7 +205,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="filtering-and-resampling">
 <span id="tut-artifacts-filter"></span><span id="sphx-glr-auto-tutorials-plot-artifacts-correction-filtering-py"></span><h1>Filtering and Resampling<a class="headerlink" href="#filtering-and-resampling" title="Permalink to this headline">¶</a></h1>
@@ -217,7 +217,7 @@ It is composed of sharp peaks at 50Hz (or 60Hz depending on your
 geographical location). Some peaks may also be present at the harmonic
 frequencies, i.e. the integer multiples of
 the power-line frequency, e.g. 100Hz, 150Hz, ... (or 120Hz, 180Hz, ...).</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">mne</span>
 <span class="kn">from</span> <span class="nn">mne.datasets</span> <span class="kn">import</span> <span class="n">sample</span>
 
@@ -246,71 +246,41 @@ the power-line frequency, e.g. 100Hz, 150Hz, ... (or 120Hz, 180Hz, ...).</p>
 </div>
 <img alt="../_images/sphx_glr_plot_artifacts_correction_filtering_001.png" class="align-center" src="../_images/sphx_glr_plot_artifacts_correction_filtering_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_raw.fif...
-    Read a total of 3 projection items:
-        PCA-v1 (1 x 102)  idle
-        PCA-v2 (1 x 102)  idle
-        PCA-v3 (1 x 102)  idle
-Current compensation grade : 0
-    Range : 25800 ... 192599 =     42.956 ...   320.670 secs
-Ready.
-Adding average EEG reference projection.
-1 projection items deactivated
-The copy parameter is deprecated and will be removed in 0.14. In 0.13 the behavior will be to operate in-place (like copy=False). In 0.12 the default is copy=True. Use inst.copy() if necessary.
-Reading 0 ... 12012  =      0.000 ...    20.000 secs...
-Effective window size : 3.410 (s)
+<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre>The copy parameter is deprecated and will be removed in 0.14. In 0.13 the behavior will be to operate in-place (like copy=False). In 0.12 the default is copy=True. Use inst.copy() if necessary.
 </pre></div>
 </div>
 <div class="section" id="removing-power-line-noise-with-notch-filtering">
 <h2>Removing power-line noise with notch filtering<a class="headerlink" href="#removing-power-line-noise-with-notch-filtering" title="Permalink to this headline">¶</a></h2>
 <p>Removing power-line noise can be done with a Notch filter, directly on the
 Raw object, specifying an array of frequency to be cut off:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">notch_filter</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw</span><span class="o">.</span><span class="n">notch_filter</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.arange.html#numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">)</span>
 <span class="n">raw</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">area_mode</span><span class="o">=</span><span class="s1">&#39;range&#39;</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_artifacts_correction_filtering_002.png" class="align-center" src="../_images/sphx_glr_plot_artifacts_correction_filtering_002.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Effective window size : 3.410 (s)
-</pre></div>
-</div>
 </div>
 <div class="section" id="removing-power-line-noise-with-low-pas-filtering">
 <h2>Removing power-line noise with low-pas filtering<a class="headerlink" href="#removing-power-line-noise-with-low-pas-filtering" title="Permalink to this headline">¶</a></h2>
 <p>If you&#8217;re only interested in low frequencies, below the peaks of power-line
 noise you can simply low pass filter the data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mf">50.</span><span class="p">)</span>  <span class="c1"># low pass filtering below 50 Hz</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mf">50.</span><span class="p">)</span>  <span class="c1"># low pass filtering below 50 Hz</span>
 <span class="n">raw</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">area_mode</span><span class="o">=</span><span class="s1">&#39;range&#39;</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_artifacts_correction_filtering_003.png" class="align-center" src="../_images/sphx_glr_plot_artifacts_correction_filtering_003.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Low-pass filtering at 50 Hz
-Effective window size : 3.410 (s)
-</pre></div>
-</div>
 </div>
 <div class="section" id="high-pass-filtering-to-remove-slow-drifts">
 <h2>High-pass filtering to remove slow drifts<a class="headerlink" href="#high-pass-filtering-to-remove-slow-drifts" title="Permalink to this headline">¶</a></h2>
 <p>If you&#8217;re only interested in low frequencies, below the peaks of power-line
 noise you can simply high pass filter the data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>  <span class="c1"># low pass filtering above 1 Hz</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>  <span class="c1"># low pass filtering above 1 Hz</span>
 <span class="n">raw</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">area_mode</span><span class="o">=</span><span class="s1">&#39;range&#39;</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_artifacts_correction_filtering_004.png" class="align-center" src="../_images/sphx_glr_plot_artifacts_correction_filtering_004.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>High-pass filtering at 1 Hz
-Effective window size : 3.410 (s)
-</pre></div>
-</div>
 <p>To do the low-pass and high-pass filtering in one step you can do
 a so-called <em>band-pass</em> filter by running</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">)</span>  <span class="c1"># band-pass filtering in the range 1 Hz - 50 Hz</span>
-</pre></div>
-</div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>Band-pass filtering from 1 - 50 Hz
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">)</span>  <span class="c1"># band-pass filtering in the range 1 Hz - 50 Hz</span>
 </pre></div>
 </div>
 </div>
@@ -322,28 +292,20 @@ sampling rate than necessary needlessly consumes memory and slows down
 computations operating on the data. To avoid that, you can down-sample
 your time series.</p>
 <p>Data resampling can be done with <em>resample</em> methods.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">npad</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>  <span class="c1"># set sampling frequency to 100Hz</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">raw</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">npad</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>  <span class="c1"># set sampling frequency to 100Hz</span>
 <span class="n">raw</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">area_mode</span><span class="o">=</span><span class="s1">&#39;range&#39;</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_plot_artifacts_correction_filtering_005.png" class="align-center" src="../_images/sphx_glr_plot_artifacts_correction_filtering_005.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-python"><div class="highlight"><pre><span></span>25 events found
-Events id: [ 1  2  3  4  5 32]
-25 events found
-Events id: [ 1  2  3  4  5 32]
-Effective window size : 10.010 (s)
-</pre></div>
-</div>
 <p>Since down-sampling reduces the timing precision of events, you might want to
 first extract epochs and down-sampling the Epochs object. You can do this
-using the <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.resample" title="mne.Epochs.resample"><code class="xref py py-func docutils literal"><span class="pre">mne.Epochs.resample()</span></code></a> method.</p>
+using the <a class="reference internal" href="../generated/mne.Epochs.html#mne.Epochs.resample" title="mne.Epochs.resample"><tt class="xref py py-func docutils literal"><span class="pre">mne.Epochs.resample()</span></tt></a> method.</p>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 5.208 seconds)</p>
+(0 minutes 5.044 seconds)</p>
 <div class="sphx-glr-download container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_artifacts_correction_filtering.py"><code class="xref download docutils literal"><span class="pre">plot_artifacts_correction_filtering.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_artifacts_correction_filtering.py"><tt class="xref download docutils literal"><span class="pre">plot_artifacts_correction_filtering.py</span></tt></a></div>
 <div class="sphx-glr-download container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_artifacts_correction_filtering.ipynb"><code class="xref download docutils literal"><span class="pre">plot_artifacts_correction_filtering.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_artifacts_correction_filtering.ipynb"><tt class="xref download docutils literal"><span class="pre">plot_artifacts_correction_filtering.ipynb</span></tt></a></div>
 </div>
 </div>
 
@@ -362,7 +324,7 @@ using the <a class="reference internal" href="../generated/mne.Epochs.html#mne.E
       
     </p>
     <p>
-        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-10.<br/>
+        &copy; Copyright 2012-2016, MNE Developers. Last updated on 2016-05-11.<br/>
     </p>
   </div>
 </footer>

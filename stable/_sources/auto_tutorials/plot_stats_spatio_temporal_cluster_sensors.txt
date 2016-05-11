@@ -17,7 +17,6 @@ to the clustering. Significant spatiotemporal clusters will then
 be visualized using custom matplotlib code.
 
 
-
 .. code-block:: python
 
     # Authors: Denis Engemann <denis.engemann@gmail.com>
@@ -46,7 +45,6 @@ Set parameters
 --------------
 
 
-
 .. code-block:: python
 
     data_path = sample.data_path()
@@ -69,7 +67,7 @@ Set parameters
 
  Out::
 
-    Opening raw data file /home/ubuntu/mne_data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
+    Opening raw data file /home/jaakko/mne-testing-data/MNE-sample-data/MEG/sample/sample_audvis_filt-0-40_raw.fif...
         Read a total of 4 projection items:
             PCA-v1 (1 x 102)  idle
             PCA-v2 (1 x 102)  idle
@@ -84,7 +82,6 @@ Set parameters
 
 Read epochs for the channel of interest
 ---------------------------------------
-
 
 
 .. code-block:: python
@@ -174,7 +171,6 @@ Load FieldTrip neighbor definition to setup sensor connectivity
 ---------------------------------------------------------------
 
 
-
 .. code-block:: python
 
     connectivity, ch_names = read_ch_connectivity('neuromag306mag')
@@ -218,7 +214,6 @@ MEG-data" Journal of Neuroscience Methods, Vol. 164, No. 1., pp. 177-190.
 doi:10.1016/j.jneumeth.2007.03.024
 
 
-
 .. code-block:: python
 
 
@@ -258,7 +253,6 @@ It can be used for single trials or for groups of subjects.
 
 Visualize clusters
 ------------------
-
 
 
 .. code-block:: python
@@ -374,9 +368,8 @@ Exercises
 - use an F distribution to compute the threshold by traditional significance
    levels. Hint: take a look at ``scipy.stats.distributions.f``
 
-
 **Total running time of the script:**
-(0 minutes 24.742 seconds)
+(0 minutes 24.387 seconds)
 
 
 
